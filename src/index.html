@@ -46,17 +46,29 @@
   margin: auto !important;
 }
   .owl-carousel .owl-nav{
-      position: absolute;
-      top: 45%;
-      text-align: left !important;
       width: 100% !important;
   }
   .owl-carousel .owl-nav .owl-next{
-    float: right;
+    position: absolute !important;
+    top: 40% !important;
+    right: 0 !important;
   }
-  .top-authors .owl-carousel .owl-nav{
-      top: 40%;
+  .owl-carousel .owl-nav .owl-prev{
+    position: absolute !important;
+    top: 40% !important;
+    left: 0 !important;
   }
+  .ngx-pagination {
+    text-align: center;
+    margin: 35px 0;
+}
+.ngx-pagination a, .ngx-pagination button {
+    color: #454545;
+    display: block;
+    padding: 0.1875rem 0.625rem;
+    border-radius: 0;
+    font-weight: 600;
+}
   @media screen and (max-width:991px) {
     .owl-carousel .owl-nav{
           margin: 0 !important;

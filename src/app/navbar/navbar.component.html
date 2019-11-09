@@ -11,21 +11,21 @@
           </div>
           <div class="menu" [class.blue-link]="headerBlue">
               <ul>
-                  <li class="navlink"><a [routerLink]="['landing']">Home</a></li>
-                  <li class="navlink"><a [routerLink]="['about']" >about</a></li>
-                  <li class="navlink"><a [routerLink]="['vision']" >vision </a></li>
-                  <li class="navlink"><a [routerLink]="['mission']" >mission </a></li>
-                  <li class="navlink"><a [routerLink]="['team']" > team </a></li>
+                  <li class="navlink"><a [routerLink]="['/home']">Home</a></li>
+                  <li class="navlink"><a [routerLink]="['/home/about']" >about</a></li>
+                  <li class="navlink"><a [routerLink]="['/home/vision']" >vision </a></li>
+                  <li class="navlink"><a [routerLink]="['/home/mission']" >mission </a></li>
+                  <li class="navlink"><a [routerLink]="['/home/team']" > team </a></li>
                   <li class="navlink hover-dd"><a> platform </a>
                     <div class="dd-menu">
                         <li><a [routerLink]="['/onewaterblog']">OneWater Blog</a></li>
                         <li><a [routerLink]="['/onevideo']">OneVideo</a></li>
                         <li><a href="https://onewateracademy.herokuapp.com">OneWater Academy</a></li>
-                        <li><a [routerLink]="['onewaterjobs']">OneWater Jobs</a></li>
+                        <li><a [routerLink]="['/onewaterjobs']">OneWater Jobs</a></li>
                         <li><a [routerLink]="['/']">Mentor Mentee</a></li>
                     </div>
                 </li>
-                  <li class="navlink"><a (click)="login()" >Login / Signup </a></li>
+                  <li class="navlink"><a [routerLink]="['/login']">Login / Signup </a></li>
               </ul>
               <!-- <div class="menu-contact">
                   <div class="row">

@@ -1,0 +1,59 @@
+<div
+class="dashboard-content-wrapper dash-tab"
+>
+<div class="dashboard-section user-statistic-block">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="user-statistic">
+        <i data-feather="command"></i>
+        <h3>266</h3>
+        <span>Blogs Posted</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="user-statistic">
+        <i data-feather="file-text"></i>
+        <h3>123</h3>
+        <span>Blogs Aproved</span>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="user-statistic">
+        <i data-feather="users"></i>
+        <h3>32</h3>
+        <span>Followers</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="dashboard-section dashboard-view-chart">
+        <canvas id="view-chart" width="400" height="200"></canvas>
+      </div> -->
+<div class="dashboard-section dashboard-recent-activity">
+  <h4 class="title">Recently posted blogs</h4>
+
+  <div class="activity-list" *ngFor="let blog of recentblogs">
+      <div class="thumb">
+          <img
+            [src]=blog.img
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+    <div class="content">
+      <h5>{{blog.title}}</h5>
+      <span class="time">{{blog.date}}</span>
+      <br>
+      <span class="time status-btn"  [ngStyle]="{
+        'background-color':blog.status === 'approved' ? '#8eff96' : '#ff988e' ,'color':blog.status === 'approved' ? '#015a01' : '#bd0303' }
+      ">
+      {{ blog.status}}
+       </span>
+    </div>
+    <div class="close-activity buttons">
+      <a class="button" routerLink="/onewaterblog/author/blog-details">View</a>
+    </div>
+  </div>
+ 
+</div>
+</div>

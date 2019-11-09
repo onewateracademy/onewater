@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './authors/services/auth.service';
+import { AuthService } from '../authors/services/auth.service';
 
 @Component({
   selector: 'app-blog-website',
@@ -11,8 +11,6 @@ export class BlogWebsiteComponent implements OnInit {
   constructor(public auth:AuthService) { }
 
   ngOnInit() {
-    this.auth.checkLocalStorage();
-    
+    //this.auth.checkLocalStorage();
   }
-
 }

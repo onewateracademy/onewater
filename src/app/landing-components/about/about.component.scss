@@ -136,14 +136,6 @@ p {
     position: relative;
   }
 }
-// .img::before{
-//     position: absolute;
-//     content: "";
-//     width: 100%;
-//     height: 100%;
-//     top: 20px;
-//     left:20px;
-//     z-index: 0;
-//     background: transparent;
-//     border: 2px #c9e9ed solid;
-// }
+@media screen and (max-width:768px){
+  
+}

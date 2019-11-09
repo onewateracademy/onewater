@@ -101,8 +101,9 @@
       <h2>
         Latest
       </h2>
-      <a >
+     
       <div class="thumbnail-card card-shadow" *ngFor="let video of latestvideos">
+          <a [routerLink]="['/onevideo/singlevideo/', video._id]">
         <div class="thumb-img">
           <img [src]="video?.image" alt="">
           <div class="hover-play">
@@ -123,8 +124,9 @@
             </div>
           </div>
         </div>
-      </div>
       </a>
+      </div>
+     
     </div>
   </div>
 </div>

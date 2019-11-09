@@ -50,6 +50,7 @@
     </h2>
     <owl-carousel [items]="likesvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
       <div class="item" *ngFor="let videoo of likesvideos">
+        <a [routerLink]="['/onevideo/singlevideo/', videoo._id]">
         <div class="thumbnail-card card-shadow" >
         <div class="thumb-img">
           <img [src]="videoo?.image" alt="">
@@ -72,6 +73,7 @@
           </div>
         </div>
       </div>
+    </a>
         </div>
         </owl-carousel>
   </div>

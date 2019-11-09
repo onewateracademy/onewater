@@ -3,22 +3,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
-import { ReactiveFormsModule } from '@angular/forms';
-
-import { NgxUiLoaderModule, NgxUiLoaderRouterModule } from  'ngx-ui-loader';
-
+import { LandingComponentsComponent } from './landing-components/landing-components.component';
+import { LandingPageComponent } from './landing-components/landing-page/landing-page.component';
+import { BlogWebsiteComponent } from './blog-website/blog-website.component';
+import { JobPortalComponent } from './job-portal/job-portal.component';
+import { VideoWebsiteComponent } from './video-website/video-website.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NavbarComponent,
-    FooterComponent,
-    LandingPageComponent
+    AppComponent, NavbarComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent
   ],
   imports: [
     BrowserModule,

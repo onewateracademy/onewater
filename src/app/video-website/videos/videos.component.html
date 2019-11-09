@@ -20,7 +20,7 @@
   <h2>
     All Videos
   </h2>
-  <ngx-masonry [useImagesLoaded]="true">
+  <ngx-masonry [useImagesLoaded]="true"  [options]="{ transitionDuration: 0 }">
  <div ngxMasonryItem class="masonry-item" *ngFor="let video of videos; let i = index">
    <a [routerLink]="['/onevideo/singlevideo/',video._id]">
    <div class="thumbnail-card">

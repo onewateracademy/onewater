@@ -45,7 +45,6 @@ export class AppComponent implements OnInit {
         } else {
           this.showLogin = true;
         }
-
       }
     });
 }
