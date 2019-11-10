@@ -3,14 +3,16 @@ import * as $ from 'jquery';
 import Feather from 'feather-icons';
 
 @Component({
-  selector: 'app-user-admin',
-  templateUrl: './user-admin.component.html',
-  styleUrls: ['./user-admin.component.scss']
+  selector: 'app-candidates',
+  templateUrl: './candidates.component.html',
+  styleUrls: ['./candidates.component.scss']
 })
-export class UserAdminComponent implements OnInit {
+export class CandidatesComponent implements OnInit {
+
   constructor() { }
 
   ngOnInit() {
+
     let filter = document.querySelector('.filter-btn a');
     let optionBox = document.querySelector('.dashboard-sidebar');
     let options = document.querySelectorAll('.dashboard-sidebar .dashboard-menu ul li a');
@@ -22,6 +24,7 @@ export class UserAdminComponent implements OnInit {
     });
 
     Feather.replace();
+
   }
 
 }

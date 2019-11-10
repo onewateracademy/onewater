@@ -9,7 +9,7 @@
         
           <router-outlet></router-outlet>
       </div>
-        <div class="dashboard-sidebar" *ngIf="showSidebar">
+        <div class="dashboard-sidebar">
           <div class="logo">
             <img src="assets/img/ow-logo1.png" alt="" />
           </div>
@@ -43,13 +43,13 @@
             <ul>
               <li routerLinkActive="activetab">
                 <i class="fa fa-home"></i
-                ><a [routerLink]="['./platforms']">Platforms</a>
+                ><a [routerLink]="['./']">Platforms</a>
               </li>
             
-              <!-- <li routerLinkActive="activetab">
+               <li routerLinkActive="activetab">
                   <i class="fa fa-plus-square"></i
-                  ><a [routerLink]="['./candidate-reg']">Candidate Dashboard</a>
-                </li>-->
+                  ><a [routerLink]="['/candidate-admin']">Candidate Dashboard</a>
+                </li>
             </ul> 
             
             <ul class="delete">

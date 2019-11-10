@@ -12,7 +12,7 @@
     }
 }
 .slide-in{
-  transform: translateX(0);
+  transform: translateX(0) !important;
 }
 .dashboard-container {
   display: -webkit-box;
@@ -313,7 +313,7 @@
     height: 80vh;
     z-index: 10;
     overflow-y: scroll;
-    transform: translateX(300px);
+    transform: translateX(-300px);
     transition: all ease-out 0.3s;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;

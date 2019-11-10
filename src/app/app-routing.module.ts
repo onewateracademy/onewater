@@ -7,7 +7,9 @@ import { JobPortalComponent } from './job-portal/job-portal.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
 
 const routes: Routes = [
-  //LANDING PAGES ROUTING
+
+  //-----------LANDING PAGES ROUTING---------------//
+
   {
     path: 'home',
     component: LandingComponentsComponent,
@@ -38,7 +40,9 @@ const routes: Routes = [
       }
     ]
   },
-  //BLOG PAGES ROUTING
+
+  //-----------BLOG PAGES ROUTING---------------//
+
   {
     path: 'onewaterblog',
     component: BlogWebsiteComponent,
@@ -73,7 +77,9 @@ const routes: Routes = [
       }
     ]
   },
-  //JOB PAGES ROUTING
+
+  //-----------JOB PAGES ROUTING---------------//
+
   {
     path: 'onewaterjobs',
     component: JobPortalComponent,
@@ -108,7 +114,9 @@ const routes: Routes = [
       }
     ]
   },
-  //VIDEO PAGES ROUTING
+
+  //-----------VIDEO PAGES ROUTING---------------//
+
   {
     path: 'onevideo',
     component: VideoWebsiteComponent,
@@ -127,26 +135,37 @@ const routes: Routes = [
       }
     ]
   },
-  //AUTHOR ADMIN PANEL
+
+  //-----------AUTHOR ADMIN PANEL---------------//
+
   {
     path: 'author',
     loadChildren: './authors/author-admin/author-admin.module#AuthorAdminModule'
   },
-  //EMPLOYER ADMIN PANEL
+
+  //-----------EMPLOYER ADMIN PANEL---------------//
+
   {
     path: 'employer',
     loadChildren: './employers/employer-admin/employer-admin.module#EmployerAdminModule'
   },
-  //USER ADMIN PANEL
+
+  //-----------USER ADMIN PANEL---------------//
+
   {
     path: 'user-admin',
     loadChildren: './user-admin/user-admin.module#UserAdminModule'
   },
-  //CANDIDATE ADMIN PANEL
-  // {
-  //   path:'candidate',
-  //   loadChildren: './candidates/candidates.module#CandidatesModule'
-  // },
+
+  //-----------CANDIDATE ADMIN PANEL---------------//
+
+  {
+    path:'candidate-admin',
+    loadChildren: './candidates/candidates.module#CandidatesModule'
+  },
+
+  //-----------OTHER PAGES ROUTING---------------//
+
   {
     path: 'login',
     loadChildren: './login-signup/login-signup.module#LoginSignupModule'
