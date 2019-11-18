@@ -15,6 +15,7 @@ body {
   // scroll-behavior: smooth;
 }
 
+
 h1,
 h2,
 h3,
@@ -23,7 +24,6 @@ h5,
 h6 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  transition: all ease-in-out 0.65s;
 }
 /*headings styles*/
 h1{
@@ -32,7 +32,7 @@ h1{
   letter-spacing: -2.2px;
 }
 h2{
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   font-weight: 700;
   letter-spacing: -1.5px;
   // border-bottom: 1px #ccc solid;
@@ -49,7 +49,6 @@ a {
   color: #222;
   text-decoration: none;
   outline: none !important;
-  transition: 0.1s all ease-in-out;
 }
 a:hover {
   color: #0C7BE2;
@@ -309,13 +308,17 @@ margin: 1rem;}
   .category-box,.subcategory-box{
     margin-bottom: 1rem;
     border-bottom: 1px #ccc solid;
-    text-align: center;
+    text-align: center;  
   }
-  img{
-    width: 35%;
-    margin: auto;
-    margin: 0.5rem auto;
+  .category-box{
+    height: 100px;
+    img{
+      width: 45px;
+      margin: auto;
+      margin: 0.2rem auto;
+    }
   }
+ 
 }
 .categories-card,.subcategories-card{
   box-shadow: 0 2px 6px 0 hsla(0, 0%, 43%, 0.2);
@@ -330,17 +333,26 @@ margin: 1rem;}
 
 .subcategories-card{
   display: none;
+
 h3{
   text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
   margin-bottom: 2rem;
+  letter-spacing: -0.05rem;
 }
 .subcategory-box {
-  h6{
+  min-height: 45px;
+  padding: 0.5rem;
+  p{
       text-transform: capitalize;
-      text-align: center;
+      letter-spacing: -0.04rem;
+      font-weight: 600;
+      margin: 0;
+      text-align: left;
     }
     img{
-      width: 25%;
+      width: 35px;
     }
 }
 }
@@ -442,9 +454,9 @@ left: 1.2rem;
   }
       .read{
         display: inline-block;
-        float: right;
         font-weight:500;
         font-size: 0.8rem;
+        float: right;
       }
     }
     .outer-card{
@@ -523,22 +535,18 @@ left: 1.2rem;
           z-index: 1;
         }
 
-        .landing-text h2 {
-          font-size: 4rem;
+         .platform-heading {
+          font-size: 4.5rem;
           font-family: "Montserrat", sans-serif;
-          font-weight: 600;
+          font-weight: 400;
           margin: 1rem;
           color: #fff;
           text-align: left;
-          letter-spacing: -4px;
+          letter-spacing: -0.35rem;
           border: none;
-        }
-
-        .landing-text h2 strong {
-          color: #fff;
-          letter-spacing: -3.5px;
-          font-size: 5rem;
-          font-weight: 700;
+          strong{
+            font-weight: 600;
+          }
         }
       }
 

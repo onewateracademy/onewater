@@ -23,17 +23,16 @@ export class HomeComponent implements OnInit {
         items: 1,
         stagePadding: 10,
       },
-      600: {
+    600: {
         items: 2,
 
       },
-      1200: {
+      1100: {
         items: 3,
-
 
       },
       1500: {
-        items: 3,
+        items: 4,
 
       }
     }

@@ -28,7 +28,9 @@ export class EmployerAdminComponent implements OnInit {
          $(optionBox).toggleClass("slide-in");
     });
     $(options).on("click",function(){
-         $(optionBox).toggleClass("slide-in");
+         $(optionBox).removeClass("slide-in");
+         $(filter).innerHTML = '<i data-feather="arrow-left"></i> Back';
+         console.log(filter.innerHTML);
     });
 
     Feather.replace();

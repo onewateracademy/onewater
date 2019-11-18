@@ -10,17 +10,6 @@
     display: flex;
     align-items: center;
   }
-//   .wave-bg{
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     height: 100%;
-//     width: 100%;
-//     background: url(/assets/img/blue-wave.webp);
-//     background-size: cover;
-//     background-position-y:10px;
-//     background-repeat: no-repeat;
-//   }
   .form-box{
       margin-top: 10vh;
     text-align: center;
@@ -261,3 +250,17 @@ text-align: center;
       }
   }
   
+  @media all and (max-width:768px){
+    p{
+      margin: 1rem auto;
+    }
+    .form-box{
+      margin-top: 2vh;
+    }
+    #login{
+      display: block;
+      padding-top: 10vh;
+      background-size: 154%;
+      background-position: 97%;
+    }
+  }

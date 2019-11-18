@@ -17,165 +17,153 @@ featuredblog;
 
 categories = [
   {
-    'img':'assets/img/icons/health.svg',
-    'name':'Health',
+    'img':'assets/img/icons/water.svg',
+    'name':'Water',
     'subcat':[
       {
-      'subname':'Nutrients',
-      'subimg':'assets/img/icons/4.svg'
+      'subname':'Distribution System',
+      'subimg':'assets/img/icons/distribution.svg'
     },
     {
-    'subname':'Diseases',
-    'subimg':'assets/img/icons/3.svg'
+    'subname':'Water Conservation',
+    'subimg':'assets/img/icons/conserve.svg'
     },
     {
-      'subname':'Cures',
-      'subimg':'assets/img/icons/2.svg'
+      'subname':'Drinking Water Quality',
+      'subimg':'assets/img/icons/drink.svg'
     },
     {
-    'subname':'Habits',
-    'subimg':'assets/img/icons/1.svg'
+    'subname':'Water Treatment & Opreations',
+    'subimg':'assets/img/icons/treatment.svg'
     },
     {
-    'subname':'Better You',
-    'subimg':'assets/img/icons/8.svg'
+    'subname':'Desalination',
+    'subimg':'assets/img/icons/desalination.svg'
     }
 ]
   },
   {
-    'img':'assets/img/icons/travel.svg',
-    'name':'Travel',
+    'img':'assets/img/icons/waste-water.svg',
+    'name':'Waste Water',
     'subcat':[
       {
-      'subname':'Stories',
-      'subimg':'assets/img/icons/7.svg'
+      'subname':'Biosolids',
+      'subimg':'assets/img/icons/lab.svg'
     },
     {
-    'subname':'Places',
-    'subimg':'assets/img/icons/6.svg'
+    'subname':'Collection Systems',
+    'subimg':'assets/img/icons/water-tank.svg'
     },
     {
-      'subname':'Experiences',
-      'subimg':'assets/img/icons/5.svg'
-    }
-]
-  },
-  {
-    'img':'assets/img/icons/book.svg',
-    'name':'Books',
-    'subcat':[
-      {
-      'subname':'fiction',
-      'subimg':'assets/img/icons/4.svg'
+      'subname':'Water Reuse and Resource Recovery',
+      'subimg':'assets/img/icons/reuse.svg'
     },
     {
-    'subname':'science',
-    'subimg':'assets/img/icons/3.svg'
+      'subname':'Odour and Corrosion Management',
+      'subimg':'assets/img/icons/smell.svg'
     },
     {
-      'subname':'biographies',
-      'subimg':'assets/img/icons/2.svg'
-    },
-    {
-    'subname':'Business',
-    'subimg':'assets/img/icons/1.svg'
-    }
-]
-
-  },
-  {
-    'img':'assets/img/icons/fashion.svg',
-    'name':'Fashion',
-    'subcat':[
-      {
-      'subname':'Men',
-      'subimg':'assets/img/icons/8.svg'
-    },
-    {
-    'subname':'Women',
-    'subimg':'assets/img/icons/7.svg'
-    },
-    {
-      'subname':'Trends',
-      'subimg':'assets/img/icons/6.svg'
+      'subname':'Wastewater Treatment & /Operations',
+      'subimg':'assets/img/icons/sewage.svg'
     }
 
 ]
   },
   {
-    'img':'assets/img/icons/sports.svg',
-    'name':'Sports',
+    'img':'assets/img/icons/storm.svg',
+    'name':'Storm Water',
     'subcat':[
       {
-      'subname':'Cricket',
-      'subimg':'assets/img/icons/5.svg'
+      'subname':'Watershed',
+      'subimg':'assets/img/icons/lake.svg'
     },
     {
-    'subname':'Football',
-    'subimg':'assets/img/icons/4.svg'
+    'subname':'Hydrology',
+    'subimg':'assets/img/icons/molecule.svg'
+    }
+]
+  },
+  {
+    'img':'assets/img/icons/research.svg',
+    'name':'Innovation & Research',
+    'subcat':[
+      {
+      'subname':'Water Science & Research',
+      'subimg':'assets/img/icons/test.svg'
     },
     {
-      'subname':'Tennis',
-      'subimg':'assets/img/icons/3.svg'
+    'subname':'Students',
+    'subimg':'assets/img/icons/graduate.svg'
     },
     {
-      'subname':'Basketball',
-      'subimg':'assets/img/icons/2.svg'
+      'subname':'Young Professionals',
+      'subimg':'assets/img/icons/scientist.svg'
+    }
+
+]
+  },
+  {
+    'img':'assets/img/icons/sustainable.svg',
+    'name':'Sustainable Development',
+    'subcat':[
+      {
+      'subname':'Climate Change',
+      'subimg':'assets/img/icons/climate.svg'
+    },
+    {
+    'subname':'Resiliency',
+    'subimg':'assets/img/icons/resilent.svg'
+    },
+    {
+      'subname':'Energy',
+      'subimg':'assets/img/icons/energy.svg'
+    },
+    {
+      'subname':'Regional Actvities/ Case Studies',
+      'subimg':'assets/img/icons/case.svg'
     }
 ]
 
   },
   {
-    'img':'assets/img/icons/lifestyle.svg',
-    'name':'Lifestyle',
+    'img':'assets/img/icons/finance.svg',
+    'name':'Management & Finance',
     'subcat':[
       {
-      'subname':'Happy',
-      'subimg':'assets/img/icons/1.svg'
+      'subname':'Workforce Management',
+      'subimg':'assets/img/icons/team.svg'
     },
     {
-    'subname':'Mood',
-    'subimg':'assets/img/icons/8.svg'
-    }
+    'subname':'Asset Management',
+    'subimg':'assets/img/icons/management.svg'
+    },
+    {
+      'subname':'Utility Management',
+      'subimg':'assets/img/icons/settings.svg'
+      },
+      {
+        'subname':'Financing',
+        'subimg':'assets/img/icons/profits.svg'
+        } ,{
+          'subname':'Construction Management',
+          'subimg':'assets/img/icons/mechanic.svg'
+          }, {
+            'subname':'Leadership',
+            'subimg':'assets/img/icons/leadership.svg'
+            }
 ]
   },
   {
-    'img':'assets/img/icons/mental-health.svg',
-    'name':'Positivity',
+    'img':'assets/img/icons/regulatory.svg',
+    'name':'Legistative/ Regulatory',
     'subcat':[
       {
-      'subname':'Stories',
-      'subimg':'assets/img/icons/7.svg'
+      'subname':'Goverment Affairs',
+      'subimg':'assets/img/icons/government.svg'
     },
     {
-    'subname':'Lessons',
-    'subimg':'assets/img/icons/6.svg'
-    },
-    {
-      'subname':'Advice',
-      'subimg':'assets/img/icons/5.svg'
-    }
-]
-  },
-  {
-    'img':'assets/img/icons/nature.svg',
-    'name':'Nature',
-    'subcat':[
-      {
-      'subname':'Flora',
-      'subimg':'assets/img/icons/4.svg'
-    },
-    {
-    'subname':'Fauna',
-    'subimg':'assets/img/icons/3.svg'
-    },
-    {
-      'subname':'Mother Nature',
-      'subimg':'assets/img/icons/2.svg'
-    },
-    {
-    'subname':'Places',
-    'subimg':'assets/img/icons/1.svg'
+    'subname':'Safety and Security',
+    'subimg':'assets/img/icons/padlock.svg'
     }
 ]
   },

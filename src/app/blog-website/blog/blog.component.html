@@ -7,13 +7,13 @@
     ------------------------------------>
 <section class="landing-section">
   <div class="container">
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col-lg-6  banner">
         <div class="landing-text">
-          <h2>
+          <h1 class="platform-heading">
             One Water <br />
             <strong>Blog</strong>
-          </h2>
+          </h1>
         </div>
         <img src="assets/img/landing-img.webp" class="banner-img" />
       </div>
@@ -196,10 +196,10 @@
             *ngFor="let item of blogcards; let i = index"
           >
             <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
-              <div class="blog-card" [ngClass]="{ 'blog-card-blue': 'i%2!=0' }">
+              <div class="blog-card" [class.blog-card-blue]="i%2!=0">
                 <div
-                  [ngClass]="{ 'overlay-2': 'i%2==0' }"
-                  [ngClass]="{ overlay: 'i%2!=0' }"
+                  [class.overlay]="i%2==0"
+                  [class.overlay-2]="i%2!=0"
                 ></div>
                 <div class="blog-img">
                   <img [src]="item.image" alt="" />
@@ -243,12 +243,12 @@
         <div class="categories home-category" id="cat">
           <h2>Categories</h2>
           <div class="categories-card">
-            <div class="row">
-              <div class="col-6" *ngFor="let category of categories; let i = index">
+            <div class="row justify-content-center">
+              <div class="col-6 no-gutter" *ngFor="let category of categories; let i = index">
                 <a (click)="showSubCategories(i)">
-                  <div class="category-box">
+                  <div class="category-box d-flex flex-column align-items-center">
                     <img [src]="category.img" alt="" />
-                    <h5>{{ category.name }}</h5>
+                    <h6>{{ category.name }}</h6>
                   </div>
                 </a>
               </div>
@@ -260,11 +260,11 @@
             </a>
             <h3>{{ currentCategory }}</h3>
             <div class="row">
-              <div class="col-6" *ngFor="let subcategory of SubCategories">
+              <div class="col-12" *ngFor="let subcategory of SubCategories">
                 <a [routerLink]="['/onewaterblog/category']">
-                  <div class="subcategory-box">
+                  <div class="subcategory-box d-flex align-items-center">
                     <img [src]="subcategory.subimg" alt="" />
-                    <h6>{{ subcategory.subname }}</h6>
+                    <p class="ml-3">{{ subcategory.subname }}</p>
                   </div>
                 </a>
               </div>
