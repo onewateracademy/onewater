@@ -4,6 +4,7 @@ import { BlogComponent } from './blog.component';
 import { RouterModule,Route } from '@angular/router';
 import { OwlModule } from 'ngx-owl-carousel';
 import { NgxMasonryModule } from 'ngx-masonry';
+import {StickyModule} from 'ng2-sticky-kit';
 
 const routes: Route[]=[
     {
@@ -19,7 +20,8 @@ const routes: Route[]=[
    RouterModule.forChild(routes),
    OwlModule,
    NgxMasonryModule,
-   CommonModule
+   CommonModule,
+   StickyModule
    ]
    })
 export class BlogModule { }

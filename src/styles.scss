@@ -586,6 +586,7 @@ left: 1.2rem;
       .landing-section {
         position: relative;
         margin-top: -80vh;
+        margin-bottom: 50px;
         padding: 0 !important;
         box-sizing: border-box;
         overflow: hidden;
@@ -625,12 +626,12 @@ left: 1.2rem;
       }
       @media screen and (min-width: 1024px) and (max-height: 768px) {
         .landing-section {
-          min-height: 100vh;
+          //min-height: 100vh;
         }
       }
       @media screen and (min-width: 1025px) {
         .landing-section {
-          min-height: 100vh;
+          //min-height: 100vh;
         }
       }
 

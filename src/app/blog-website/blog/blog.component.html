@@ -127,6 +127,7 @@
 <div class="container">
   <!-- topauthors carousel section starts-->
   <div class="top-authors">
+    
     <h2>
       Top Authors
     </h2>
@@ -184,7 +185,7 @@
 </div>
 
 <div class="wrapper container-fluid">
-  
+   
     <div class="left-section">
    
         <h2>Latest Posts</h2>
@@ -229,93 +230,15 @@
               </div>
             </a>
           </div>
-          <div
-          ngxMasonryItem
-          class="masonry-item"
-          *ngFor="let item of blogcards; let i = index"
-        >
-          <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
-            <div class="blog-card-blue blog-card">
-              <div
-                class="overlay-2"
-              ></div>
-              <div class="blog-img">
-                <img [src]="item.image" alt="" />
-              </div>
-              <div class="blog-caption">
-                <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
-                  <h6>
-                    {{ item.title }}
-                  </h6>
-                </a>
-                <div class="author">
-                  <a [routerLink]="['/onewaterblog/authorprofile/', item._id]">
-                    <img [src]="item.image" alt="" />
-                    <p>{{ item.name }}</p></a
-                  >
-                </div>
-                <div class="row card-btn">
-                  <div class="col-6">
-                    <div class="like-btn">
-                      <i class="fa fa-heart"></i> {{ item.likes.length }}
-                      <!-- <i class="fa fa-comment"></i> {{item.comments}} -->
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="read-mins">7 mins read</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div
-        ngxMasonryItem
-        class="masonry-item"
-        *ngFor="let item of blogcards; let i = index"
-      >
-        <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
-          <div class="blog-card-blue blog-card">
-            <div
-              class="overlay-2"
-            ></div>
-            <div class="blog-img">
-              <img [src]="item.image" alt="" />
-            </div>
-            <div class="blog-caption">
-              <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
-                <h6>
-                  {{ item.title }}
-                </h6>
-              </a>
-              <div class="author">
-                <a [routerLink]="['/onewaterblog/authorprofile/', item._id]">
-                  <img [src]="item.image" alt="" />
-                  <p>{{ item.name }}</p></a
-                >
-              </div>
-              <div class="row card-btn">
-                <div class="col-6">
-                  <div class="like-btn">
-                    <i class="fa fa-heart"></i> {{ item.likes.length }}
-                    <!-- <i class="fa fa-comment"></i> {{item.comments}} -->
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="read-mins">7 mins read</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </a>
-      </div>
+        
         </ngx-masonry>
       
     </div>
-   
-    <div class="right-section" >
+    <!-- <sticky [sticky-offset-top]=80></sticky> -->
+    
+    <div class="right-section" id="sidebar" >
       <div class="side-bar">
-        <div class="categories home-category" id="cat">
+        <div class="categories home-category" >
           <h2>Categories</h2>
           <div class="categories-card">
             <div class="row justify-content-center">
@@ -345,33 +268,10 @@
               </div>
             </div>
           </div>
-        <!-- <div class="ads">
-          <br />
-          <div id="demoad" class="carousel slide" data-ride="carousel">
-            
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="assets/img/ad1.webp" alt="" />
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/ad2.jpg" alt="" />
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/ad3.png" alt="" />
-              </div>
-            </div>
-            
-            <a class="carousel-control-prev" href="#demoad" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demoad" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
+
 </div>
  
   

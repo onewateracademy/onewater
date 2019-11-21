@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { getElementDepthCount } from '@angular/core/src/render3/state';
 declare var $: any;
 
 @Component({
@@ -13,7 +14,6 @@ export class BlogComponent implements OnInit {
 
   blogcards;
   featuredblog;
-
 
   categories = [
     {
@@ -185,7 +185,6 @@ export class BlogComponent implements OnInit {
   }
 
   //owl carousel settings
-
   carouselOptions = {
     margin: 25,
     nav: true,
@@ -245,32 +244,49 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  authors;
+authors;
+
   constructor(public http: HttpClient) { }
 
   ngOnInit() {
-    let sideBar = document.querySelector(".side-bar");
-    let stickSidebar = $(sideBar).offset().top;
-    let wrapper = document.querySelector(".footer");
-    let wrapperOffset;    
-    wrapperOffset =  $(wrapper).outerHeight() ;
-    console.log(wrapperOffset);
-    $(window).bind("scroll",function () {
-     
 
-      if ($(window).scrollTop() - $(window).height() + 190 > stickSidebar) {
-        $(sideBar).addClass('affix');
-        //console.log("sideBar");
-      }
     
-      else if ($(window).scrollTop()>= wrapperOffset + $(wrapper).offset().top ) {
-        $(sideBar).removeClass('affix'); 
-        console.log("removeee");
-      }
-      else {
-        $(sideBar).removeClass('affix');
-      }
-    });
+    let el = document.getElementById('sidebar');
+    let stickyTop = $(el).offset().top;
+    let stickyHeight = $(el).height();
+    // let sideBar = document.querySelector(".side-bar");
+    // let stickSidebar = $(sideBar).offset().top;
+    // let wrapper = document.querySelector(".footer");
+    // let wrapperOffset;    
+    //wrapperOffset =  $(wrapper).outerHeight() ;
+    //console.log(wrapperOffset);
+    // $(window).on("scroll",function () {
+    //   let limit = $('.footer').offset().top - stickyHeight - 20;
+    //   let windowTop = $(window).scrollTop();
+
+    //   if (stickyTop < windowTop) {
+    //     el.style.position = "fixed";
+    //     el.style.top = "0px";
+    //   }
+    //   else{
+    //     el.style.position = "static";
+    //   }
+
+
+    //   if(windowTop > limit){
+    //     var diff = limit-windowTop;
+    //     el.style.top = "20px";
+    //   }
+    
+    //   else if ($(window).scrollTop()>= wrapperOffset + $(wrapper).offset().top ) {
+    //     $(sideBar).removeClass('affix'); 
+    //     console.log("removeee");
+    //   }
+    //   else {
+    //     $(sideBar).removeClass('affix');
+    //   }
+     //});
+   
    
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/approveblogs')
       .subscribe(result => {
