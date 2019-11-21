@@ -184,9 +184,9 @@
 </div>
 
 <div class="wrapper container-fluid">
-  
+
     <div class="left-section">
-   
+
         <h2>Latest Posts</h2>
         <ngx-masonry [options]="{ transitionDuration: 0 }" [useImagesLoaded]="true">
           <div
@@ -310,9 +310,9 @@
         </a>
       </div>
         </ngx-masonry>
-      
+
     </div>
-   
+
     <div class="right-section" >
       <div class="side-bar">
         <div class="categories home-category" id="cat">
@@ -336,7 +336,7 @@
             <h3>{{ currentCategory }}</h3>
             <div class="row">
               <div class="col-12" *ngFor="let subcategory of SubCategories">
-                <a [routerLink]="['/onewaterblog/category']">
+                <a [routerLink]="['/onewaterblog/category']" [queryParams]="{'category':currentCategory, 'subcategory':subcategory.subname}">
                   <div class="subcategory-box d-flex align-items-center">
                     <img [src]="subcategory.subimg" alt="" />
                     <p class="ml-3">{{ subcategory.subname }}</p>
@@ -348,7 +348,7 @@
         <!-- <div class="ads">
           <br />
           <div id="demoad" class="carousel slide" data-ride="carousel">
-            
+
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="assets/img/ad1.webp" alt="" />
@@ -360,7 +360,7 @@
                 <img src="assets/img/ad3.png" alt="" />
               </div>
             </div>
-            
+
             <a class="carousel-control-prev" href="#demoad" data-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </a>
@@ -373,6 +373,6 @@
     </div>
   </div>
 </div>
- 
-  
+
+
 

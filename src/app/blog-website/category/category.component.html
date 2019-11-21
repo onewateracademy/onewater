@@ -1,32 +1,32 @@
 <div class="category-wrap">
   <div class="container">
   <div class="category-head">
-    <h1> SubcategoryName 
+    <h1> {{subcategory}}
 
       <h2 class="mt-2">
-        from CategoryName
+        from {{category}}
       </h2>
     </h1>
-    
+
   </div>
 
 <div class="row">
   <div class="col-lg-8">
     <div class="big-post">
-      <a [routerLink]="['/onewaterblog/blogpost']"><img src="assets/img/category-bigpost.jpg" alt=""></a>
+      <a [routerLink]="['/onewaterblog/blogpost']"><img src={{singleblog?.image}} alt=""></a>
       <div class="blog-caption">
-        <a [routerLink]="['/onewaterblog/blogpost']">
+        <a [routerLink]="['/onewaterblog/blogpost',singleblog?._id]">
           <h2>
-            Best Android Phones 2019: 13 best phones running Android today.
+            {{singleblog?.title}}
           </h2>
         </a>
         <div class="article-meta">
           <a [routerLink]="['/onewaterblog/authorprofile']">
-          <img src="https://picsum.photos/200/200" alt="Author" />
+          <img src={{author?.image}} alt="Author" />
           </a>
           <div class="meta-data">
-            <span class="meta-author">By <a [routerLink]="['/onewaterblog/authorprofile']">Jake</a></span><br />
-            <span class="meta-date">August 30, 2019</span>
+            <span class="meta-author">By <a [routerLink]="['/onewaterblog/authorprofile/',author?._id]">{{author?.name}}</a></span><br />
+            <span class="meta-date">{{ singleblog?.date_approved | date: "MMMM d, y" }}</span>
               <span class="meta-read">7 mins read</span>
           </div>
         </div>
@@ -34,50 +34,22 @@
     </div>
 
     <div class="latest-blogs">
-      <h2>Latest from SubcategoryName</h2>
+      <h2>All Blogs from {{subcategory}}</h2>
       <div class="outer-card">
         <div class="outer-overlay"></div>
       <div class="latest-card">
-        <div class="row">
+        <div class="row" *ngFor="let blog of blogs">
           <div class="col-3">
-              <img src="https://picsum.photos/820/820" alt="">
+              <img src={{blog.image}} alt="">
             </div>
             <div class="col-9">
               <div class="blog-caption">
-                  <a [routerLink]="['/onewaterblog/blogpost']">
-              <h6>Explore the gauges, levers, and history of a 747's iconic cockpit</h6>
+                  <a [routerLink]="['/onewaterblog/blogpost/', blog._id]">
+              <h6>{{blog?.title}}</h6>
               </a>
               <div class="blog-meta-data">
                 <div class="author">
-                  By Jane Ross
-                </div>
-                <div class="likes">
-                    <i class="fa fa-heart"></i>79 likes
-                </div>
-                <div class="read">
-                    7 mins read
-                </div>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
-      </div>
-      <div class="outer-card">
-        <div class="outer-overlay"></div>
-      <div class="latest-card">
-        <div class="row">
-          <div class="col-3">
-              <img src="https://picsum.photos/850/850" alt="">
-            </div>
-            <div class="col-9">
-              <div class="blog-caption">
-                <a [routerLink]="['/onewaterblog/blogpost']">
-              <h6>Facebook's new Portal video chat devices are smaller, cheaper, and facing stiffer competition</h6>
-              </a>
-              <div class="blog-meta-data">
-                <div class="author">
-                  By Jane Ross
+                  By {{author?.name}}
                 </div>
                 <div class="likes">
                     <i class="fa fa-heart"></i>79 likes
@@ -94,7 +66,7 @@
 
 
     </div>
-<!-- 
+<!--
     <div class="featured two-card-blog">
   <h2>Featured Blogs</h2>
       <div class="row">
@@ -263,7 +235,7 @@
             </div>
           </div>
         </div>
-      
+
       </div>
   </div>
 
