@@ -1,7 +1,8 @@
 <!-- BEGIN Blog Post -->
 
 <!-- <progress value="0"></progress> -->
-<div class="cover-photo" [style.background-image]="'url(blog?.image'">
+<div class="cover-photo" [ngStyle]="{'background-image': 'url(' + blog.image + ')'}">
+  <div class="gradient-image"></div>
   <div class="wave"></div>
 </div>
 <div class="container blog-post-wrapper">
@@ -16,7 +17,7 @@
               <span class="meta-author"
                 >By
                 <a
-                  [routerLink]="['/onewaterblog/authorprofile/', author._id]"
+                  [routerLink]="['/onewaterblog/authorprofile/', author?._id]"
                   >{{ author?.name }}</a
                 ></span
               ><br />
@@ -42,7 +43,6 @@
           <p class="teaser top-teaser">
             <strong>Tags</strong> : <span>Health</span> <span>Well-Being</span>
           </p>
-
           <div class="di" [innerHtml]="blog?.desc"></div>
           <div class="blog-options">
             <div class="like-btn">
@@ -90,7 +90,7 @@
                 <div class="two-card">
                   <img src="{{ blog?.image }}" alt="" />
                   <div class="blog-caption">
-                    <a [routerLink]="['/onewaterblog/blogpost', blog._id]">
+                    <a [routerLink]="['/onewaterblog/blogpost', blog?._id]">
                       <h6>{{ blog.title }}</h6>
                     </a>
                     <div class="blog-meta-data">

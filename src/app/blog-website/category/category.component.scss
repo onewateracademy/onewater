@@ -8,11 +8,19 @@
   font-size: 4rem;
   font-weight: bold;
   letter-spacing: -4px;
-  text-align: center;
   padding-bottom: 2rem;
   border-bottom: 1px #ccc solid;
-}
 
+  h2{
+    color: #777;
+    letter-spacing: -0.06rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+}
+.category-box{
+  height: 120px;
+}
 .big-post{
   margin: 0.2rem auto 3rem;
    img{

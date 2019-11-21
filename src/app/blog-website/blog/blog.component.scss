@@ -1,3 +1,4 @@
+
 @media screen and (min-width: 1200px) {
   .masonry-item {
     width: 33.3%;
@@ -18,7 +19,36 @@
     width: 100%;
   }
 }
+h2{
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  // border-bottom: 1px #ccc solid;
+  // border-top: 1px #ccc solid;
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+.affix{
+  position: fixed;
+  right: 15px;
+  top: 80px;
+  width: 320px;
+}
+.wrapper{
+  position: relative;
+  display: flex;
+}
+.left-section{
+  width: calc(100% - 320px);
+}
+.right-section{
+  width: 320px;
 
+  h2{
+    margin: 0 auto 1.5rem;
+  }
+}
 .cover-photo {
   height: 75vh;
   position: relative;

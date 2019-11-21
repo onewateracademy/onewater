@@ -183,10 +183,9 @@
   </div>
 </div>
 
-<div class="container-fluid  mt-3">
-  <div class="row no-gutter">
-    <div class="col-lg-9">
-      <div class="left-section">
+<div class="wrapper container-fluid">
+  
+    <div class="left-section">
    
         <h2>Latest Posts</h2>
         <ngx-masonry [options]="{ transitionDuration: 0 }" [useImagesLoaded]="true">
@@ -196,10 +195,9 @@
             *ngFor="let item of blogcards; let i = index"
           >
             <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
-              <div class="blog-card" [class.blog-card-blue]="i%2!=0">
+              <div class="blog-card-blue blog-card">
                 <div
-                  [class.overlay]="i%2==0"
-                  [class.overlay-2]="i%2!=0"
+                  class="overlay-2"
                 ></div>
                 <div class="blog-img">
                   <img [src]="item.image" alt="" />
@@ -231,14 +229,91 @@
               </div>
             </a>
           </div>
+          <div
+          ngxMasonryItem
+          class="masonry-item"
+          *ngFor="let item of blogcards; let i = index"
+        >
+          <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
+            <div class="blog-card-blue blog-card">
+              <div
+                class="overlay-2"
+              ></div>
+              <div class="blog-img">
+                <img [src]="item.image" alt="" />
+              </div>
+              <div class="blog-caption">
+                <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
+                  <h6>
+                    {{ item.title }}
+                  </h6>
+                </a>
+                <div class="author">
+                  <a [routerLink]="['/onewaterblog/authorprofile/', item._id]">
+                    <img [src]="item.image" alt="" />
+                    <p>{{ item.name }}</p></a
+                  >
+                </div>
+                <div class="row card-btn">
+                  <div class="col-6">
+                    <div class="like-btn">
+                      <i class="fa fa-heart"></i> {{ item.likes.length }}
+                      <!-- <i class="fa fa-comment"></i> {{item.comments}} -->
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="read-mins">7 mins read</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+        ngxMasonryItem
+        class="masonry-item"
+        *ngFor="let item of blogcards; let i = index"
+      >
+        <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
+          <div class="blog-card-blue blog-card">
+            <div
+              class="overlay-2"
+            ></div>
+            <div class="blog-img">
+              <img [src]="item.image" alt="" />
+            </div>
+            <div class="blog-caption">
+              <a [routerLink]="['/onewaterblog/blogpost/', item._id]">
+                <h6>
+                  {{ item.title }}
+                </h6>
+              </a>
+              <div class="author">
+                <a [routerLink]="['/onewaterblog/authorprofile/', item._id]">
+                  <img [src]="item.image" alt="" />
+                  <p>{{ item.name }}</p></a
+                >
+              </div>
+              <div class="row card-btn">
+                <div class="col-6">
+                  <div class="like-btn">
+                    <i class="fa fa-heart"></i> {{ item.likes.length }}
+                    <!-- <i class="fa fa-comment"></i> {{item.comments}} -->
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="read-mins">7 mins read</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
         </ngx-masonry>
       
     </div>
-    </div>
-  
-  
-  <div class="col-lg-3">
-    <div class="right-section">
+   
+    <div class="right-section" >
       <div class="side-bar">
         <div class="categories home-category" id="cat">
           <h2>Categories</h2>
@@ -270,12 +345,10 @@
               </div>
             </div>
           </div>
-       
-    
-        <div class="ads">
+        <!-- <div class="ads">
           <br />
           <div id="demoad" class="carousel slide" data-ride="carousel">
-            <!-- The slideshow -->
+            
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <img src="assets/img/ad1.webp" alt="" />
@@ -287,7 +360,7 @@
                 <img src="assets/img/ad3.png" alt="" />
               </div>
             </div>
-            <!-- Left and right controls -->
+            
             <a class="carousel-control-prev" href="#demoad" data-slide="prev">
               <span class="carousel-control-prev-icon"></span>
             </a>
@@ -295,11 +368,11 @@
               <span class="carousel-control-next-icon"></span>
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
-  </div>
-  
-  </div>
 </div>
+ 
+  
+
