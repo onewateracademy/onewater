@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { getElementDepthCount } from '@angular/core/src/render3/state';
 declare var $: any;
 
 @Component({
@@ -15,6 +14,7 @@ export class BlogComponent implements OnInit {
   blogcards;
   featuredblog;
 
+
   categories = [
     {
       'img': 'assets/img/icons/water.svg',
@@ -22,22 +22,27 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Distribution System',
+          'sname':'distribution',
           'subimg': 'assets/img/icons/distribution.svg'
         },
         {
           'subname': 'Water Conservation',
+          'sname':'conservation',
           'subimg': 'assets/img/icons/conserve.svg'
         },
         {
           'subname': 'Drinking Water Quality',
+          'sname':'drinking',
           'subimg': 'assets/img/icons/drink.svg'
         },
         {
           'subname': 'Water Treatment & Opreations',
+          'sname':'watertreatment',
           'subimg': 'assets/img/icons/treatment.svg'
         },
         {
           'subname': 'Desalination',
+          'sname':'desalination',
           'subimg': 'assets/img/icons/desalination.svg'
         }
       ]
@@ -48,22 +53,27 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Biosolids',
+          'sname':'biosolids',
           'subimg': 'assets/img/icons/lab.svg'
         },
         {
           'subname': 'Collection Systems',
+          'sname':'collection',
           'subimg': 'assets/img/icons/water-tank.svg'
         },
         {
           'subname': 'Water Reuse and Resource Recovery',
+          'sname':'reuse',
           'subimg': 'assets/img/icons/reuse.svg'
         },
         {
           'subname': 'Odour and Corrosion Management',
+          'sname':'odor',
           'subimg': 'assets/img/icons/smell.svg'
         },
         {
           'subname': 'Wastewater Treatment & /Operations',
+          'sname':'wastewatertreatment',
           'subimg': 'assets/img/icons/sewage.svg'
         }
 
@@ -75,10 +85,12 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Watershed',
+          'sname':'watershed',
           'subimg': 'assets/img/icons/lake.svg'
         },
         {
           'subname': 'Hydrology',
+          'sname':'hydrology',
           'subimg': 'assets/img/icons/molecule.svg'
         }
       ]
@@ -89,14 +101,17 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Water Science & Research',
+          'sname':'waterscience',
           'subimg': 'assets/img/icons/test.svg'
         },
         {
           'subname': 'Students',
+          'sname':'students',
           'subimg': 'assets/img/icons/graduate.svg'
         },
         {
           'subname': 'Young Professionals',
+          'sname':'youngpros',
           'subimg': 'assets/img/icons/scientist.svg'
         }
 
@@ -108,18 +123,22 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Climate Change',
+          'sname':'climate',
           'subimg': 'assets/img/icons/climate.svg'
         },
         {
           'subname': 'Resiliency',
+          'sname':'resiliency',
           'subimg': 'assets/img/icons/resilent.svg'
         },
         {
           'subname': 'Energy',
+          'sname':'energy',
           'subimg': 'assets/img/icons/energy.svg'
         },
         {
           'subname': 'Regional Actvities/ Case Studies',
+          'sname':'reg',
           'subimg': 'assets/img/icons/case.svg'
         }
       ]
@@ -131,24 +150,30 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Workforce Management',
+          'sname':'workforce',
           'subimg': 'assets/img/icons/team.svg'
         },
         {
           'subname': 'Asset Management',
+          'sname':'asset',
           'subimg': 'assets/img/icons/management.svg'
         },
         {
           'subname': 'Utility Management',
+          'sname':'util',
           'subimg': 'assets/img/icons/settings.svg'
         },
         {
           'subname': 'Financing',
+          'sname':'finance',
           'subimg': 'assets/img/icons/profits.svg'
         }, {
           'subname': 'Construction Management',
+          'sname':'cons',
           'subimg': 'assets/img/icons/mechanic.svg'
         }, {
           'subname': 'Leadership',
+          'sname':'leader',
           'subimg': 'assets/img/icons/leadership.svg'
         }
       ]
@@ -159,10 +184,12 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Goverment Affairs',
+          'sname':'govt',
           'subimg': 'assets/img/icons/government.svg'
         },
         {
           'subname': 'Safety and Security',
+          'sname':'safety',
           'subimg': 'assets/img/icons/padlock.svg'
         }
       ]
@@ -185,6 +212,7 @@ export class BlogComponent implements OnInit {
   }
 
   //owl carousel settings
+
   carouselOptions = {
     margin: 25,
     nav: true,
@@ -244,13 +272,12 @@ export class BlogComponent implements OnInit {
     }
   }
 
-authors;
-
+  authors;
+  bannerblogs;
   constructor(public http: HttpClient) { }
 
   ngOnInit() {
-
-    
+   
     let el = document.getElementById('sidebar');
     let extraHeight = $(window).height() * 0.8;
     let stickyTop = $(el).offset().top + extraHeight;
@@ -286,8 +313,7 @@ authors;
     //     $(sideBar).removeClass('affix');
     //   }
     // });
-   
-   
+    
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/approveblogs')
       .subscribe(result => {
         console.log(result);
@@ -300,9 +326,15 @@ authors;
       .subscribe(result => {
         console.log(result);
         this.authors = result.result;
-       
+
       })
 
+      this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/homeblog')
+      .subscribe(result => {
+        console.log(result,'bannerrrr');
+        this.bannerblogs = result.result;
+
+      })
 
   }
 
