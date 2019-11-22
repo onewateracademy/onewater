@@ -252,7 +252,8 @@ authors;
 
     
     let el = document.getElementById('sidebar');
-    let stickyTop = $(el).offset().top;
+    let extraHeight = $(window).height() * 0.8;
+    let stickyTop = $(el).offset().top + extraHeight;
     let stickyHeight = $(el).height();
     // let sideBar = document.querySelector(".side-bar");
     // let stickSidebar = $(sideBar).offset().top;
@@ -265,17 +266,16 @@ authors;
     //   let windowTop = $(window).scrollTop();
 
     //   if (stickyTop < windowTop) {
-    //     el.style.position = "fixed";
-    //     el.style.top = "0px";
+    //     $(el).addClass('affix');
     //   }
     //   else{
-    //     el.style.position = "static";
+    //     $(el).removeClass('affix');
     //   }
 
-
     //   if(windowTop > limit){
+    //     $(el).removeClass('affix');
     //     var diff = limit-windowTop;
-    //     el.style.top = "20px";
+    //     el.style.top = diff.toString();
     //   }
     
     //   else if ($(window).scrollTop()>= wrapperOffset + $(wrapper).offset().top ) {
@@ -285,7 +285,7 @@ authors;
     //   else {
     //     $(sideBar).removeClass('affix');
     //   }
-     //});
+    // });
    
    
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/approveblogs')
