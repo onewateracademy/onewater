@@ -10,29 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class CategoryComponent implements OnInit {
 
   showSubCat=false;
-  currentCategory=[
-    {
-      'subname': 'Distribution System',
-      'subimg': 'assets/img/icons/distribution.svg'
-    },
-    {
-      'subname': 'Water Conservation',
-      'subimg': 'assets/img/icons/conserve.svg'
-    },
-    {
-      'subname': 'Drinking Water Quality',
-      'subimg': 'assets/img/icons/drink.svg'
-    },
-    {
-      'subname': 'Water Treatment & Opreations',
-      'subimg': 'assets/img/icons/treatment.svg'
-    },
-    {
-      'subname': 'Desalination',
-      'subimg': 'assets/img/icons/desalination.svg'
-    }
-  ];
-
+  currentCategory;
+ 
   categories = [
     {
       'img': 'assets/img/icons/water.svg',
@@ -186,7 +165,7 @@ export class CategoryComponent implements OnInit {
       ]
     },
   ]
-
+ 
   category;
   subcategory;
   fetchcategory;
@@ -194,14 +173,26 @@ export class CategoryComponent implements OnInit {
   blogs;
   author;
   sname;
+
+  
+
   constructor(public route:ActivatedRoute, public http:HttpClient) { }
 
   ngOnInit() {
+
+   
+    
     this.route.queryParams.subscribe(result=>{
       console.log(result);
       this.category=result.category;
       this.subcategory=result.subcategory;
       this.sname=result.sname
+
+      for(let i=0;i<this.categories.length;i++){
+        if(this.categories[i].name == this.category){
+          this.currentCategory = this.categories[i].subcat;
+        }
+      }
 
       // if( this.category=='Water' && this.subcategory == 'Distribution System') this.fetchcategory='distribution';
       // if( this.category=='Water' && this.subcategory == 'Water Conservation') this.fetchcategory='conservation'
@@ -248,6 +239,8 @@ console.log(this.fetchcategory,'effe');
         this.getauthor(this.singleblog.author_id);
       })
     })
+
+    
 
   }
 

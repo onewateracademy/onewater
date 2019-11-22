@@ -278,16 +278,11 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {
    
-    let el = document.getElementById('sidebar');
-    let extraHeight = $(window).height() * 0.8;
-    let stickyTop = $(el).offset().top + extraHeight;
-    let stickyHeight = $(el).height();
-    // let sideBar = document.querySelector(".side-bar");
-    // let stickSidebar = $(sideBar).offset().top;
-    // let wrapper = document.querySelector(".footer");
-    // let wrapperOffset;    
-    //wrapperOffset =  $(wrapper).outerHeight() ;
-    //console.log(wrapperOffset);
+    // let el = document.getElementById('sidebar');
+    // let extraHeight = $(window).height() * 0.8;
+    // let stickyTop = $(el).offset().top + extraHeight;
+    // let stickyHeight = $(el).height();
+   
     // $(window).on("scroll",function () {
     //   let limit = $('.footer').offset().top - stickyHeight - 20;
     //   let windowTop = $(window).scrollTop();
@@ -298,22 +293,13 @@ export class BlogComponent implements OnInit {
     //   else{
     //     $(el).removeClass('affix');
     //   }
-
     //   if(windowTop > limit){
     //     $(el).removeClass('affix');
     //     var diff = limit-windowTop;
     //     el.style.top = diff.toString();
     //   }
-    
-    //   else if ($(window).scrollTop()>= wrapperOffset + $(wrapper).offset().top ) {
-    //     $(sideBar).removeClass('affix'); 
-    //     console.log("removeee");
-    //   }
-    //   else {
-    //     $(sideBar).removeClass('affix');
-    //   }
     // });
-    
+
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/approveblogs')
       .subscribe(result => {
         console.log(result);

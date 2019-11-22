@@ -12,13 +12,18 @@ export class CommonService {
 
   addBlog(value){
     const data= new FormData();
+    let count=value.data.split(' ').length;
+    let min=count/250;
+    console.log(min.toString(),'fef');
+    console.log(count,'iihiji')
     data.append('title',value.title)
     data.append('authorid',this.blogauth.authorapprovedid)
-    data.append('image',value.image)
-    data.append('desc',value.data)
+    data.append('image',value.image);
+    data.append('desc',value.data);
+    data.append('readtime',min.toString());
     data.append('category','Technology');
     data.append('category','Health');
-    this.http.post<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/unapproved-blog',data)
+    this.http.post<{status:string, msg:string,result:any}>('http://onewater-blog-api.herokuapp.com/unapproved-blog',data)
     .subscribe(result=>{
       console.log(result);
       alert(result.msg)
