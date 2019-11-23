@@ -1,10 +1,17 @@
 <button class="button logout-button" type="button" data-feather="user-check" (click)="logout()"><i class="fa fa-power-off"></i> Logout</button>
 <section class="emp-registration">
     <div class="container">
-      <h1>
-        Hey username, welcome to <span> OneWater Blog.</span> <br>
+       
+      <h1 *ngIf="!submited">
+        Hello! welcome to <span> OneWater Blog.</span> <br>
         Fill up the form below and get started!
       </h1>
+
+      <h1 *ngIf="submited">
+          Hello! welcome to <span> OneWater Blog.</span> <br>
+          Your details have been registred. Please wait until your profile gets verified!
+        </h1>
+
       <div class="dashboard-content-wrapper dash-tab">
         <form class="dashboard-form" (submit)="submit()" [formGroup]="form">
 
@@ -145,7 +152,7 @@
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
-                      <i class="fa fa-instagran"></i>
+                      <i class="fa fa-instagram"></i>
                     </div>
                   </div>
                   <input
@@ -162,7 +169,7 @@
             <div class="form-group row">
               <label class="col-sm-3 col-form-label"></label>
               <div class="col-sm-9">
-                <button class="button" type="submit" >Save Change</button>
+                <button class="button" type="submit" data-toggle="modal" data-target="#registerModal">Submit</button>
               </div>
             </div>
           </div>
