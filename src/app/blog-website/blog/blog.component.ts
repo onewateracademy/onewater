@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 declare var $: any;
+declare var ScrollMagic : any;
+declare var TimelineMax : any;
 
 @Component({
   selector: 'app-blog',
@@ -22,27 +24,27 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Distribution System',
-          'sname':'distribution',
+          'sname': 'distribution',
           'subimg': 'assets/img/icons/distribution.svg'
         },
         {
           'subname': 'Water Conservation',
-          'sname':'conservation',
+          'sname': 'conservation',
           'subimg': 'assets/img/icons/conserve.svg'
         },
         {
           'subname': 'Drinking Water Quality',
-          'sname':'drinking',
+          'sname': 'drinking',
           'subimg': 'assets/img/icons/drink.svg'
         },
         {
           'subname': 'Water Treatment & Opreations',
-          'sname':'watertreatment',
+          'sname': 'watertreatment',
           'subimg': 'assets/img/icons/treatment.svg'
         },
         {
           'subname': 'Desalination',
-          'sname':'desalination',
+          'sname': 'desalination',
           'subimg': 'assets/img/icons/desalination.svg'
         }
       ]
@@ -53,27 +55,27 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Biosolids',
-          'sname':'biosolids',
+          'sname': 'biosolids',
           'subimg': 'assets/img/icons/lab.svg'
         },
         {
           'subname': 'Collection Systems',
-          'sname':'collection',
+          'sname': 'collection',
           'subimg': 'assets/img/icons/water-tank.svg'
         },
         {
           'subname': 'Water Reuse and Resource Recovery',
-          'sname':'reuse',
+          'sname': 'reuse',
           'subimg': 'assets/img/icons/reuse.svg'
         },
         {
           'subname': 'Odour and Corrosion Management',
-          'sname':'odor',
+          'sname': 'odor',
           'subimg': 'assets/img/icons/smell.svg'
         },
         {
           'subname': 'Wastewater Treatment & /Operations',
-          'sname':'wastewatertreatment',
+          'sname': 'wastewatertreatment',
           'subimg': 'assets/img/icons/sewage.svg'
         }
 
@@ -85,12 +87,12 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Watershed',
-          'sname':'watershed',
+          'sname': 'watershed',
           'subimg': 'assets/img/icons/lake.svg'
         },
         {
           'subname': 'Hydrology',
-          'sname':'hydrology',
+          'sname': 'hydrology',
           'subimg': 'assets/img/icons/molecule.svg'
         }
       ]
@@ -101,17 +103,17 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Water Science & Research',
-          'sname':'waterscience',
+          'sname': 'waterscience',
           'subimg': 'assets/img/icons/test.svg'
         },
         {
           'subname': 'Students',
-          'sname':'students',
+          'sname': 'students',
           'subimg': 'assets/img/icons/graduate.svg'
         },
         {
           'subname': 'Young Professionals',
-          'sname':'youngpros',
+          'sname': 'youngpros',
           'subimg': 'assets/img/icons/scientist.svg'
         }
 
@@ -123,22 +125,22 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Climate Change',
-          'sname':'climate',
+          'sname': 'climate',
           'subimg': 'assets/img/icons/climate.svg'
         },
         {
           'subname': 'Resiliency',
-          'sname':'resiliency',
+          'sname': 'resiliency',
           'subimg': 'assets/img/icons/resilent.svg'
         },
         {
           'subname': 'Energy',
-          'sname':'energy',
+          'sname': 'energy',
           'subimg': 'assets/img/icons/energy.svg'
         },
         {
           'subname': 'Regional Actvities/ Case Studies',
-          'sname':'reg',
+          'sname': 'reg',
           'subimg': 'assets/img/icons/case.svg'
         }
       ]
@@ -150,30 +152,30 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Workforce Management',
-          'sname':'workforce',
+          'sname': 'workforce',
           'subimg': 'assets/img/icons/team.svg'
         },
         {
           'subname': 'Asset Management',
-          'sname':'asset',
+          'sname': 'asset',
           'subimg': 'assets/img/icons/management.svg'
         },
         {
           'subname': 'Utility Management',
-          'sname':'util',
+          'sname': 'util',
           'subimg': 'assets/img/icons/settings.svg'
         },
         {
           'subname': 'Financing',
-          'sname':'finance',
+          'sname': 'finance',
           'subimg': 'assets/img/icons/profits.svg'
         }, {
           'subname': 'Construction Management',
-          'sname':'cons',
+          'sname': 'cons',
           'subimg': 'assets/img/icons/mechanic.svg'
         }, {
           'subname': 'Leadership',
-          'sname':'leader',
+          'sname': 'leader',
           'subimg': 'assets/img/icons/leadership.svg'
         }
       ]
@@ -184,12 +186,12 @@ export class BlogComponent implements OnInit {
       'subcat': [
         {
           'subname': 'Goverment Affairs',
-          'sname':'govt',
+          'sname': 'govt',
           'subimg': 'assets/img/icons/government.svg'
         },
         {
           'subname': 'Safety and Security',
-          'sname':'safety',
+          'sname': 'safety',
           'subimg': 'assets/img/icons/padlock.svg'
         }
       ]
@@ -268,37 +270,70 @@ export class BlogComponent implements OnInit {
         items: 4,
         nav: true
       }
-
     }
   }
 
   authors;
   bannerblogs;
+
   constructor(public http: HttpClient) { }
 
-  ngOnInit() {
-   
-    // let el = document.getElementById('sidebar');
-    // let extraHeight = $(window).height() * 0.8;
-    // let stickyTop = $(el).offset().top + extraHeight;
-    // let stickyHeight = $(el).height();
-   
-    // $(window).on("scroll",function () {
-    //   let limit = $('.footer').offset().top - stickyHeight - 20;
-    //   let windowTop = $(window).scrollTop();
+  ngOnInit() {  
+  //   let el = document.getElementById('sidebar');
+  //   let container = document.getElementById('wrapper');
+  //   let extraHeight = $(window).height() * 0.8;
+  //   let windowHeight = $(window).height();
+  //   let stickyTop = $(container).offset().top + extraHeight + 260;
+  //   let debounce_timer;
+  //   let windowTop = $(window).scrollTop();
+  //   console.log(windowTop,stickyTop);
+  
+  //   $(window).on("scroll", function () {
+  //     if(debounce_timer) {
+  //       window.clearTimeout(debounce_timer);
+  //      }
+  
+  //    debounce_timer = window.setTimeout(function() {
+  //       // run your actual function here
+  //     let limit = $('.footer').offset().top + extraHeight - 530;
+  //     if(windowTop < stickyTop) {
+  //       $(el).removeClass('affix');
+  //     }
+  //     if (windowTop > stickyTop) {
+  //       $(el).addClass('affix');
+  //     }
+  //     if (windowTop + windowHeight > limit) {
+  //       $(el).removeClass('affix');
+  //       $(el).addClass('abs');
+  //     }
+  //     else {
+  //       $(el).removeClass('abs');
+  //     }
+  //       console.log('Fire');
+  // }, 10)
+  // });
+  
 
-    //   if (stickyTop < windowTop) {
-    //     $(el).addClass('affix');
-    //   }
-    //   else{
-    //     $(el).removeClass('affix');
-    //   }
-    //   if(windowTop > limit){
-    //     $(el).removeClass('affix');
-    //     var diff = limit-windowTop;
-    //     el.style.top = diff.toString();
-    //   }
+    // var container =  document.getElementById("wrapper");
+    // function getHeight(){
+    //   var scrollHeight = $(container).height();
+    //  // console.log(scrollHeight);
+    //   return scrollHeight;
+    // }
+    // var controller = new ScrollMagic.Controller({
     // });
+    // var scene1 = new ScrollMagic.Scene({
+    //   triggerElement:'.wrapper',
+    //   triggerHook:0.12,
+      
+    // })
+    // .duration(getHeight)
+    // //.setPin("#sidebar")
+    // .setClassToggle('#sidebar', 'affix')
+    // .addIndicators()
+    // .refresh(getHeight())
+    // .addTo(controller);
+
 
     this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/approveblogs')
       .subscribe(result => {
@@ -315,13 +350,13 @@ export class BlogComponent implements OnInit {
 
       })
 
-      this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/homeblog')
+    this.http.get<{ status: string, msg: string, result: any }>('https://onewater-blog-api.herokuapp.com/homeblog')
       .subscribe(result => {
-        console.log(result,'bannerrrr');
+        console.log(result, 'bannerrrr');
         this.bannerblogs = result.result;
 
       })
-
+     
   }
 
 }

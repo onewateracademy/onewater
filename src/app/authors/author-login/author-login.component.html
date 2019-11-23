@@ -19,7 +19,7 @@
                <input formControlName="password" class="vldform__textbox" type="password" name="pass"  placeholder="Password" required>
                <a class="vldform__recoverypassword" (click)="showrecoveryform()">Forgot password?</a>
                <a href=""></a>
-               <button type="submit" class="vldform__button">Login</button>
+               <button type="submit" class="vldform__button" >Login</button>
                <!-- <div class="social-btn"> <span>or login using </span> <br>
                  <a href="#"><img src="assets/img/icons/google.svg" alt=""> </a>
                  <a href="#"><img src="assets/img/icons/facebook.svg" alt=""></a>
@@ -65,7 +65,8 @@
 
     </div>
 </section>
-<!-- Modal -->
+
+<!-- First Signup Modal -->
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
@@ -73,15 +74,45 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
     </div>
       <div class="modal-body">
-
-
        <img src="assets/img/mail.png
        " alt="">
        <h2>Please verify the email by clicking the link you will receive in your inbox.</h2>
       </div>
-
         <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-
     </div>
   </div>
 </div>
+
+<!-- Login before email verification Modal -->
+<div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+      <div class="modal-head">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        <div class="modal-body">
+         <img src="assets/img/modals/verify-mail.jpg
+         " alt="">
+         <h2>Please verify your Email to login.</h2>
+        </div>
+          <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+
+
+<div class="modal fade" id="signupModal" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+      <div class="modal-head">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+        <div class="modal-body">
+         <img src="assets/img/modals/mail-sent.jpg
+         " alt="">
+         <h2>This Email ID is already in use on our platform. Please check your inbox if you have not verified your Email ID</h2>
+        </div>
+          <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>

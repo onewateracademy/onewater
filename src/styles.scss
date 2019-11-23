@@ -198,6 +198,19 @@ margin: 1rem;}
   z-index: 2;
 }
 
+.logout-button{
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  z-index: 1000;
+  background: #ff6060;
+  color: #fff ;
+  transition: all 0.3s ease-in-out;
+}
+.logout-button:hover{
+  color: #ff6060 ;
+  background: #fff ;
+}
 .button {
   border: 1px solid transparent;
   outline: none;

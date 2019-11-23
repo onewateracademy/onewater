@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { Subscription } from 'rxjs';
+import { CommonService } from '../services/common.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-author-registration',
@@ -9,14 +12,36 @@ import { AuthService } from '../services/auth.service';
 })
 export class AuthorRegistrationComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, public common:CommonService, public http:HttpClient) { }
 
   form:FormGroup;
   imagePreview;
   submited:boolean=false;
   area=[];
   temp=[];
+  tempsus:Subscription;
+  editableprofile;
+  public showsubmit:boolean=false;
   ngOnInit() {
+
+if(localStorage.getItem('form_filled_job')  == 'true'){
+  this.http.get<{status:string, msg:string, result:any}>('https://onewater-blog-api.herokuapp.com/notauthor/'+localStorage.getItem('authorid'))
+  .subscribe(result=> {
+    this.submited=true;
+    console.log(result);
+    this.editableprofile=result.result[0];
+    console.log(this.editableprofile,'dwwd')
+   this.form.patchValue({author_name:this.editableprofile.name,
+    location:this.editableprofile.location,
+      image:this.editableprofile.image,
+      author_desc:this.editableprofile.about_author,
+      interest:this.editableprofile.interest_category,
+      linkedin:this.editableprofile.linkedIn_id,
+      facebook:this.editableprofile.facebook_id,
+      twitter:this.editableprofile.twitter_id,
+      instagram:this.editableprofile.instagram_id})
+  })
+}
 
   this.form= new FormGroup({
     author_name:new FormControl(null,{validators:[Validators.required,Validators.email]}),
@@ -45,7 +70,7 @@ export class AuthorRegistrationComponent implements OnInit {
 
   submit(){
     console.log(this.form.value);
-    this.submited=true;
+    // this.submited=true;
     // if(this.form.invalid)
     //   {
     //     return;
@@ -55,6 +80,10 @@ export class AuthorRegistrationComponent implements OnInit {
     this.form.value.interest=this.area;
     console.log(this.form.value,'sss');
      this.auth.authorRegistration(this.form.value);
+  }
+
+  logout(){
+    this.auth.logout();
   }
 
 

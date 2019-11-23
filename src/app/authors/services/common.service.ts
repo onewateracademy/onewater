@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import {Router} from '@angular/router';
 import { Subject } from 'rxjs';
 import { AuthService } from './auth.service';
+import * as $ from 'jquery';
 
 @Injectable({
   providedIn:'root'
@@ -13,7 +14,7 @@ export class CommonService {
   addBlog(value){
     const data= new FormData();
     let count=value.data.split(' ').length;
-    let min=count/250;
+    let min=Math.ceil(count/250);
     console.log(min.toString(),'fef');
     console.log(count,'iihiji')
     data.append('title',value.title)
@@ -23,9 +24,10 @@ export class CommonService {
     data.append('readtime',min.toString());
     data.append('category','Technology');
     data.append('category','Health');
-    this.http.post<{status:string, msg:string,result:any}>('http://onewater-blog-api.herokuapp.com/unapproved-blog',data)
+    this.http.post<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/unapproved-blog',data)
     .subscribe(result=>{
       console.log(result);
+
       alert(result.msg)
     })
   }
