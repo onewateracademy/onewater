@@ -10,29 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class CategoryComponent implements OnInit {
 
   showSubCat=false;
-  currentCategory=[
-    {
-      'subname': 'Distribution System',
-      'subimg': 'assets/img/icons/distribution.svg'
-    },
-    {
-      'subname': 'Water Conservation',
-      'subimg': 'assets/img/icons/conserve.svg'
-    },
-    {
-      'subname': 'Drinking Water Quality',
-      'subimg': 'assets/img/icons/drink.svg'
-    },
-    {
-      'subname': 'Water Treatment & Opreations',
-      'subimg': 'assets/img/icons/treatment.svg'
-    },
-    {
-      'subname': 'Desalination',
-      'subimg': 'assets/img/icons/desalination.svg'
-    }
-  ];
-
+  currentCategory;
+ 
   categories = [
     {
       'img': 'assets/img/icons/water.svg',
@@ -186,58 +165,72 @@ export class CategoryComponent implements OnInit {
       ]
     },
   ]
-
+ 
   category;
   subcategory;
   fetchcategory;
   singleblog;
   blogs;
   author;
+  sname;
+
+  
+
   constructor(public route:ActivatedRoute, public http:HttpClient) { }
 
   ngOnInit() {
+
+   
+    
     this.route.queryParams.subscribe(result=>{
       console.log(result);
       this.category=result.category;
       this.subcategory=result.subcategory;
+      this.sname=result.sname
 
-      if( this.category=='Water' && this.subcategory == 'Distribution System') this.fetchcategory='distribution';
-      if( this.category=='Water' && this.subcategory == 'Water Conservation') this.fetchcategory='conservation'
-      if( this.category=='Water' && this.subcategory == 'Drinking Water Quality') this.fetchcategory='drinking'
-      if( this.category=='Water' && this.subcategory == 'Water Treatment & Operations') this.fetchcategory='watertreatment'
-      if( this.category=='Water' && this.subcategory == 'Desalination') this.fetchcategory='desalination';
+      for(let i=0;i<this.categories.length;i++){
+        if(this.categories[i].name == this.category){
+          this.currentCategory = this.categories[i].subcat;
+        }
+      }
 
-      if( this.category=='Wastewater' && this.subcategory == 'Biosolids') this.fetchcategory='biosolids'
-      if( this.category=='Wastewater' && this.subcategory == 'Collection Systems') this.fetchcategory='collection'
-      if( this.category=='Wastewater' && this.subcategory == 'Water Reuse and Resource Recovery') this.fetchcategory='reuse'
-      if( this.category=='Wastewater' && this.subcategory == 'Odor and corrosion management') this.fetchcategory='odor'
-      if( this.category=='Wastewater' && this.subcategory == 'Wastewater treatment & Operations') this.fetchcategory='wastewatertreatment';
+      // if( this.category=='Water' && this.subcategory == 'Distribution System') this.fetchcategory='distribution';
+      // if( this.category=='Water' && this.subcategory == 'Water Conservation') this.fetchcategory='conservation'
+      // if( this.category=='Water' && this.subcategory == 'Drinking Water Quality') this.fetchcategory='drinking'
+      // if( this.category=='Water' && this.subcategory == 'Water Treatment & Operations') this.fetchcategory='watertreatment'
+      // if( this.category=='Water' && this.subcategory == 'Desalination') this.fetchcategory='desalination';
 
-      if( this.category=='Stormwater' && this.subcategory == 'Watershed') this.fetchcategory='watershed'
-      if( this.category=='Stormwater' && this.subcategory == 'Hydrology') this.fetchcategory='hydrology';
+      // if( this.category=='Wastewater' && this.subcategory == 'Biosolids') this.fetchcategory='biosolids'
+      // if( this.category=='Wastewater' && this.subcategory == 'Collection Systems') this.fetchcategory='collection'
+      // if( this.category=='Wastewater' && this.subcategory == 'Water Reuse and Resource Recovery') this.fetchcategory='reuse'
+      // if( this.category=='Wastewater' && this.subcategory == 'Odor and corrosion management') this.fetchcategory='odor'
+      // if( this.category=='Wastewater' && this.subcategory == 'Wastewater treatment & Operations') this.fetchcategory='wastewatertreatment';
 
-      if( this.category=='Innovation & Research' && this.subcategory == 'Water Science & Research') this.fetchcategory='waterscience'
-      if( this.category=='Innovation & Research' && this.subcategory == 'Students') this.fetchcategory='students'
-      if( this.category=='Innovation & Research' && this.subcategory == 'Young Professionals') this.fetchcategory='youngpros'
+      // if( this.category=='Stormwater' && this.subcategory == 'Watershed') this.fetchcategory='watershed'
+      // if( this.category=='Stormwater' && this.subcategory == 'Hydrology') this.fetchcategory='hydrology';
 
-      if( this.category=='Sustainable Development' && this.subcategory == 'Climate Change') this.fetchcategory='climate'
-      if( this.category=='Sustainable Development' && this.subcategory == 'Resiliency') this.fetchcategory='resiliency'
-      if( this.category=='Sustainable Development' && this.subcategory == 'Energy') this.fetchcategory='energy'
-      if( this.category=='Sustainable Development' && this.subcategory == 'Regional Activities/ Cast Studies') this.fetchcategory='reg';
+      // if( this.category=='Innovation & Research' && this.subcategory == 'Water Science & Research') this.fetchcategory='waterscience'
+      // if( this.category=='Innovation & Research' && this.subcategory == 'Students') this.fetchcategory='students'
+      // if( this.category=='Innovation & Research' && this.subcategory == 'Young Professionals') this.fetchcategory='youngpros'
 
-      if( this.category=='Management & Finance' && this.subcategory == 'Workforce Development') this.fetchcategory='workforce'
-      if( this.category=='Management & Finance' && this.subcategory == 'Asset management') this.fetchcategory='asset'
-      if( this.category=='Management & Finance' && this.subcategory == 'Utility management') this.fetchcategory='util'
-      if( this.category=='Management & Finance' && this.subcategory == 'Financing') this.fetchcategory='finance'
-      if( this.category=='Management & Finance' && this.subcategory == 'Construction management') this.fetchcategory='cons'
-      if( this.category=='Management & Finance' && this.subcategory == 'Leadership') this.fetchcategory='leader';
+      // if( this.category=='Sustainable Development' && this.subcategory == 'Climate Change') this.fetchcategory='climate'
+      // if( this.category=='Sustainable Development' && this.subcategory == 'Resiliency') this.fetchcategory='resiliency'
+      // if( this.category=='Sustainable Development' && this.subcategory == 'Energy') this.fetchcategory='energy'
+      // if( this.category=='Sustainable Development' && this.subcategory == 'Regional Activities/ Cast Studies') this.fetchcategory='reg';
 
-      if( this.category=='Legislative & Regulatory' && this.subcategory == 'Government Affairs') this.fetchcategory='govt'
-      if( this.category=='Legislative & Regulatory' && this.subcategory == 'Safety and Security') this.fetchcategory='safety'
+      // if( this.category=='Management & Finance' && this.subcategory == 'Workforce Development') this.fetchcategory='workforce'
+      // if( this.category=='Management & Finance' && this.subcategory == 'Asset management') this.fetchcategory='asset'
+      // if( this.category=='Management & Finance' && this.subcategory == 'Utility management') this.fetchcategory='util'
+      // if( this.category=='Management & Finance' && this.subcategory == 'Financing') this.fetchcategory='finance'
+      // if( this.category=='Management & Finance' && this.subcategory == 'Construction management') this.fetchcategory='cons'
+      // if( this.category=='Management & Finance' && this.subcategory == 'Leadership') this.fetchcategory='leader';
+
+      // if( this.category=='Legislative & Regulatory' && this.subcategory == 'Government Affairs') this.fetchcategory='govt'
+      // if( this.category=='Legislative & Regulatory' && this.subcategory == 'Safety and Security') this.fetchcategory='safety'
 
 
 console.log(this.fetchcategory,'effe');
-      this.http.get<{status: any, msg: any, result:any}>('http://localhost:3000/category/'+this.fetchcategory)
+      this.http.get<{status: any, msg: any, result:any}>('https://onewater-blog-api.herokuapp.com/category/'+this.sname)
       .subscribe(result=>{
         console.log(result);
         this.blogs=result.result;
@@ -246,6 +239,8 @@ console.log(this.fetchcategory,'effe');
         this.getauthor(this.singleblog.author_id);
       })
     })
+
+    
 
   }
 

@@ -182,8 +182,11 @@ text-align: center;
   .vldform__signup a {
       margin-left: 4px;
       color: dodgerblue;
+      cursor: pointer;
   }
-
+  .vldform__signup a:hover{
+    text-decoration: underline !important;
+  }
   .vldreg {
       display: none;
   }

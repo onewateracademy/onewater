@@ -18,7 +18,7 @@
           <div class="company-info">
             <div class="thumb">
               <img
-                src="assets/img/jobs/dashboard/images/company-logo.png"
+                src={{author.image}}
                 class="img-fluid"
                 alt=""
               />
@@ -31,7 +31,7 @@
           <div class="dashboard-menu">
             <ul>
               <li routerLinkActive="activetab" [routerLinkActiveOptions]="{ exact: true }">
-                <i class="fa fa-pencil-square"></i
+                <i class="fa fa-bar-chart"></i
                 ><a [routerLink]="['./']">Dashboard</a>
               </li>
               <li routerLinkActive="activetab">
@@ -47,8 +47,16 @@
                 ><a [routerLink]="['./pending-blogs']">Pending Blogs</a>
               </li>
               <li routerLinkActive="activetab">
+                  <i class="fa fa-bars"></i
+                  ><a [routerLink]="['./videos']">All Videos</a>
+                </li>
+              <li routerLinkActive="activetab">
                 <i class="fa fa-plus-square"></i
                 ><a [routerLink]="['./post-blog']">Post New Blog</a>
+              </li>
+              <li routerLinkActive="activetab">
+                <i class="fa fa-video-camera"></i
+                ><a [routerLink]="['./post-video']">Post New Video</a>
               </li>
               <li routerLinkActive="activetab">
                 <i class="fa fa-user"></i

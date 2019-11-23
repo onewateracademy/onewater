@@ -32,13 +32,32 @@
 //   width: 75%; }
 .dashboard-container .dashboard-sidebar {
   width: 280px;
-  border-radius: 20px;
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
+  overflow-y: scroll;
+}
+/* width */
+.dashboard-container .dashboard-sidebar::-webkit-scrollbar {
+  width: 4px;
 }
 
+/* Track */
+.dashboard-container .dashboard-sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.dashboard-container .dashboard-sidebar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+.dashboard-container .dashboard-sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgb(126, 126, 126);
+}
 .dashboard-content-wrapper {
   background: #f0f3f9;
   padding: 2rem;

@@ -1,9 +1,17 @@
+<button class="button logout-button" type="button" data-feather="user-check" (click)="logout()"><i class="fa fa-power-off"></i> Logout</button>
 <section class="emp-registration">
     <div class="container">
-      <h1>
-        Hey username, welcome to <span> OneWater Blog.</span> <br>
+       
+      <h1 *ngIf="!submited">
+        Hello! welcome to <span> OneWater Blog.</span> <br>
         Fill up the form below and get started!
       </h1>
+
+      <h1 *ngIf="submited">
+          Hello! welcome to <span> OneWater Blog.</span> <br>
+          Your details have been registred. Please wait until your profile gets verified!
+        </h1>
+
       <div class="dashboard-content-wrapper dash-tab">
         <form class="dashboard-form" (submit)="submit()" [formGroup]="form">
 
@@ -144,7 +152,7 @@
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
-                      <i class="fa fa-instagran"></i>
+                      <i class="fa fa-instagram"></i>
                     </div>
                   </div>
                   <input
@@ -157,11 +165,11 @@
               </div>
             </div>
           </div>
-          <div class="dashboard-section basic-info-input">
+          <div *ngIf="!submited" class="dashboard-section basic-info-input">
             <div class="form-group row">
               <label class="col-sm-3 col-form-label"></label>
               <div class="col-sm-9">
-                <button class="button" type="submit" >Save Change</button>
+                <button class="button" type="submit" data-toggle="modal" data-target="#registerModal">Submit</button>
               </div>
             </div>
           </div>
@@ -169,3 +177,19 @@
       </div>
     </div>
   </section>
+  <!-- <button data-toggle="modal" data-target="#registerModal"> open modal</button> -->
+  <div class="modal fade" id="registerModal" role="dialog" >
+      <div class="modal-dialog modal-md">
+        <div class="modal-content">
+        <div class="modal-head">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+          <div class="modal-body">
+           <img src="assets/img/modals/register.jpg
+           " alt="">
+           <h2>Your profile has been submitted for review. We will get back to you in 24 hrs.</h2>
+          </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+  </div>

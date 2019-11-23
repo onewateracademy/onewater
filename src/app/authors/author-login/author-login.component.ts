@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl, EmailValidator } from '@angular/forms';
 import {AuthService} from '../services/auth.service';
+import * as $ from 'jquery';
+import * as modal from 'bootstrap';
+declare var modal : any;
+// declare var $:any;
+
 
 @Component({
   selector: 'app-author-login',
@@ -11,6 +16,8 @@ export class AuthorLoginComponent implements OnInit {
 
   user:FormGroup;
   loginuser:FormGroup;
+
+
   showregform(){
     document.querySelector(".vldauth")['style'].display = "none";
     document.querySelector(".vldreg")['style'].display = "flex";
@@ -18,6 +25,8 @@ export class AuthorLoginComponent implements OnInit {
     document.getElementById("signup-text")['style'].display = "block"
 
     }
+
+
 
      showauthform(){
     document.querySelector(".vldauth")['style'].display = "flex";
@@ -33,8 +42,53 @@ export class AuthorLoginComponent implements OnInit {
     document.getElementById("login-text")['style'].display = "none"
     document.getElementById("signup-text")['style'].display = "none"
     }
-    constructor(public auth:AuthService) { }
 
+
+    constructor(public auth:AuthService) {
+      this.auth.emailexist$.subscribe(
+        () => {
+
+          console.log("hitttt")
+          $('#signupModal').css("display", "block");
+          $('#signupModal').addClass("show");
+              //   $(window).load(function() {
+              //     $('#myModal').modal('show');
+              // });
+
+        }
+      );
+
+      this.auth.notverifiedmail$.subscribe(
+        () => {
+
+          console.log("hitttt")
+          $('#loginModal').css("display", "block");
+          $('#loginModal').addClass("show");
+              //   $(window).load(function() {
+              //     $('#myModal').modal('show');
+              // });
+
+        }
+      );
+
+      this.auth.verifymail$.subscribe(
+        () => {
+
+          console.log("hitttt")
+          $('#myModal').css("display", "block");
+          $('#myModal').addClass("show");
+              //   $(window).load(function() {
+              //     $('#myModal').modal('show');
+              // });
+
+        }
+      );
+    }
+    closeModal(thismodal){
+  console.log('hitmcloes')
+  $(thismodal).css("display", "none");
+  $(thismodal).removeClass("show");
+}
   ngOnInit() {
     this.auth.checkLocalStorage();
     this.showregform();
@@ -49,12 +103,14 @@ export class AuthorLoginComponent implements OnInit {
       email:new FormControl(null,{validators:[Validators.required,Validators.email]}),
       password:new FormControl(null,{validators:[Validators.required]}),
     });
+
   }
 
   register(){
     console.log(this.user.value);
     this.auth.author(this.user.value);
   }
+
 
   login(){
     console.log(this.loginuser.value);
