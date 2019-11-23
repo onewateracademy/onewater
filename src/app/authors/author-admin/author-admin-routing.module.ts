@@ -14,6 +14,8 @@ const routes: Routes = [
       { path: 'all-blogs', loadChildren: './all-blogs/all-blogs.module#AllBlogsModule' },
       { path: 'approved-blogs', loadChildren: './approved-blogs/approved-blogs.module#ApprovedBlogsModule' },
       { path: 'pending-blogs', loadChildren: './pending-blogs/pending-blogs.module#PendingBlogsModule' },
+      { path: 'post-video', loadChildren: './post-video/post-video.module#PostVideoModule' },
+      { path: 'videos', loadChildren: './author-videos/author-videos.module#AuthorVideosModule' },
     ]
   }
 ];

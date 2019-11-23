@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import { Subject } from 'rxjs';
 import { AuthService } from './auth.service';
 import * as $ from 'jquery';
+import { XSRF_COOKIE_NAME } from '@angular/common/http/src/xsrf';
 
 @Injectable({
   providedIn:'root'
@@ -31,6 +32,21 @@ export class CommonService {
       alert(result.msg)
     })
   }
+
+  addVideo(values){
+    this.http.post("https://onewater-blog-api.herokuapp.com/post-video",values)
+    .subscribe(result=>{
+      console.log(result);
+      alert("Video Posted Successfully");
+    })
+  }
+
+  getAllVideos(){
+    const data={
+      email: localStorage.getItem('authoremail')
+    }
+    return this.http.get<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/singlevideo/'+localStorage.getItem('authoremail'));
+   }
 
   getAllBlogs(){
    return this.http.get<{status:string, msg:string,result:any}>('https://onewater-blog-api.herokuapp.com/authorallblogs/'+this.blogauth.authorapprovedid);

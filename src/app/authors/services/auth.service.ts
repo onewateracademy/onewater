@@ -53,6 +53,7 @@ export class AuthService {
         localStorage.setItem('authoremail',this.authoremail)
         localStorage.setItem('authorid',this.authorid)
         localStorage.setItem('authormainid',this.authormainid)
+        localStorage.setItem('name',result.result.name)
         localStorage.setItem('form_filled_job',result.result.form_filled)
         if(result.result.approvedid=='null') {
           // return(alert("Profile Not Approved Yet"));
@@ -68,6 +69,7 @@ export class AuthService {
         this.route.navigate(['/author']);
       }else{
         localStorage.setItem('onewaterauthortoken',result.result.token)
+        localStorage.setItem('name',result.result.name)
         localStorage.setItem('authoremail',this.authoremail)
         localStorage.setItem('authorid',this.authorid)
         localStorage.setItem('authormainid',this.authormainid)

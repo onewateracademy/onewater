@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Feather from 'feather-icons';
+import { CommonService } from '../../services/common.service';
 
 @Component({
   selector: 'app-author-dashboard',
@@ -7,42 +8,30 @@ import * as Feather from 'feather-icons';
   styleUrls: ['./author-dashboard.component.scss']
 })
 export class AuthorDashboardComponent implements OnInit {
- recentblogs=[
-   {
-     title:'12 benefits of yoga',
-     img:'assets/img/jobs/dashboard/images/user-1.jpg',
-     date:'12/12/2019',
-     status:'approved'
-   },
-   {
-    title:'12 benefits of yoga',
-    img:'assets/img/jobs/dashboard/images/user-1.jpg',
-    date:'12/12/2019',
-    status:'pending'
-  },
-  {
-    title:'12 benefits of yoga',
-    img:'assets/img/jobs/dashboard/images/user-1.jpg',
-    date:'12/12/2019',
-    status:'approved'
-  },
-  {
-    title:'12 benefits of yoga',
-    img:'assets/img/jobs/dashboard/images/user-1.jpg',
-    date:'12/12/2019',
-    status:'pending'
-  },
-  {
-    title:'12 benefits of yoga',
-    img:'assets/img/jobs/dashboard/images/user-1.jpg',
-    date:'12/12/2019',
-    status:'approved'
-  }
- ]
-  constructor() { }
+ recentblogs;
+ totalblogs;
+approvedblogs;
+totalvideos;
+  constructor(public common: CommonService) { }
 
   ngOnInit() {
     Feather.replace();
+
+    this.common.getAllBlogs()
+    .subscribe(result=>{
+      this.totalblogs=result.result.length;
+      this.recentblogs=result.result.slice(-5).reverse();
+    })
+
+    this.common.getApprovedBlogs()
+    .subscribe(result=>{
+      this.approvedblogs=result.result.length;
+    })
+
+    this.common.getAllVideos()
+    .subscribe(result=>{
+      this.totalvideos=result.result.length;
+    })
   }
 
 }
