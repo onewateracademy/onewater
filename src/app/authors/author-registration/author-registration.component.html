@@ -97,7 +97,7 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                         <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
-                      <button type="button"  (click)="file.click()">Select Image</button>
+                      <button type="button" (click)="file.click()">Select Image</button>
                     </div>
                     <div class="row form-group" *ngIf=" form.get('author_image').invalid &&profilesubmit" >
                       <p style="color: red; margin:0px auto">

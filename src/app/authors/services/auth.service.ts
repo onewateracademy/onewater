@@ -182,7 +182,7 @@ approvedauthorLitsener(){
     author.append('mainid',this.authormainid)
 
     console.log(this.authormainid, this.authorid,'dwdw');
-    this.http.post('http://localhost:3000/update-authorprofile',author)
+    this.http.post('https://onewater-blog-api.herokuapp.com/update-authorprofile',author)
     .subscribe(result=> {
       console.log(result);
       // alert("Profile Send For Verification You will be respond Back");
