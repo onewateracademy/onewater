@@ -218,7 +218,7 @@ approvedauthorLitsener(){
     }
 
     console.log(this.authormainid, this.authorapprovedid,'dwdw');
-    this.http.post('http://localhost:3000/update-approveprofile',data)
+    this.http.post('https://onewater-blog-api.herokuapp.com/update-approveprofile',data)
     .subscribe(result=> {
       console.log(result);
       // alert("Profile Send For Verification You will be respond Back");
