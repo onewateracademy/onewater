@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../authors/services/auth.service';
-import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-blog-website',
@@ -9,18 +8,9 @@ import { Router, NavigationStart } from '@angular/router';
 })
 export class BlogWebsiteComponent implements OnInit {
   showHeader = true ;
-  constructor(public auth:AuthService,public router: Router) { }
+  constructor(public auth:AuthService) { }
 
   ngOnInit() {
-    //this.auth.checkLocalStorage();
-    this.router.events.forEach((event) => {
-      if (event instanceof NavigationStart) {
-        if (event['url'] == '/thankyou-author'  ||event['url'] == '/thankyou-employer'||event['url'] == '/onewaterblog/author-reg') {
-          this.showHeader = false;
-        } else {
-          this.showHeader = true;
-        }
-      }
-    });
+ 
   }
 }

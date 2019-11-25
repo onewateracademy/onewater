@@ -61,14 +61,14 @@ export class AuthorEditProfileComponent implements OnInit {
     }
     filereader.readAsDataURL(file);
   }
-
+  profilesubmit:boolean=false;
   submit(){
     console.log(this.form.value);
-    this.submited=true;
-    // if(this.form.invalid)
-    //   {
-    //     return;
-    //   }
+    this.profilesubmit=true;
+     if(this.form.invalid)
+      {
+        return;
+      }
     console.log(this.form.value);
     this.area=this.form.value.interest.split(',');
     this.form.value.interest=this.area;

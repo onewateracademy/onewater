@@ -21,13 +21,14 @@ export class AuthorRegistrationComponent implements OnInit {
   temp=[];
   tempsus:Subscription;
   editableprofile;
+  profilesubmit:boolean=false;
   public showsubmit:boolean=false;
   ngOnInit() {
 
 if(localStorage.getItem('form_filled_job')  == 'true'){
   this.http.get<{status:string, msg:string, result:any}>('https://onewater-blog-api.herokuapp.com/notauthor/'+localStorage.getItem('authorid'))
   .subscribe(result=> {
-    this.submited=true;
+    this.showsubmit=true;
     console.log(result);
     this.editableprofile=result.result[0];
     console.log(this.editableprofile,'dwwd')
@@ -40,7 +41,9 @@ if(localStorage.getItem('form_filled_job')  == 'true'){
       facebook:this.editableprofile.facebook_id,
       twitter:this.editableprofile.twitter_id,
       instagram:this.editableprofile.instagram_id})
+      this.imagePreview=this.editableprofile.image;
   })
+
 }
 
   this.form= new FormGroup({
@@ -70,11 +73,11 @@ if(localStorage.getItem('form_filled_job')  == 'true'){
 
   submit(){
     console.log(this.form.value);
-    // this.submited=true;
-    // if(this.form.invalid)
-    //   {
-    //     return;
-    //   }
+    this.profilesubmit=true;
+    if(this.form.invalid)
+      {
+        return;
+      }
     console.log(this.form.value);
     this.area=this.form.value.interest.split('\n');
     this.form.value.interest=this.area;

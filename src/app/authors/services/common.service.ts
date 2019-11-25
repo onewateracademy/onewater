@@ -20,6 +20,7 @@ export class CommonService {
     console.log(count,'iihiji')
     data.append('title',value.title)
     data.append('authorid',this.blogauth.authorapprovedid)
+    data.append('authorname',this.blogauth.authorname)
     data.append('image',value.image);
     data.append('desc',value.data);
     data.append('readtime',min.toString());
@@ -29,7 +30,7 @@ export class CommonService {
     .subscribe(result=>{
       console.log(result);
 
-      alert(result.msg)
+      // alert(result.msg)
     })
   }
 

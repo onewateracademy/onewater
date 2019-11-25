@@ -15,6 +15,25 @@ class="dashboard-content-wrapper dash-tab"
           formControlName="author_name"
         />
       </div>
+      <div class="row form-group" *ngIf=" form.get('name').invalid &&profilesubmit" >
+        <p style="color: red; margin:0px auto">
+            Enter Name </p>
+    </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Phone</label>
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="+55 123 4563 4643"
+          formControlName="mobile"
+        />
+      </div>
+      <div class="row form-group" *ngIf=" form.get('mobile').invalid &&profilesubmit" >
+        <p style="color: red; margin:0px auto">
+            Enter Your Mobile No. </p>
+    </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Address</label>
@@ -26,6 +45,10 @@ class="dashboard-content-wrapper dash-tab"
           formControlName="location"
         />
       </div>
+      <div class="row form-group" *ngIf=" form.get('location').invalid &&profilesubmit" >
+        <p style="color: red; margin:0px auto">
+            Enter Your Location </p>
+    </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Interests</label>
@@ -37,39 +60,22 @@ class="dashboard-content-wrapper dash-tab"
           formControlName="interest"
         ></textarea>
       </div>
+      <div class="row form-group" *ngIf=" form.get('interest').invalid &&profilesubmit" >
+        <p style="color: red; margin:0px auto">
+            Enter Your Intrest </p>
+    </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Bio</label>
       <div class="col-sm-9">
         <textarea formControlName="author_desc" class="form-control" placeholder="Write something about yourself..."></textarea>
       </div>
+      <div class="row form-group" *ngIf=" form.get('author_desc').invalid &&profilesubmit" >
+        <p style="color: red; margin:0px auto">
+            Enter the Author Description </p>
+    </div>
     </div>
   </div>
-    <!-- <div class="dashboard-section media-inputs">
-    <h4><i data-feather="image"></i>Profile Photo</h4>
-    <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Upload photo</label>
-      <div class="col-sm-9">
-        <div class="input-group image-upload-input">
-          <div class="input-group-prepend">
-            <div class="input-group-text">
-                <input style="display: none"  type="file" #file  (change)="onImagePick($event)" >
-              <button type="button" (click)="file.click()">Select Image</button>
-            </div>
-          </div>
-          <div class="active">
-            <div class="upload-images">
-              <div class="pic" *ngIf="imagePreview!='' && imagePreview">
-
-                  <img style="width: 120px;" [src]="imagePreview">
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <div class="dashboard-section social-inputs">
     <h4><i data-feather="cast"></i>Social Networks</h4>
     <div class="form-group row">
@@ -87,6 +93,10 @@ class="dashboard-content-wrapper dash-tab"
             formControlName="linkedin"
           />
         </div>
+        <div class="row form-group" *ngIf=" form.get('linkedin').invalid &&profilesubmit" >
+          <p style="color: red; margin:0px auto">
+              Enter Your LinkedIn Profile Link </p>
+      </div>
       </div>
     </div>
     <div class="form-group row">
@@ -105,6 +115,10 @@ class="dashboard-content-wrapper dash-tab"
             formControlName="facebook"
           />
         </div>
+        <div class="row form-group" *ngIf=" form.get('facebook').invalid &&profilesubmit" >
+          <p style="color: red; margin:0px auto">
+            Enter Your Facebook Profile Link </p>
+      </div>
       </div>
     </div>
     <div class="form-group row">
@@ -122,6 +136,10 @@ class="dashboard-content-wrapper dash-tab"
             formControlName="twitter"
           />
         </div>
+        <div class="row form-group" *ngIf=" form.get('twitter').invalid &&profilesubmit" >
+          <p style="color: red; margin:0px auto">
+            Enter Your Twitter Profile Link </p>
+      </div>
       </div>
     </div>
     <div class="form-group row">
@@ -129,7 +147,7 @@ class="dashboard-content-wrapper dash-tab"
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text">
-              <i class="fa fa-instagran"></i>
+              <i class="fa fa-instagram"></i>
             </div>
           </div>
           <input
@@ -139,14 +157,18 @@ class="dashboard-content-wrapper dash-tab"
             formControlName="instagram"
           />
         </div>
+        <div class="row form-group" *ngIf=" form.get('instagram').invalid &&profilesubmit" >
+          <p style="color: red; margin:0px auto">
+            Enter Your Instagram Profile Link </p>
+      </div>
       </div>
     </div>
   </div>
-  <div class="dashboard-section basic-info-input">
+  <div *ngIf="!showsubmit" class="dashboard-section basic-info-input">
     <div class="form-group row">
       <label class="col-sm-3 col-form-label"></label>
       <div class="col-sm-9">
-        <button class="button" type="submit" data-toggle="modal" data-target="#updateProfileModal">Update Profile</button>
+        <button class="button" type="submit" data-toggle="modal" data-target="#registerModal">Submit</button>
       </div>
     </div>
   </div>

@@ -11,6 +11,7 @@ export class AuthService {
   constructor(public http:HttpClient, public route: Router){}
   public authoremail;
   public authorid;
+  public authorname;
   public authormainid;
   public authorapprovedid;
   public loggedIn:boolean=false;
@@ -46,6 +47,7 @@ export class AuthService {
       if(result.status =='error') return;
       this.authoremail=result.result.email;
       this.authorid=result.result.id;
+      this.authorname=result.result.name
       this.authormainid=result.result.mainid;
       this.authorapprovedid=result.result.approvedid;
       if(result.result.form_filled){
@@ -104,7 +106,8 @@ export class AuthService {
     console.log('check local hit')
     const token=localStorage.getItem('onewaterauthortoken');
     const approve=localStorage.getItem('authorapprovedid');
-        if(token && approve){
+    console.log(approve,'appppppp')
+        if(token){
           console.log('hit 1223')
           this.loggedIn=true
           this.loggedinLitsener.next({
@@ -114,19 +117,21 @@ export class AuthService {
             console.log('check local hit ifffffffff',localStorage.getItem('form_filled_job'))
             this.token=token;
             this.authorid=localStorage.getItem('authorid');
+            this.authorname=localStorage.getItem('name');
             this.authoremail=localStorage.getItem('authoremail');
             this.authormainid=localStorage.getItem('authormainid');
-            if(localStorage.getItem('authorapprovedid')=='null') return;
+            if(!approve) return this.route.navigate(['/onewaterblog/author-reg']);;
             this.authorapprovedid=localStorage.getItem('authorapprovedid');
             this.route.navigate(['/author']);
           }else{
             console.log('check local hit elseeeeeeeeeeee')
             this.token=token;
             this.authorid=localStorage.getItem('authorid');
+            this.authorname=localStorage.getItem('name');
             this.authoremail=localStorage.getItem('authoremail');
             this.authormainid=localStorage.getItem('authormainid');
             this.authorapprovedid=localStorage.getItem('authorapprovedid');
-            this.route.navigate(['/onewaterblog/author-login']);
+            this.route.navigate(['/onewaterblog/author-reg']);
           }
         }
 }
@@ -155,6 +160,8 @@ approvedauthorLitsener(){
 
   authorRegistration(values){
     const author= new FormData();
+    author.append('name',localStorage.getItem('name'))
+    author.append('email',localStorage.getItem('authoremail'))
     author.append('location',values.location)
     author.append('author_image',values.author_image)
     author.append('about_author',values.author_desc)
@@ -171,7 +178,7 @@ approvedauthorLitsener(){
     this.http.post('https://onewater-blog-api.herokuapp.com/update-authorprofile',author)
     .subscribe(result=> {
       console.log(result);
-      alert("Profile Send For Verification You will be respond Back");
+      // alert("Profile Send For Verification You will be respond Back");
     })
   }
 

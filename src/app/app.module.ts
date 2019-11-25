@@ -18,7 +18,7 @@ import { VideoWebsiteComponent } from './video-website/video-website.component';
 @NgModule({
   declarations: [
     AppComponent, NavbarComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent
-  ],
+  ],exports:[],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -29,6 +29,7 @@ import { VideoWebsiteComponent } from './video-website/video-website.component';
     NgxUiLoaderModule,
     NgxUiLoaderRouterModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

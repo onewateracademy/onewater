@@ -105,14 +105,23 @@ export class AuthorLoginComponent implements OnInit {
     });
 
   }
-
+  registersubmitted:boolean=false;
   register(){
+    this.registersubmitted=true;
+    if(this.user.invalid){
+      return;
+    }
+    if(this.user.value.password != this.user.value.cpassword) return alert("Password Not Macthed");
     console.log(this.user.value);
     this.auth.author(this.user.value);
   }
 
-
+  loginsubmitted:boolean=false;
   login(){
+    this.loginsubmitted=true;
+    if(this.loginuser.invalid){
+      return;
+    }
     console.log(this.loginuser.value);
     this.auth.login(this.loginuser.value);
   }
