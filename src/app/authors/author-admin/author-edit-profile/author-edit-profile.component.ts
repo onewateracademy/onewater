@@ -18,6 +18,7 @@ export class AuthorEditProfileComponent implements OnInit {
   area=[];
   temp=[];
   editableprofile;
+  showsubmit;
 
   ngOnInit() {
     Feather.replace();
