@@ -34,7 +34,7 @@ if(localStorage.getItem('form_filled_job')  == 'true'){
     console.log(this.editableprofile,'dwwd')
    this.form.patchValue({author_name:this.editableprofile.name,
     location:this.editableprofile.location,
-      image:this.editableprofile.image,
+    author_image:this.editableprofile.image,
       author_desc:this.editableprofile.about_author,
       interest:this.editableprofile.interest_category,
       linkedin:this.editableprofile.linkedIn_id,
