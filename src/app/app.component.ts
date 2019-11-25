@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { Router, NavigationStart,NavigationEnd } from '@angular/router';
 import { Location, PopStateEvent } from "@angular/common";
 import { NgxUiLoaderService } from 'ngx-ui-loader'; // Import NgxUiLoaderService
+import { AuthService } from './authors/services/auth.service';
 // import * as $ from "jquery";
 
 @Component({
@@ -16,8 +17,9 @@ export class AppComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-  constructor(public router: Router, private location: Location) {
+  constructor(public router: Router, private location: Location, public blogauth:AuthService) {
 
+this.blogauth.checkLocalStorage();
     this.location.subscribe((ev:PopStateEvent) => {
       this.lastPoppedUrl = ev.url;
   });
@@ -37,7 +39,7 @@ export class AppComponent implements OnInit {
 }
   ngOnInit() {
 
- 
+
     this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         if (event['url'] == '/login' || event['url'] == '/dashboard' ||event['url'] == '/thankyou-author'  ||event['url'] == '/thankyou-employer' || event['url'].includes('/onewaterjobs/employer/')  || event['url'].includes('/onewaterblog/author-admin')|| event['url'].includes('/user-admin/')) {

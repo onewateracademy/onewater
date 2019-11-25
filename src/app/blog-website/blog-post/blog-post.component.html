@@ -18,10 +18,10 @@
                 >By
                 <a
                   [routerLink]="['/onewaterblog/authorprofile/', author?._id]"
-                  >{{ author?.name }}</a
+                  >{{ author?.name | titlecase}}</a
                 ></span
               ><br />
-              <span class="meta-date">{{ author?.name }}</span>
+              <span class="meta-date">{{ author?.about_author | slice: 0:70  }}....</span>
             </div>
           </div>
           <!-- <div class="share-button">
@@ -41,7 +41,7 @@
     </div> -->
 
           <p class="teaser top-teaser">
-            <strong>Tags</strong> : <span>Health</span> <span>Well-Being</span>
+            <strong>Category</strong> : <span>{{blog?.category | titlecase}} </span> <span>{{blog?.sub_category | titlecase}}</span>
           </p>
           <div class="di" [innerHtml]="blog?.desc"></div>
           <div class="blog-options">
@@ -69,7 +69,7 @@
               <p class="bio-hl">
                 <a
                   [routerLink]="['/onewaterblog/authorprofile/', author._id]"
-                  >{{ author?.name }}</a
+                  >{{ author?.name | titlecase}}</a
                 >
               </p>
               <p>{{ author?.about_author | slice: 0:80 }}...</p>
@@ -94,7 +94,7 @@
                       <h6>{{ blog.title }}</h6>
                     </a>
                     <div class="blog-meta-data">
-                      <div class="author">By {{ author?.name }}</div>
+                      <div class="author">By {{ author?.name | titlecase}}</div>
                       <div class="likes">
                         <i class="fa fa-heart"></i>79 likes
                       </div>

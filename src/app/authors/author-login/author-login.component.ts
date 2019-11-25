@@ -95,7 +95,7 @@ export class AuthorLoginComponent implements OnInit {
     this.user= new FormGroup({
       author_name:new FormControl(null,{validators:[Validators.required,Validators.email]}),
       author_email:new FormControl(null,{validators:[Validators.required,Validators.email]}),
-      password:new FormControl(null,{validators:[Validators.required]}),
+      password:new FormControl(null,{validators:[Validators.required, Validators.minLength(6)]}),
       cpassword:new FormControl(null,{validators:[Validators.required]})
     });
 
@@ -105,14 +105,23 @@ export class AuthorLoginComponent implements OnInit {
     });
 
   }
-
+  registersubmitted:boolean=false;
   register(){
+    this.registersubmitted=true;
+    if(this.user.invalid){
+      return;
+    }
+    if(this.user.value.password != this.user.value.cpassword) return alert("Password Not Macthed");
     console.log(this.user.value);
     this.auth.author(this.user.value);
   }
 
-
+  loginsubmitted:boolean=false;
   login(){
+    this.loginsubmitted=true;
+    if(this.loginuser.invalid){
+      return;
+    }
     console.log(this.loginuser.value);
     this.auth.login(this.loginuser.value);
   }

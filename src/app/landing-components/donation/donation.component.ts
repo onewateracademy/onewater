@@ -11,7 +11,7 @@ export class DonationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    PageScrollConfig.defaultScrollOffset = 50;
+    PageScrollConfig.defaultScrollOffset = 70;
     PageScrollConfig.defaultEasingLogic = {
         ease: (t: number, b: number, c: number, d: number): number => {
             // easeInOutExpo easing

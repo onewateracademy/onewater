@@ -36,7 +36,7 @@
                               {{bannerblogs[0].title}}
                             </h3></a
                           >
-      
+
                           <div class="authorname">
                             {{bannerblogs[0].author}}
                           </div>
@@ -57,7 +57,7 @@
                               {{bannerblogs[1].title}}
                             </h3></a
                           >
-      
+
                           <div class="authorname">
                             {{bannerblogs[1].author}}
                           </div>
@@ -78,7 +78,7 @@
                               {{bannerblogs[2].title}}
                             </h3></a
                           >
-      
+
                           <div class="authorname">
                             {{bannerblogs[2].author}}
                           </div>
@@ -86,7 +86,7 @@
                       </div>
                     </div>
                   </div>
-      
+
                   <!-- Left and right controls -->
                   <a class="carousel-control-prev" href="#demo" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
@@ -125,7 +125,7 @@
 <div class="container">
   <!-- topauthors carousel section starts-->
   <div class="top-authors">
-    
+
     <h2>
       Top Authors
     </h2>
@@ -185,9 +185,9 @@
   position sicky
 </div> -->
 <div class="wrapper container-fluid" id="wrapper">
-   
+
     <div class="left-section">
-   
+
         <h2>Latest Posts</h2>
         <ngx-masonry [options]="{ transitionDuration: 0 }" [useImagesLoaded]="true">
           <div
@@ -209,10 +209,16 @@
                       {{ item.title }}
                     </h6>
                   </a>
+                  <div class="blog-category">
+
+                    <p class="text-white">
+                      {{item.sub_category | titlecase}}
+                    </p>
+                  </div>
                   <div class="author">
                     <a [routerLink]="['/onewaterblog/authorprofile/', item._id]">
-                      <img [src]="item.image" alt="" />
-                      <p>{{ item.name }}</p></a
+                      <img [src]="item.author_image" alt="" />
+                      <p>{{ item.author_name }}</p></a
                     >
                   </div>
                   <div class="row card-btn">
@@ -232,9 +238,9 @@
               </div>
             </a>
           </div>
-        
+
         </ngx-masonry>
-      
+
     </div>
    <aside>
       <div class="right-section" id="sidebar">
@@ -269,14 +275,14 @@
                   </div>
                 </div>
               </div>
-           
+
           </div>
         </div>
       </div>
    </aside>
- 
+
 
 </div>
- 
-  
+
+
 

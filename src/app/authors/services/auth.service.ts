@@ -11,6 +11,8 @@ export class AuthService {
   constructor(public http:HttpClient, public route: Router){}
   public authoremail;
   public authorid;
+  public authorname;
+  public authorimage;
   public authormainid;
   public authorapprovedid;
   public loggedIn:boolean=false;
@@ -46,6 +48,7 @@ export class AuthService {
       if(result.status =='error') return;
       this.authoremail=result.result.email;
       this.authorid=result.result.id;
+      this.authorname=result.result.name
       this.authormainid=result.result.mainid;
       this.authorapprovedid=result.result.approvedid;
       if(result.result.form_filled){
@@ -54,6 +57,7 @@ export class AuthService {
         localStorage.setItem('authorid',this.authorid)
         localStorage.setItem('authormainid',this.authormainid)
         localStorage.setItem('name',result.result.name)
+        localStorage.setItem('image',result.result.image)
         localStorage.setItem('form_filled_job',result.result.form_filled)
         if(result.result.approvedid=='null') {
           // return(alert("Profile Not Approved Yet"));
@@ -70,6 +74,7 @@ export class AuthService {
       }else{
         localStorage.setItem('onewaterauthortoken',result.result.token)
         localStorage.setItem('name',result.result.name)
+        localStorage.setItem('image',result.result.image)
         localStorage.setItem('authoremail',this.authoremail)
         localStorage.setItem('authorid',this.authorid)
         localStorage.setItem('authormainid',this.authormainid)
@@ -104,7 +109,8 @@ export class AuthService {
     console.log('check local hit')
     const token=localStorage.getItem('onewaterauthortoken');
     const approve=localStorage.getItem('authorapprovedid');
-        if(token && approve){
+    console.log(approve,'appppppp')
+        if(token){
           console.log('hit 1223')
           this.loggedIn=true
           this.loggedinLitsener.next({
@@ -114,19 +120,23 @@ export class AuthService {
             console.log('check local hit ifffffffff',localStorage.getItem('form_filled_job'))
             this.token=token;
             this.authorid=localStorage.getItem('authorid');
+            this.authorname=localStorage.getItem('name');
             this.authoremail=localStorage.getItem('authoremail');
             this.authormainid=localStorage.getItem('authormainid');
-            if(localStorage.getItem('authorapprovedid')=='null') return;
+            this.authorimage=localStorage.getItem('image');
+            if(!approve) return this.route.navigate(['/onewaterblog/author-reg']);;
             this.authorapprovedid=localStorage.getItem('authorapprovedid');
             this.route.navigate(['/author']);
           }else{
             console.log('check local hit elseeeeeeeeeeee')
             this.token=token;
             this.authorid=localStorage.getItem('authorid');
+            this.authorname=localStorage.getItem('name');
+            this.authorimage=localStorage.getItem('image');
             this.authoremail=localStorage.getItem('authoremail');
             this.authormainid=localStorage.getItem('authormainid');
             this.authorapprovedid=localStorage.getItem('authorapprovedid');
-            this.route.navigate(['/onewaterblog/author-login']);
+            this.route.navigate(['/onewaterblog/author-reg']);
           }
         }
 }
@@ -141,6 +151,8 @@ localStorage.removeItem('authorid');
 localStorage.removeItem('authoremail');
 localStorage.removeItem('authormainid');
 localStorage.removeItem('authorapprovedid');
+localStorage.removeItem('image');
+localStorage.removeItem('name');
 this.route.navigate(['/onewaterblog/author-login'])
 }
 
@@ -155,6 +167,8 @@ approvedauthorLitsener(){
 
   authorRegistration(values){
     const author= new FormData();
+    author.append('name',localStorage.getItem('name'))
+    author.append('email',localStorage.getItem('authoremail'))
     author.append('location',values.location)
     author.append('author_image',values.author_image)
     author.append('about_author',values.author_desc)
@@ -168,13 +182,48 @@ approvedauthorLitsener(){
     author.append('mainid',this.authormainid)
 
     console.log(this.authormainid, this.authorid,'dwdw');
-    this.http.post('https://onewater-blog-api.herokuapp.com/update-authorprofile',author)
+    this.http.post('http://localhost:3000/update-authorprofile',author)
     .subscribe(result=> {
       console.log(result);
-      alert("Profile Send For Verification You will be respond Back");
+      // alert("Profile Send For Verification You will be respond Back");
     })
   }
 
+  authorUpdate(values){
+    const author= new FormData();
+    author.append('name',values.author_name)
+    author.append('location',values.location)
+    author.append('author_image',values.author_image)
+    author.append('about_author',values.author_desc)
+    author.append('interest_category',values.interest);
+    author.append('mobile',values.mobile);
+    author.append('facebook',values.facebook)
+    author.append('linkedIn',values.linkedin)
+    author.append('twitter',values.twitter)
+    author.append('instagram',values.instagram)
+    author.append('id',this.authorapprovedid)
+    author.append('mainid',this.authormainid)
+
+    const data={
+      name:values.author_name,
+      location:values.location,
+      about_author:values.author_desc,
+      interest_category:values.interest,
+      facebook:values.facebook,
+      twitter:values.twitter,
+      linkedIn:values.linkedin,
+      instagram:values.instagram,
+      id:this.authorapprovedid,
+      mainid:this.authormainid
+    }
+
+    console.log(this.authormainid, this.authorapprovedid,'dwdw');
+    this.http.post('http://localhost:3000/update-approveprofile',data)
+    .subscribe(result=> {
+      console.log(result);
+      // alert("Profile Send For Verification You will be respond Back");
+    })
+  }
   addNewJob(values){
     this.http.post('https://onewater-blog-api.herokuapp.com/createjob',values)
     .subscribe(result=> {

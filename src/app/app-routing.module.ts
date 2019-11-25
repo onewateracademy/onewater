@@ -70,14 +70,14 @@ const routes: Routes = [
       {
         path: 'author-login',
         loadChildren: './authors/author-login/author-login.module#AuthorLoginModule'
-      },
-      {
-        path: 'author-reg',
-        loadChildren: './authors/author-registration/author-registration.module#AuthorRegistrationModule'
       }
     ]
   },
-
+  //-----------Author Registeration page -----------------//
+  {
+    path: 'onewaterblog/author-reg',
+    loadChildren: './authors/author-registration/author-registration.module#AuthorRegistrationModule'
+  },
   //-----------JOB PAGES ROUTING---------------//
 
   {

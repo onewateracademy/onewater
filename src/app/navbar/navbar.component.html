@@ -10,10 +10,10 @@
               <a [routerLink]='["/"]' class="logo2 scrollto"><img src="assets/img/ow-logo1.png" alt="logo-1"></a>
 
           </div>
-          <div class="menu" [class.blue-link]="headerBlue">
+          <div class="menu" [ngClass]="{'blue-link':headerBlue}">
               <ul>
                   <li class="navlink"><a [routerLink]="['/home']">Home</a></li>
-                  <li class="navlink"><a href="https://onewateracademy.herokuapp.com" >learning academy </a></li>
+                  <li class="navlink"><a href="https://onewateracademy.herokuapp.com" target="_blank">learning academy </a></li>
                   <li class="navlink"><a [routerLink]="['/home']" style="text-transform: none;" >OWXchange </a></li>
                   <li class="navlink"><a [routerLink]="['/onevideo']"  style="text-transform: uppercase;" >o-wow </a></li>
                   <li class="navlink"><a [routerLink]="['/onewaterblog']" >blog</a></li>
