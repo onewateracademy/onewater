@@ -1,7 +1,7 @@
-<section class="hero-section">
+<section class="hero-section d-flex align-items-center">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-6 order-lg-first ">
         <div class="heading">
           <h1>
               OneWater
@@ -15,7 +15,7 @@
           </p>
         </div>
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-6 order-first">
          <img src="assets/img/landing/hero2.png" alt="" class="img-fluid hero-img">
         </div>
     </div>
@@ -32,22 +32,19 @@
 </section>
 
 <section class="platform-section">
-    <div class="block-3"></div>
-    <div class="block-4"></div>
-      <!--<div class="rect1">
-      <img src="assets/img/landing/rect.png" alt="">
-    </div>
-   <div class="rect2">
-        <img src="assets/img/landing/rect.png" alt="">
-    </div> -->
-  <div class="heading">
-    <h1>
-      OneWater provides you access to 5 platforms all through one login.
-    </h1>
-    <div class="platform-intro-img">
-      <img src="assets/img/landing/platform1.png" alt="">
+  <div class="container">
+      <div class="block-3"></div>
+      <div class="block-4"></div>
+    <div class="heading">
+      <h1>
+        OneWater provides you access to 5 platforms all through one login.
+      </h1>
+      <div class="platform-intro-img">
+        <img src="assets/img/landing/platform1.png" alt="">
+      </div>
     </div>
   </div>
+   
 </section>
 
 
@@ -113,7 +110,7 @@
 
             <div class="platform">
                 <div class="row">
-                
+
                   <div class="col-lg-6">
                       <div class="platform-name">
                           O-WOW
@@ -123,7 +120,7 @@
                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat corporis, voluptates temporibus quos alias itaque eum nostrum eveniet, eaque, maiores voluptatem accusantium aut officiis asperiores qui facere dolores et assumenda? Sed asperiores nesciunt sequi autem exercitationem deleniti id nam, repudiandae error, atque ullam, impedit mollitia repellat adipisci reprehenderit sit nobis.
                             </p>
                             <div class="mybtn">
-                                <a [routerLink]="['/onevideo']">
+                                <a [routerLink]="['/o-wow']">
                                   Go to O-Wow
                                 </a>
                             </div>
@@ -135,10 +132,10 @@
                       </div>
                       </div>
                 </div>
-    
+
             </div>
 
-            
+
       <div class="platform">
         <div class="row">
             <div class="col-lg-6">
@@ -161,7 +158,7 @@
                     </div>
                   </div>
           </div>
-        
+
         </div>
 
       </div>
@@ -193,32 +190,32 @@
 
         </div> -->
 
-     
-      
+
+
     </div>
   </div>
 </section>
 
 
-<section class="about-section">
+<!-- <section class="about-section">
     <div class="block-4a">
     </div>
     <div class="block-4b">
       </div>
   <div class="container">
-     
+
   <div class="row align-items-center">
     <div class="col-lg-6">
       <img src="assets/img/landing/about.png" alt="" class="about-img" />
     </div>
     <div class="col-lg-6">
-       
+
       <div class="about-content">
           <h1 class="my-2">
               Vision
             </h1>
 <p>
-    The Vision of the One Water Academy (OWA) is to develop a One Water workforce for a One Water resilient world. 
+    The Vision of the One Water Academy (OWA) is to develop a One Water workforce for a One Water resilient world.
 </p>
       </div>
     </div>
@@ -232,11 +229,11 @@
     <div class="block-4b">
       </div>
   <div class="container">
-     
+
   <div class="row align-items-center">
 
     <div class="col-lg-6">
-       
+
       <div class="about-content">
           <h1 class="my-2">
               Mission
@@ -251,7 +248,7 @@
       </div>
   </div>
 </div>
-</section>
+</section> -->
 
 <section class="features-section">
     <!-- <div class="block-fa1"></div>  -->
@@ -477,11 +474,11 @@
            <h2>Enter your email to get our newsletter every week!</h2>
            <img src="assets/img/landing/newsletter-modal.png
            " alt="">
-           <form [formGroup]="form" (submit)="suscribeuser()">
+           <form [formGroup]="form" >
            <input formControlName="name" class="vldform__textbox" type="text" placeholder="name" required>
 
            <input formControlName="email" class="vldform__textbox" type="email" placeholder="email" required>
-           <button type="submit" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#thanksmodal">Submit</button>
+           <button type="submit" (click)="subscribe()" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#thanksmodal">Submit</button>
           </form>
           </div>
 

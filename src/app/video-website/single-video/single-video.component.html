@@ -50,7 +50,7 @@
     </h2>
     <owl-carousel [items]="likesvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
       <div class="item" *ngFor="let videoo of likesvideos">
-        <a [routerLink]="['/onevideo/singlevideo/', videoo._id]">
+        <a [routerLink]="['/o-wow/singlevideo/', videoo._id]" title="{{videoo?.title}}">
         <div class="thumbnail-card card-shadow" >
         <div class="thumb-img">
           <img [src]="videoo?.image" alt="">
@@ -60,11 +60,9 @@
         </div>
         <div class="thumb-caption">
           <div class="video-name">
-          <a [routerLink]="['/onevideo/singlevideo']"><h3>{{videoo?.title}}</h3></a>
+          <a [routerLink]="['/o-wow/singlevideo']"><h5>{{videoo?.title | slice:0:60}}..</h5></a>
           </div>
-          <div class="channel">
-            John Wick
-          </div>
+          
           <div class="video-metadata">
             <div class="row">
               <div class="col-6"><div class="views">{{videoo?.views}} views</div></div>

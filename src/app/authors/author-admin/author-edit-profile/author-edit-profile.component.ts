@@ -24,12 +24,10 @@ export class AuthorEditProfileComponent implements OnInit {
     Feather.replace();
 
     this.form= new FormGroup({
-      author_name:new FormControl(null,{validators:[Validators.required,Validators.email]}),
+      author_name:new FormControl(null,{validators:[Validators.required]}),
       location:new FormControl(null,{validators:[Validators.required]}),
-      author_image:new FormControl(null,{validators:[Validators.required]}),
       author_desc:new FormControl(null),
       interest:new FormControl(null,{validators:[Validators.required]}),
-      mobile:new FormControl(null,{validators:[Validators.required]}),
       facebook:new FormControl(null,{validators:[Validators.required]}),
       linkedin:new FormControl(null,{validators:[Validators.required]}),
       twitter:new FormControl(null,{validators:[Validators.required]}),
@@ -42,7 +40,6 @@ export class AuthorEditProfileComponent implements OnInit {
       console.log(this.editableprofile,'dwwd')
      this.form.patchValue({author_name:this.editableprofile.name,
       location:this.editableprofile.location,
-        image:this.editableprofile.image,
         author_desc:this.editableprofile.about_author,
         interest:this.editableprofile.interest_category,
         linkedin:this.editableprofile.linkedIn_id,
@@ -66,14 +63,15 @@ export class AuthorEditProfileComponent implements OnInit {
   submit(){
     console.log(this.form.value);
     this.profilesubmit=true;
+    console.log(this.form);
      if(this.form.invalid)
       {
         return;
       }
     console.log(this.form.value);
-    this.area=this.form.value.interest.split(',');
-    this.form.value.interest=this.area;
-     this.auth.authorRegistration(this.form.value);
+    // this.area=this.form.value.interest.split(',');
+    // this.form.value.interest=this.area;
+     this.auth.authorUpdate(this.form.value);
   }
 
 }

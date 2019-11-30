@@ -20,7 +20,7 @@ export class LandingPageComponent implements OnInit {
     })
   }
 
-  suscribeuser(){
+  subscribe(){
     console.log(this.form.value)
     this.http.post('https://onewater-job-api.herokuapp.com/suscribed',this.form.value)
     .subscribe(result=>{

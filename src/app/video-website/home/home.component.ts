@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../services/common.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -32,7 +33,7 @@ export class HomeComponent implements OnInit {
 
       },
       1500: {
-        items: 4,
+        items: 3,
 
       }
     }
@@ -42,39 +43,80 @@ export class HomeComponent implements OnInit {
   public featuredvideos;
   public latestvideos;
   public likesvideos;
+  public water;
+  public wastewater;
+  public stormwater;
+  public innovationresearch;
+  public sustainabledevelopment;
+  public managementsinance;
+  public legistativeregulatory;
+  singleliked;
   constructor(public commonservice:CommonService) { }
 
 ngOnInit() {
 
-  this.commonservice.getVideoByViews()
-        .subscribe(result=>{
-          this.featuredvideos=result.result.slice(0,10)
-          for(let i=0; i<this.featuredvideos.length; i++)
-          {
-            let image=this.getId(this.featuredvideos[i].video_link);
-            this.featuredvideos[i].image=`https://img.youtube.com/vi/${image}/0.jpg`;
-          }
-          console.log(this.featuredvideos,'hittt')
-        })
+
+
+  // this.commonservice.getVideoByViews()
+  //       .subscribe(result=>{
+  //         this.featuredvideos=result.result.slice(0,10)
+  //         console.log(this.featuredvideos,'hittt')
+  //       })
 
   this.commonservice.getLatestvideos()
         .subscribe(result=>{
-          this.latestvideos=result.result.slice(0,6)
-          for(let i=0; i<this.latestvideos.length; i++)
-          {
-            let image=this.getId(this.latestvideos[i].video_link);
-            this.latestvideos[i].image=`https://img.youtube.com/vi/${image}/0.jpg`;
-          }
+          this.latestvideos=result.result.slice(0,12)
           console.log(this.latestvideos,'hittt')
         })
 
         this.commonservice.getVideoByLikes()
         .subscribe(result=>{
-          this.likesvideos=result.result[0];
-            let image=this.getId(this.likesvideos.video_link);
-            this.likesvideos.image=`https://img.youtube.com/vi/${image}/0.jpg`;
+          this.singleliked=result.result[0]
+          this.likesvideos=result.result.slice(1,5);
+          console.log(this.likesvideos,'hittt likedd')
+        })
 
-          console.log(this.likesvideos,'hittt')
+        this.commonservice.getHomeVideoByCategory('water')
+        .subscribe(result=>{
+          this.water=result.result.slice(0,10)
+          console.log(this.water,'hittt')
+        })
+
+        this.commonservice.getHomeVideoByCategory('wastewater')
+        .subscribe(result=>{
+          this.wastewater=result.result.slice(0,10)
+          console.log(this.wastewater,'hittt')
+        })
+
+        this.commonservice.getHomeVideoByCategory('stormwater')
+        .subscribe(result=>{
+          this.stormwater=result.result.slice(0,10)
+          console.log(this.featuredvideos,'hittt')
+        })
+
+        this.commonservice.getHomeVideoByCategory('research')
+        .subscribe(result=>{
+          this.innovationresearch=result.result.slice(0,10)
+          console.log(this.featuredvideos,'hittt')
+        })
+
+        this.commonservice.getHomeVideoByCategory('sustainable')
+        .subscribe(result=>{
+          this.sustainabledevelopment=result.result.slice(0,10)
+          console.log(this.featuredvideos,'hittt')
+        })
+
+
+        this.commonservice.getHomeVideoByCategory('mgmt')
+        .subscribe(result=>{
+          this.managementsinance=result.result.slice(0,10)
+          console.log(this.featuredvideos,'hittt')
+        })
+
+        this.commonservice.getHomeVideoByCategory('leg')
+        .subscribe(result=>{
+          this.legistativeregulatory=result.result.slice(0,10)
+          console.log(this.featuredvideos,'hittt')
         })
 
 }

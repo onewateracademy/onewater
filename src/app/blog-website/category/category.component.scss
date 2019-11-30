@@ -1,3 +1,5 @@
+@import '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
+
 .category-wrap{
   padding-top: 15vh;
   background: #fff;
@@ -5,19 +7,20 @@
 
 .category-head h1{
   margin: 0.5rem auto;
-  font-size: 4rem;
+  @include ms-respond(font-size,8);
   font-weight: bold;
-  letter-spacing: -4px;
-  padding-bottom: 2rem;
+  letter-spacing: -0.15rem;
   border-bottom: 1px #ccc solid;
 
   h2{
     color: #777;
-    letter-spacing: -0.06rem;
     font-weight: 600;
-    font-size: 1.8rem;
+    letter-spacing: -0.06rem;
+    @include ms-respond(font-size,3);
   }
 }
+
+
 .category-box{
   height: 120px;
 }
@@ -31,12 +34,8 @@
    .blog-caption{
      margin: 0.2rem auto;
 
-     h2{
-       font-size: 2rem;
-       font-weight: 600;
-       letter-spacing: -1px;
+     h3{
         margin: 1rem auto 1.2rem;
-        text-align: left;
      }
    }
 
@@ -67,31 +66,16 @@
 
    }
    .article-meta .meta-date {
-     color: #777777;
-     font-weight: 400;
-   }
-
-   .article-meta hr {
-     width: 140px;
-     margin-top: 20px;
-     border: none;
-     border-bottom: 1px solid #cccccc;
+     color: rgba(0, 0, 0, 0.477);
+     font-weight: 600;
    }
 
    .article-meta .meta-read{
-     color: #777777;
+    color: rgba(0, 0, 0, 0.477);
      display: block;
-     font-weight: 400;
+     font-weight: 600;
    }
 
-}
-
-h2{
-  font-size: 2.1rem;
-  font-weight: 700;
-  text-align: left;
-  letter-spacing: -2px;
-  margin-bottom: 1rem;
 }
 
 
@@ -100,6 +84,13 @@ h2{
     .outer-card{
         margin: 2rem auto;
     }
+
+    img{
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    
 }
 .outer-card{
     margin: 1rem auto;
@@ -116,11 +107,6 @@ h2{
   .blog-caption {
     padding: 1rem;
     padding-left: 0.2rem;
-    h6{
-      font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -1.2px;
-      }
   }
 }
 
@@ -157,7 +143,7 @@ h2{
     h6{
       font-size: 1rem;
       font-weight: 600;
-      letter-spacing: -1px;
+      letter-spacing: -0.8px;
       margin: 0.5rem;
     }
 
@@ -169,6 +155,7 @@ h2{
 }
 @media screen and (max-width:768px){
   .big-post{
+    
     .article-meta {
       img{
         width: 84px;
@@ -181,6 +168,9 @@ h2{
         font-size: 0.95rem;
       }
     }
+  }
+  .category-head h1{
+    text-align: center;
   }
 }
   @media screen and (max-width:520px){
@@ -198,9 +188,7 @@ h2{
         }
       }
     }
-    .category-head h1{
-      font-size: 3.5rem;
-    }
+
     .big-post{
       .blog-caption{
         h2{
@@ -217,13 +205,17 @@ h2{
         flex: 0 0 100%;
       }
       .col-3{
-        display: none;
+        max-width: 100% !important;
+        flex: 0 0 100%;
       }
+      
       .blog-caption h6 {
       font-size: 1.2rem;
       font-weight: 600;
     }
-    }
+
+
+}
 h2{
   text-align: center;
 }

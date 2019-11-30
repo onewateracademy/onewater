@@ -27,173 +27,98 @@
 
 </div>
 </section>
-<!--LANDING SECTION ENDS-->
 
-<!----------Video Section Begins--------------->
-
-<section class="video-section">
-<section class="">
-  <div class="my-container">
-      <h2>Category One</h2>
-      <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="item" *ngFor="let video of featuredvideos">
-          <a [routerLink]="['/onevideo/singlevideo/', video._id]">
-              <div class="thumbnail-card card-shadow">
-                  <div class="thumb-img">
-                    <img [src]="video.image" alt="">
-                    <div class="hover-play">
-                      <i class="fa fa-play-circle" aria-hidden="true"></i>
-                    </div>
-                  </div>
-                  <div class="thumb-caption d-flex align-items-stretch flex-column">
-                    <div class="video-name">
-                      <h3>{{video?.title}}</h3>
-                    </div>
-                    <div class="channel">
-                      John Wick
-                    </div>
-                    <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6"><div class="views">{{video?.views}} views</div></div>
-                      <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d,M'}}</div></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          </a>
-          </div>
-          </owl-carousel>
-          <div class="d-flex justify-content-end mt-2">
-            <a href="">
-              <p>
-                  More videos from Category one
-              </p>
-            </a>
-          </div>
+<div class="author-btn">
+    <div class="row no-gutter align-items-end">
+      <div class="col-lg-7 align-self-center">
+        <div class="reg-text">
+          <h3>
+            Want to write blogs and post videos?
+            <br />
+            Register yourself as author here.
+          </h3>
+          <a routerLink="/onewaterblog/author-login">Register as author</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <img src="assets/img/author-reg-bg.png" alt="" />
+      </div>
     </div>
-</section>
+  </div>
 
-<section class="">
-  <div class="my-container">
-      <h2>Category Two</h2>
-      <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="item" *ngFor="let video of featuredvideos">
-          <a [routerLink]="['/onevideo/singlevideo/', video._id]">
-              <div class="thumbnail-card card-shadow">
-                  <div class="thumb-img">
-                    <img [src]="video.image" alt="">
-                    <div class="hover-play">
-                      <i class="fa fa-play-circle" aria-hidden="true"></i>
-                    </div>
+
+<section class="top-videos">
+<div class="my-container">
+    <h2>
+        Top Videos
+      </h2>
+    <div class="row">
+        <div class="col-md-6 ">
+            <div class="vod">
+
+            <a [routerLink]="['/o-wow/singlevideo/',likesvideos._id]">
+                <div class="thumbnail-card card-shadow">
+                <div class="thumb-img">
+                  <img [src]="singleliked?.image" alt="">
+                  <div class="hover-play">
+                    <i class="fa fa-play-circle" aria-hidden="true"></i>
                   </div>
-                  <div class="thumb-caption d-flex align-items-stretch flex-column">
-                    <div class="video-name">
-                      <h3>{{video?.title}}</h3>
-                    </div>
-                    <div class="channel">
-                      John Wick
-                    </div>
-                    <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6"><div class="views">{{video?.views}} views</div></div>
-                      <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d,M'}}</div></div>
+                  <div class="thumb-caption">
+                      <div class="video-name">
+                        <h3>{{singleliked?.title}}</h3>
+                      </div>
+                      <div class="channel">
+                        John Wick
+                      </div>
+                      <div class="video-metadata">
+                        <div class="row">
+                          <div class="col-6"><div class="views">{{singleliked?.views}} views</div></div>
+                        <div class="col-6"><div class="date">{{singleliked?.date_added | date:'MMMM d, y'}}</div></div>
+                        </div>
                       </div>
                     </div>
-                  </div>
                 </div>
-          </a>
-          </div>
-          </owl-carousel>
-          <div class="d-flex justify-content-end mt-2">
-              <a href="">
-                <p>
-                    More videos from Category two
-                </p>
+
+              </div>
               </a>
-            </div>
-    </div>
-</section>
+              </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-sm-6" *ngFor="let video of likesvideos" >
+                <div class="vod vod-small">
 
-<section class="">
-  <div class="my-container">
-      <h2>Category Three</h2>
-      <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="item" *ngFor="let video of featuredvideos">
-          <a [routerLink]="['/onevideo/singlevideo/', video._id]">
-              <div class="thumbnail-card card-shadow">
-                  <div class="thumb-img">
-                    <img [src]="video.image" alt="">
-                    <div class="hover-play">
-                      <i class="fa fa-play-circle" aria-hidden="true"></i>
-                    </div>
-                  </div>
-                  <div class="thumb-caption d-flex align-items-stretch flex-column">
-                    <div class="video-name">
-                      <h3>{{video?.title}}</h3>
-                    </div>
-                    <div class="channel">
-                      John Wick
-                    </div>
-                    <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6"><div class="views">{{video?.views}} views</div></div>
-                      <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d,M'}}</div></div>
+                <a [routerLink]="['/o-wow/singlevideo/',latestvideos._id]">
+                    <div class="thumbnail-card card-shadow">
+                    <div class="thumb-img">
+                      <img [src]="video?.image" alt="">
+                      <div class="hover-play">
+                        <i class="fa fa-play-circle" aria-hidden="true"></i>
                       </div>
+                      <div class="thumb-caption">
+                          <div class="video-name">
+                              <h3>{{singleliked?.title}}</h3>
+                          </div>
+                          <div class="channel">
+                            John Wick
+                          </div>
+                          <div class="video-metadata">
+                            <div class="row">
+                              <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                            <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                            </div>
+                          </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-          </a>
-          </div>
-          </owl-carousel>
-          <div class="d-flex justify-content-end mt-2">
-              <a href="">
-                <p>
-                    More videos from Category three
-                </p>
-              </a>
-            </div>
-    </div>
-</section>
 
-<section class="">
-  <div class="my-container">
-      <h2>Category Four</h2>
-      <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
-        <div class="item" *ngFor="let video of featuredvideos">
-          <a [routerLink]="['/onevideo/singlevideo/', video._id]">
-              <div class="thumbnail-card card-shadow">
-                  <div class="thumb-img">
-                    <img [src]="video.image" alt="">
-                    <div class="hover-play">
-                      <i class="fa fa-play-circle" aria-hidden="true"></i>
-                    </div>
                   </div>
-                  <div class="thumb-caption d-flex align-items-stretch flex-column">
-                    <div class="video-name">
-                      <h3>{{video?.title}}</h3>
-                    </div>
-                    <div class="channel">
-                      John Wick
-                    </div>
-                    <div class="video-metadata">
-                      <div class="row">
-                        <div class="col-6"><div class="views">{{video?.views}} views</div></div>
-                      <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d,M'}}</div></div>
-                      </div>
-                    </div>
+                  </a>
                   </div>
-                </div>
-          </a>
-          </div>
-          </owl-carousel>
-          <div class="d-flex justify-content-end mt-2">
-              <a href="">
-                <p>
-                    More videos from Category four
-                </p>
-              </a>
             </div>
-    </div>
+          </div>
+        </div>
+      </div>
+</div>
 </section>
 
 <section class="categories">
@@ -202,9 +127,9 @@
           Browse by categories
         </h2>
         <div class="row justify-content-center">
-         
-          <div class="col-lg-3">
-              <a href="">
+
+          <div class="col-lg-3 col-6">
+              <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Water',fetchcategory:'water'}">
                   <div class="single-category">
                       <div class="card-shadow">
                           <img src="assets/img/icons/water.svg" alt="">
@@ -215,8 +140,8 @@
                   </div>
               </a>
             </div>
-            <div class="col-lg-3">
-                <a href="">
+            <div class="col-lg-3 col-6">
+                <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Wastewater',fetchcategory:'wastewater'}">
                     <div class="single-category">
                         <div class="card-shadow">
                             <img src="assets/img/icons/waste-water.svg" alt="">
@@ -227,8 +152,8 @@
                     </div>
                 </a>
               </div>
-              <div class="col-lg-3">
-                  <a href="">
+              <div class="col-lg-3 col-6">
+                  <a  [routerLink]="['/o-wow/video-category']"[queryParams]="{'category':'Storm Water',fetchcategory:'stormwater'}">
                       <div class="single-category">
                           <div class="card-shadow">
                               <img src="assets/img/icons/storm.svg" alt="">
@@ -239,8 +164,8 @@
                       </div>
                   </a>
                 </div>
-                <div class="col-lg-3">
-                    <a href="">
+                <div class="col-lg-3 col-6">
+                    <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Innovation Research',fetchcategory:'research'}">
                         <div class="single-category">
                             <div class="card-shadow">
                                 <img src="assets/img/icons/research.svg" alt="">
@@ -251,9 +176,9 @@
                         </div>
                     </a>
                   </div>
-                 
-                    <div class="col-lg-3">
-                        <a href="">
+
+                    <div class="col-lg-3 col-6">
+                        <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Sustainable Development',fetchcategory:'sustainable'}">
                             <div class="single-category">
                                 <div class="card-shadow">
                                     <img src="assets/img/icons/sustainable.svg" alt="">
@@ -264,8 +189,8 @@
                             </div>
                         </a>
                       </div>
-                      <div class="col-lg-3">
-                          <a href="">
+                      <div class="col-lg-3 col-6">
+                          <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Management & Finance',fetchcategory:'mgmt'}">
                               <div class="single-category">
                                   <div class="card-shadow">
                                       <img src="assets/img/icons/finance.svg" alt="">
@@ -276,9 +201,9 @@
                               </div>
                           </a>
                         </div>
-                     
-                        <div class="col-lg-3">
-                            <a href="">
+
+                        <div class="col-lg-3 col-6">
+                            <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Legistative & Regulatory',fetchcategory:'leg'}">
                                 <div class="single-category">
                                     <div class="card-shadow">
                                         <img src="assets/img/icons/regulatory.svg" alt="">
@@ -290,43 +215,343 @@
                             </a>
                           </div>
         </div>
-     
+
   </div>
 
 </section>
-</section>
+<!----------Video Section Begins--------------->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-9">
+      <section class="video-section">
+        <section class="">
+          <div class="my-container">
+              <h2>Water</h2>
+              <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                <div class="item" *ngFor="let video of water">
+                  <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+                      <div class="thumbnail-card card-shadow">
+                          <div class="thumb-img">
+                            <img [src]="video.image" alt="">
+                            <div class="hover-play">
+                              <i class="fa fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                          </div>
+                          <div class="thumb-caption">
+                            <div class="video-name">
+                              <h5>{{video?.title | slice:0:45}}..</h5>
+                            </div>
+                            <div class="channel">
+                              John Wick
+                            </div>
+                            <div class="video-metadata">
+                              <div class="row">
+                                <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                              <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </a>
+                  </div>
+                  </owl-carousel>
+                  <div class="d-flex justify-content-end mt-2">
+                    <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Water',fetchcategory:'water'}">
+                      <p>
+                          More videos from Category
+                      </p>
+                    </a>
+                  </div>
+            </div>
+        </section>
+
+        <section class="">
+          <div class="my-container">
+              <h2>Wastewater</h2>
+              <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                <div class="item" *ngFor="let video of wastewater">
+                  <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+                      <div class="thumbnail-card card-shadow">
+                          <div class="thumb-img">
+                            <img [src]="video.image" alt="">
+                            <div class="hover-play">
+                              <i class="fa fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                          </div>
+                          <div class="thumb-caption">
+                            <div class="video-name">
+                                <h5>{{video?.title | slice:0:45}}..</h5>
+                            </div>
+                            <div class="channel">
+                              John Wick
+                            </div>
+                            <div class="video-metadata">
+                              <div class="row">
+                                <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                              <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </a>
+                  </div>
+                  </owl-carousel>
+                  <div class="d-flex justify-content-end mt-2">
+                      <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Wastewater',fetchcategory:'wastewater'}">
+                        <p>
+                            More videos from Category
+                        </p>
+                      </a>
+                    </div>
+            </div>
+        </section>
+
+        <section class="">
+          <div class="my-container">
+              <h2>Storm Water</h2>
+              <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                <div class="item" *ngFor="let video of stormwater">
+                  <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+                      <div class="thumbnail-card card-shadow">
+                          <div class="thumb-img">
+                            <img [src]="video.image" alt="">
+                            <div class="hover-play">
+                              <i class="fa fa-play-circle" aria-hidden="true"></i>
+                            </div>
+
+                          </div>
+                          <div class="thumb-caption">
+                            <div class="video-name">
+                                <h5>{{video?.title | slice:0:45}}..</h5>
+                            </div>
+                            <div class="channel">
+                              John Wick
+                            </div>
+                            <div class="video-metadata">
+                              <div class="row">
+                                <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                              <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </a>
+                  </div>
+                  </owl-carousel>
+                  <div class="d-flex justify-content-end mt-2">
+                      <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Storm Water',fetchcategory:'stormwater'}">
+                        <p>
+                            More videos from Category
+                        </p>
+                      </a>
+                    </div>
+            </div>
+        </section>
+
+        <section class="">
+          <div class="my-container">
+              <h2>Innovation Research </h2>
+              <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                <div class="item" *ngFor="let video of innovationresearch">
+                  <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+                      <div class="thumbnail-card card-shadow">
+                          <div class="thumb-img">
+                            <img [src]="video.image" alt="">
+                            <div class="hover-play">
+                              <i class="fa fa-play-circle" aria-hidden="true"></i>
+                            </div>
+                          </div>
+                          <div class="thumb-caption">
+                            <div class="video-name">
+                                <h5>{{video?.title | slice:0:45}}..</h5>
+                            </div>
+                            <div class="channel">
+                              John Wick
+                            </div>
+                            <div class="video-metadata">
+                              <div class="row">
+                                <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                              <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </a>
+                  </div>
+                  </owl-carousel>
+                  <div class="d-flex justify-content-end mt-2">
+                      <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Innovation Research',fetchcategory:'research'}">
+                        <p>
+                            More videos from Category
+                        </p>
+                      </a>
+                    </div>
+            </div>
+        </section>
+
+        <section class="">
+            <div class="my-container">
+                <h2>Sustainable Development</h2>
+                <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                  <div class="item" *ngFor="let video of sustainabledevelopment">
+                    <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+                        <div class="thumbnail-card card-shadow">
+                            <div class="thumb-img">
+                              <img [src]="video.image" alt="">
+                              <div class="hover-play">
+                                <i class="fa fa-play-circle" aria-hidden="true"></i>
+                              </div>
+                            </div>
+                            <div class="thumb-caption">
+                              <div class="video-name">
+                                  <h5>{{video?.title | slice:0:45}}..</h5>
+                              </div>
+                              <div class="channel">
+                                John Wick
+                              </div>
+                              <div class="video-metadata">
+                                <div class="row">
+                                  <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                                <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </a>
+                    </div>
+                    </owl-carousel>
+                    <div class="d-flex justify-content-end mt-2">
+                        <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Sustainable Development',fetchcategory:'sustainable'}">
+                          <p>
+                              More videos from Category
+                          </p>
+                        </a>
+                      </div>
+              </div>
+          </section>
+
+          <section class="">
+              <div class="my-container">
+                  <h2>Management & Finance</h2>
+                  <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                    <div class="item" *ngFor="let video of managementsinance">
+                      <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+                          <div class="thumbnail-card card-shadow">
+                              <div class="thumb-img">
+                                <img [src]="video.image" alt="">
+                                <div class="hover-play">
+                                  <i class="fa fa-play-circle" aria-hidden="true"></i>
+                                </div>
+                              </div>
+                              <div class="thumb-caption">
+                                <div class="video-name">
+                                    <h5>{{video?.title | slice:0:45}}..</h5>
+                                </div>
+                                <div class="channel">
+                                  John Wick
+                                </div>
+                                <div class="video-metadata">
+                                  <div class="row">
+                                    <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                                  <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                      </a>
+                      </div>
+                      </owl-carousel>
+                      <div class="d-flex justify-content-end mt-2">
+                          <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Management & Finance',fetchcategory:'mgmt'}">
+                            <p>
+                                More videos from Category
+                            </p>
+                          </a>
+                        </div>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="my-container">
+                    <h2>Legistative & Regulatory</h2>
+                    <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                      <div class="item" *ngFor="let video of legistativeregulatory">
+                        <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+                            <div class="thumbnail-card card-shadow">
+                                <div class="thumb-img">
+                                  <img [src]="video.image" alt="">
+                                  <div class="hover-play">
+                                    <i class="fa fa-play-circle" aria-hidden="true"></i>
+                                  </div>
+                                </div>
+                                <div class="thumb-caption">
+                                  <div class="video-name">
+                                      <h5>{{video?.title | slice:0:45}}..</h5>
+                                  </div>
+                                  <div class="channel">
+                                    John Wick
+                                  </div>
+                                  <div class="video-metadata">
+                                    <div class="row">
+                                      <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+                                    <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </a>
+                        </div>
+                        </owl-carousel>
+                        <div class="d-flex justify-content-end mt-2">
+                            <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Legistative & Regulatory',fetchcategory:'leg'}">
+                              <p>
+                                  More videos from Category four
+                              </p>
+                            </a>
+                          </div>
+                  </div>
+              </section>
+        </section>
+    </div>
+    <div class="col-lg-3">
+      <div class="sidebar-videos">
+        <h2>
+          Latest
+        </h2>
+
+        <div class="thumbnail-card card-shadow" *ngFor="let video of latestvideos">
+            <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
+          <div class="thumb-img">
+            <img [src]="video?.image" alt="">
+            <div class="hover-play">
+              <i class="fa fa-play-circle" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="thumb-caption">
+            <div class="video-name">
+              <h3>{{video?.title | slice:0:45}}..</h3>
+            </div>
+            <div class="channel">
+              John Wick
+            </div>
+            <div class="video-metadata">
+              <div class="row">
+                <div class="col-6"><div class="views">{{video?.views}} views</div></div>
+              <div class="col-6"><div class="date">{{video?.date_added | date:'MMMM d, y'}}</div></div>
+              </div>
+            </div>
+          </div>
+        </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="text-center see-more">
-  <a [routerLink]="['/onevideo/videos']">
+  <a [routerLink]="['/o-wow/videos']">
       More Videos
   </a>
 </div>
 
-    <!-- <div class="vod">
-      <h2>
-        Trending Video
-      </h2>
-  <a [routerLink]="['/onevideo/singlevideo/',likesvideos._id]">
-      <div class="thumbnail-card card-shadow">
-      <div class="thumb-img">
-        <img [src]="likesvideos?.image" alt="">
-        <div class="hover-play">
-          <i class="fa fa-play-circle" aria-hidden="true"></i>
-        </div>
-      </div>
-      <div class="thumb-caption">
-        <div class="video-name">
-          <h3>{{likesvideos?.title}}</h3>
-        </div>
-        <div class="channel">
-          John Wick
-        </div>
-        <div class="video-metadata">
-          <div class="row">
-            <div class="col-6"><div class="views">{{likesvideos?.views}} views</div></div>
-          <div class="col-6"><div class="date">{{likesvideos?.date_added | date:'MMMM d,M'}}</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </a>
-    </div> -->

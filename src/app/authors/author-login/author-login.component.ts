@@ -93,9 +93,9 @@ export class AuthorLoginComponent implements OnInit {
     this.auth.checkLocalStorage();
     this.showregform();
     this.user= new FormGroup({
-      author_name:new FormControl(null,{validators:[Validators.required,Validators.email]}),
+      author_name:new FormControl(null,{validators:[Validators.required]}),
       author_email:new FormControl(null,{validators:[Validators.required,Validators.email]}),
-      password:new FormControl(null,{validators:[Validators.required]}),
+      password:new FormControl(null,{validators:[Validators.required, Validators.minLength(6)]}),
       cpassword:new FormControl(null,{validators:[Validators.required]})
     });
 

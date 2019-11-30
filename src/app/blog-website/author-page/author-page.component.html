@@ -9,13 +9,13 @@
     <div class="col-lg-9">
       <div class="author-detail">
       <h1 class="author-name">
-          {{author?.name}}
+          {{author?.name | titlecase}}
       </h1>
       <div class="author-stats">
         <div class="row">
           <div class="col-md-4 col-4">
             <img src="assets/img/icons/map.svg" alt="">
-            <p>From <strong>{{author?.location}}</strong></p>
+            <p>From <strong>{{author?.location | titlecase}}</strong></p>
           </div>
           <div class="col-md-4 col-4">
             <img src="assets/img/icons/followers.svg" alt="">
@@ -26,21 +26,19 @@
             <img src="assets/img/icons/add-friend.svg" alt="">
             <p>Follow <strong>Author</strong></p>
             </a>
-
-
           </div>
         </div>
       </div>
       <div class="about-author">
-        <h2>
+        <h3>
           About Author
-        </h2>
+        </h3>
         <p>
             {{author?.about_author}}
         </p>
       </div>
       <div class="author-contact">
-        <h2>Also available at :</h2>
+        <h3>Also available at :</h3>
         <div class="social-media">
           <a href={{author?.linkedIn_id}} target="
           _blank"><i class="fa fa-linkedin"></i></a>

@@ -20,46 +20,36 @@
   }
 }
 h2{
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: -1.5px;
-  // border-bottom: 1px #ccc solid;
-  // border-top: 1px #ccc solid;
-  padding: 1rem;
   text-align: center;
-  margin: 1rem 0;
+  margin:50px 0;
 }
-#sidebar.affix{
-  position: fixed;
-  right: 15px;
-  top: 80px;
-  width: 320px;
-}
+// #sidebar.affix{
+//   position: fixed;
+//   right: 15px;
+//   top: 80px;
+//   width: 320px;
+// }
 // #sidebar{
 //   transition: linear 10s all;
 // }
-.wrapper{
-  position: relative;
-  padding: 0;
-  display: flex;
-}
-.left-section{
-  width: calc(100% - 320px);
-}
-.right-section{
-  width: 320px;
-  position: absolute;
-  right: 15px;
-  
-  h2{
-    margin: 0 auto 1.5rem;
-  }
-}
-.abs{
-  position: absolute !important;
-  bottom: 0 !important;
-  right: 15px !important;
-}
+// .wrapper{
+//   position: relative;
+//   padding: 0;
+//   display: flex;
+// }
+// .left-section{
+//   width: calc(100% - 320px);
+// }
+// .right-section{
+//   width: 320px;
+//   position: absolute;
+//   right: 15px;
+// }
+// .abs{
+//   position: absolute !important;
+//   bottom: 0 !important;
+//   right: 15px !important;
+// }
 .cover-photo {
   height: 75vh;
   position: relative;
@@ -83,18 +73,16 @@ h2{
     padding: 75px 0;
     }
   background: #d5e7f2;
-    h4 {
-    font-weight: 600;
+    h3 {
     text-align: center;
-    letter-spacing: -1.5px;
     margin: 2rem auto;
-    font-size: 2rem;
     color: #000c61;
+    font-weight: 600;
   }
   a {
     text-align: center;
     border-radius: 3px;
-    color: #6f7484;
+    color: #000c61;
     padding: 8px 16px;
     font-weight: 600;
     font-size: 1.1rem;
@@ -150,23 +138,13 @@ h2{
       font-weight: 500;
       font-size: 1rem;
       letter-spacing: -0.5px;
-      font-family: "Montserrat", sans-serif;
+      margin-bottom: 30px;
     }
     h3 {
       /*-------------LANDING BLOG HEADING-----------*/
-      font-size: 1.9rem;
       font-weight: 800;
-      letter-spacing: -1.5px;
-      margin-bottom: 1rem;
-      margin-top: 0.5rem;
     }
-    .authorname {
-      font-weight: bold;
-      font-size: 1rem;
-      font-weight: 00;
-      letter-spacing: -0.8px;
-      font-family: "Montserrat", sans-serif;
-    }
+   
   }
 }
 
@@ -187,22 +165,26 @@ h2{
 /*-----gray cards styles-----------*/
 .blog-card {
   overflow: hidden;
-  background-color: #ccc;
+  background-color: #000c61;
   border-radius: 15px;
   position: relative;
   box-shadow: 0px 25px 35px -25px #97a3b8;
-  margin: 1.3rem;
+  margin: 0 0.7rem 1.3rem;
   .blog-caption {
     padding: 1rem;
     z-index: 10;
     position: relative;
 
-    h6 {
-      font-size: 1.4rem;
+    h4 {
       font-weight: 700;
-      letter-spacing: -1px;
-      margin: 0rem 0.2rem 0.5rem;
+      color: #fff;
+      transition: 0.2s all ease-in-out;
+      
     }
+  }
+  a:hover h4
+   {
+    color: #6675db;
   }
   .author {
     margin: 1rem 0;
@@ -218,7 +200,7 @@ h2{
     p {
       font-size: 0.7rem;
       font-weight: 600;
-      color: black;
+      color: white;
     }
   }
 
@@ -229,8 +211,8 @@ h2{
   }
 
   .like-btn,
-  .read-mins {
-    color: black;
+  .read-mins  {
+    color: white;
     font-size: 0.8rem;
     font-weight: 500;
   }
@@ -254,33 +236,6 @@ h2{
   transform: scale(1.3);
 }
 
-/*---------blue blog card styling----------*/
-.blog-card-blue {
-  background-color: #000c61;
-  h6 {
-    color: #fff;
-  }
-  a:hover h6 {
-    color: #6675db;
-  }
-  .blog-img::after {
-    background-color: #000c61;
-  }
-
-  .like-btn,
-  .read-mins {
-    color: white;
-  }
-  .author p {
-    color: white;
-  }
-  .like-btn {
-    i:nth-child(2) {
-      color: #ccc;
-    }
-  }
-}
-
 .featured-post {
   padding: 2rem 0;
   .outer-card {
@@ -295,16 +250,8 @@ h2{
     .blog-caption {
       padding: 0.5rem;
 
-      h6 {
-        margin: 0.5rem 0;
-        font-size: 1.2rem;
-        letter-spacing: -1px;
-        font-weight: 800;
-      }
-      .author {
-        text-align: left;
-        font-weight: 600;
-      }
+      
+
       .read,
       .likes {
         font-weight: 500;
@@ -359,6 +306,9 @@ h2{
   }
 }
 @media screen and (max-width: 520px) {
+  h2{
+    margin:20px 0;
+  }
   .main-head {
     margin-top: 3rem !important;
   }

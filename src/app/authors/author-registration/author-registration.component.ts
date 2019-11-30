@@ -34,7 +34,7 @@ if(localStorage.getItem('form_filled_job')  == 'true'){
     console.log(this.editableprofile,'dwwd')
    this.form.patchValue({author_name:this.editableprofile.name,
     location:this.editableprofile.location,
-      image:this.editableprofile.image,
+    author_image:this.editableprofile.image,
       author_desc:this.editableprofile.about_author,
       interest:this.editableprofile.interest_category,
       linkedin:this.editableprofile.linkedIn_id,
@@ -47,7 +47,7 @@ if(localStorage.getItem('form_filled_job')  == 'true'){
 }
 
   this.form= new FormGroup({
-    author_name:new FormControl(null,{validators:[Validators.required,Validators.email]}),
+    author_name:new FormControl(null,{validators:[Validators.required]}),
     location:new FormControl(null,{validators:[Validators.required]}),
     author_image:new FormControl(null,{validators:[Validators.required]}),
     author_desc:new FormControl(null),

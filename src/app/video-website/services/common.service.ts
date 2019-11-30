@@ -22,6 +22,23 @@ export class CommonService {
     return this.http.get<{status:any,msg:any,result:any}>("https://onewater-video-api.herokuapp.com/videobyviews");
   }
 
+
+  getVideoByCategory(category){
+    return this.http.get<{status:any,msg:any,result:any}>("https://onewater-video-api.herokuapp.com/categoryvideos/"+category);
+  }
+
+  getHomeVideoByCategory(category){
+    return this.http.get<{status:any,msg:any,result:any}>("https://onewater-video-api.herokuapp.com/homecategoryvideos/"+category);
+  }
+
+  getCategoryVideoByLikes(category){
+    return this.http.get<{status:any,msg:any,result:any}>("https://onewater-video-api.herokuapp.com/categoryvideoslikes/"+category);
+  }
+
+  getCategoryVideoByViews(category){
+    return this.http.get<{status:any,msg:any,result:any}>("https://onewater-video-api.herokuapp.com/categoryvideosviews/"+category);
+  }
+
   getLikes(videoid){
     return this.http.get<{items:any}>(`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoid}&key=AIzaSyDAmRDLp2OJIZ8EqXblfX0glUZyEN6iG_U`);
   }

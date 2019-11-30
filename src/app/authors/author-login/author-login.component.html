@@ -47,7 +47,7 @@
                  <p style="color: red" *ngIf="registersubmitted && user.get('author_email').invalid">Please Enter a Valid Email </p>
 
                  <div class="row"><div class="col-md-6"> <input formControlName="password" class="vldform__textbox halfwidth" type="password" name="pass"  placeholder="Password" required>
-                  <p style="color: red" *ngIf="registersubmitted && user.get('password').invalid">Please Enter a Password </p>
+                  <p style="color: red" *ngIf="registersubmitted && user.get('password').invalid">Enter Password of Length Minlength Six </p>
                 </div>
                  <div class="col-md-6"><input formControlName="cpassword" class="vldform__textbox halfwidth" type="password" name="pass2"  placeholder="Confirm Password" required>
                   <p style="color: red" *ngIf="registersubmitted && user.get('cpassword').invalid">Please Enter Confirm Password </p>
