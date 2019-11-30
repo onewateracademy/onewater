@@ -206,11 +206,16 @@ img{
     font-size: 0.9rem;
   }
 }
-
+.top-videos{
+   .col-sm-6{
+    padding: 0 4px 4px !important;
+  }
+  .col-md-6{
+    padding: 8px;
+  }
+}
 .vod-small{
-  margin-bottom: 1.5rem;
   .thumb-caption {
-    padding: 0;
     position: absolute;
     bottom: 0;
     min-height: 40px !important;

@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   //owl carousel settings
 
-  carouselOptions = {
+  carouselOptions1 = {
     margin: 25,
     nav: true,
     dots:false,
@@ -38,7 +38,168 @@ export class HomeComponent implements OnInit {
       }
     }
   }
+  carouselOptions2 = {
+    margin: 25,
+    nav: true,
+    dots:false,
 
+    stagePadding: 50,
+    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 10,
+      },
+    600: {
+        items: 2,
+
+      },
+      1100: {
+        items: 3,
+
+      },
+      1500: {
+        items: 3,
+
+      }
+    }
+  }
+  carouselOptions3 = {
+    margin: 25,
+    nav: true,
+    dots:false,
+
+    stagePadding: 50,
+    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 10,
+      },
+    600: {
+        items: 2,
+
+      },
+      1100: {
+        items: 3,
+
+      },
+      1500: {
+        items: 3,
+
+      }
+    }
+  }
+  carouselOptions4 = {
+    margin: 25,
+    nav: true,
+    dots:false,
+
+    stagePadding: 50,
+    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 10,
+      },
+    600: {
+        items: 2,
+
+      },
+      1100: {
+        items: 3,
+
+      },
+      1500: {
+        items: 3,
+
+      }
+    }
+  }
+  carouselOptions5 = {
+    margin: 25,
+    nav: true,
+    dots:false,
+
+    stagePadding: 50,
+    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 10,
+      },
+    600: {
+        items: 2,
+
+      },
+      1100: {
+        items: 3,
+
+      },
+      1500: {
+        items: 3,
+
+      }
+    }
+  }
+  carouselOptions6 = {
+    margin: 25,
+    nav: true,
+    dots:false,
+
+    stagePadding: 50,
+    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 10,
+      },
+    600: {
+        items: 2,
+
+      },
+      1100: {
+        items: 3,
+
+      },
+      1500: {
+        items: 3,
+
+      }
+    }
+  }
+  carouselOptions7 = {
+    margin: 25,
+    nav: true,
+    dots:false,
+
+    stagePadding: 50,
+    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        stagePadding: 10,
+      },
+    600: {
+        items: 2,
+
+      },
+      1100: {
+        items: 3,
+
+      },
+      1500: {
+        items: 3,
+
+      }
+    }
+  }
 
   public featuredvideos;
   public latestvideos;

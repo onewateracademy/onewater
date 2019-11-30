@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         if (event['url'] == '/onewaterblog/author-login' ||
           event['url'].includes('/onewaterblog/category') ||
-          event['url'].includes('/onevideo/video-category') ||
+          event['url'].includes('/o-wow/video-category') ||
           event['url'] == '/onewaterjobs/emp-login') {
           this.headerBlue = true;
         } else {
