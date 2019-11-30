@@ -132,6 +132,10 @@ const routes: Routes = [
       {
         path: 'videos',
         loadChildren: './video-website/videos/videos.module#VideosModule'
+      },
+      {
+        path: 'video-category',
+        loadChildren: './video-website/video-category/video-category.module#VideoCategoryModule'
       }
     ]
   },
