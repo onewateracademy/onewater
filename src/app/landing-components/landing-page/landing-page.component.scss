@@ -3,7 +3,6 @@
 section{
   //background: #2b5ada;
   background: #092b86;
-  padding: 50px 20px;
 }
 p{
   font-weight: 500;
@@ -12,12 +11,14 @@ p{
 .row{
   align-items: center;
 }
+h1,h2{
+  color: #fff;
+  font-weight: 600;
+  z-index: 20;
+  position: relative;
+}
 h1{
   text-align: center;
-  font-size: 3rem;
-  font-weight: 600;
-  letter-spacing: -2px;
-  color: #fff;
 }
 .hero-section{
   min-height: 100vh;
@@ -27,26 +28,21 @@ h1{
 overflow-y: visible;
   .heading{
     h1{
-      font-size: 6rem;
-      font-weight: 500;
-      text-align: left;
-      letter-spacing: -5px;
+      font-size: 5.5rem;
+      letter-spacing: -0.3rem;
       position: relative;
       z-index: 10;
+      font-weight: 500;
       color: #fff;
+      text-align: left;
     }
     
-h5{
+h3{
   color: #fff;
-  letter-spacing: -0.5px;
-  font-size: 2rem;
+  z-index: 20;
   position: relative;
-  z-index: 10;
 }
     p{
-      font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: -0.2px;
 margin: 2rem 0; 
 line-height: 2rem;
 width:95%;
@@ -70,11 +66,7 @@ width:95%;
     margin: 1rem auto;
   }
   .about-content{
-    margin: 20% 0 2rem;
-
     p{
-      padding: 1rem;
-      font-size: 1rem;
       color: #fff;
     }
   }
@@ -111,6 +103,10 @@ width:95%;
   color: #fff;
   margin: 0 auto;
   position: relative;
+
+  h2{
+    margin:2rem 0 1.5rem;
+  }
 }
 .platform-name{
   font-size: 3.1rem;
@@ -120,15 +116,15 @@ width:95%;
 }
 .platform-img{
   margin: auto;
-  margin-top: 10%;
-    width:80%;
+  width:80%;
 
 }
 .about-platform p{
-  font-size: 1rem;
   font-weight: 500;
-  margin: 1rem;
+  z-index: 20;
+  position: relative;
 }
+
 .feature-desc{
   font-size: 0.95rembout;
 }
@@ -184,11 +180,8 @@ z-index: 2;
 }
 .mybtn{
   text-align: center;
-    margin: 4rem auto 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    margin: 2rem auto 1rem;
     position: relative;
-    letter-spacing: -1.5px;
     z-index: 10;
 a{
   background: transparent;
@@ -224,16 +217,10 @@ a:hover{
     filter: brightness(0) invert(1);
   }
 }
-
-
-  h2{
-    font-size: 2.5rem;
-    color: #fff;
-    font-weight: 700;
-    text-align: left;
-  }
   .news-img{
     width: 70%;
+    z-index: 20;
+    position: relative;
   }
   .newsletter-section{
     background:#092b86;
@@ -318,6 +305,7 @@ a:hover{
 @media all and (max-width:768px){
   .hero-section{
     text-align: center;
+   padding-top: 18vh;
     .hero-img{
       width: 75%;
       margin: auto;
@@ -325,8 +313,48 @@ a:hover{
     .heading{
       h1{
         text-align: center;
+        font-size: 4rem;
+        letter-spacing: -0.25rem;
       }
     }
   }
+}
+
+@media all and (max-width:480px){
+  h2{
+    text-align: center;
+  }
+  .about-platform p{
+    text-align: justify;
+  }
+  .platform-intro-img {
+    width: 100%;
+  }
+  .platform{
+    padding: 2rem 0;
+  }
+  .platform-img{
+    margin: auto;
+    width:100%;
+  }
+  .news-img {
+    width: 100%; 
+    margin: 3rem auto;
+}
+.newsletter-section p{
+  text-align: center;
+}
+.call-to-action-section{
+  padding: 150px 0 25px;
+}
+.cta-img{
+  width: 80px;
+}
+.newsletter-section {
+  margin-bottom: -230px;
+}
+.partners {
+  padding: 2rem 0;
+}
 }
 
