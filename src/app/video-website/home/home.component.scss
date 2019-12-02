@@ -61,10 +61,13 @@ h2{
   margin: 1.6rem auto;
   max-width: 200px;
   text-align: center;
+  cursor: pointer;
   img{
-    width: 45%;
+    width: 35%;
+    transition: all 0.2s ease-out;
     margin: 1.5rem auto;
   }
+  
   .card-shadow{
     border-radius: 8px;
     transition: all 0.2s ease-in-out;

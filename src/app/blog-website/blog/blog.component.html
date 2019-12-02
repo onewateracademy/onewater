@@ -231,12 +231,12 @@
                         >
                       </div>
                       <div class="row card-btn">
-                        <div class="col-6">
+                        <div class="col-6 col-lg-6 col-sm-4">
                           <div class="like-btn">
                                 <i class="fa fa-heart"></i> {{ item.likes.length }}
                           </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col-6 col-lg-6 col-sm-4">
                           <div class="read-mins">
                                 {{item?.read_time}} mins read
                           </div>
@@ -259,7 +259,7 @@
                     <h2>Categories</h2>
                     <div class="categories-card">
                       <div class="row justify-content-center">
-                        <div class="col-6 no-gutter" *ngFor="let category of categories; let i = index">
+                        <div class="col-6 col-lg-6 col-sm-3 col-xs-4 no-gutter" *ngFor="let category of categories; let i = index">
                           <a (click)="showSubCategories(i)">
                             <div class="category-box d-flex flex-column align-items-center">
                               <img [src]="category.img" alt="" />

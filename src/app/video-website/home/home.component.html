@@ -11,7 +11,7 @@
                    O-Wow
                </h2>
                <p>
-                  Find videos that can change your life here.
+                OneWater one world talks.
                </p>
            </div>
 
@@ -55,7 +55,7 @@
     <div class="row">
         <div class="col-md-6 h-100">
             <div class="vod">
-            <a [routerLink]="['/o-wow/singlevideo/',likesvideos._id]">
+            <a [routerLink]="['/o-wow/singlevideo/', singleliked._id]" title="{{singleliked?.title}}">
                 <div class="thumbnail-card">
                 <div class="thumb-img">
                   <img [src]="singleliked?.image" alt="">
@@ -87,7 +87,7 @@
             <div class="col-sm-6" *ngFor="let video of likesvideos" >
                 <div class="vod vod-small">
 
-                <a [routerLink]="['/o-wow/singlevideo/',latestvideos._id]">
+                <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
                     <div class="thumbnail-card">
                     <div class="thumb-img">
                       <img [src]="video?.image" alt="">
@@ -127,7 +127,7 @@
         </h2>
         <div class="row justify-content-center">
 
-          <div class="col-lg-3 col-6">
+          <div class="col-md-3 col-6 col-sm-3">
               <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Water',fetchcategory:'water'}">
                   <div class="single-category">
                       <div class="card-shadow">
@@ -139,7 +139,7 @@
                   </div>
               </a>
             </div>
-            <div class="col-lg-3 col-6">
+            <div class="col-md-3 col-6 col-sm-3">
                 <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Wastewater',fetchcategory:'wastewater'}">
                     <div class="single-category">
                         <div class="card-shadow">
@@ -151,7 +151,7 @@
                     </div>
                 </a>
               </div>
-              <div class="col-lg-3 col-6">
+              <div class="col-md-3 col-6 col-sm-3">
                   <a  [routerLink]="['/o-wow/video-category']"[queryParams]="{'category':'Storm Water',fetchcategory:'stormwater'}">
                       <div class="single-category">
                           <div class="card-shadow">
@@ -163,7 +163,7 @@
                       </div>
                   </a>
                 </div>
-                <div class="col-lg-3 col-6">
+                <div class="col-md-3 col-6 col-sm-3">
                     <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Innovation Research',fetchcategory:'research'}">
                         <div class="single-category">
                             <div class="card-shadow">
@@ -176,7 +176,7 @@
                     </a>
                   </div>
 
-                    <div class="col-lg-3 col-6">
+                    <div class="col-md-3 col-6 col-sm-3">
                         <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Sustainable Development',fetchcategory:'sustainable'}">
                             <div class="single-category">
                                 <div class="card-shadow">
@@ -188,7 +188,7 @@
                             </div>
                         </a>
                       </div>
-                      <div class="col-lg-3 col-6">
+                      <div class="col-md-3 col-6 col-sm-3">
                           <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Management & Finance',fetchcategory:'mgmt'}">
                               <div class="single-category">
                                   <div class="card-shadow">
@@ -201,7 +201,7 @@
                           </a>
                         </div>
 
-                        <div class="col-lg-3 col-6">
+                        <div class="col-md-3 col-6 col-sm-3">
                             <a  [routerLink]="['/o-wow/video-category']" [queryParams]="{'category':'Legistative & Regulatory',fetchcategory:'leg'}">
                                 <div class="single-category">
                                     <div class="card-shadow">
@@ -226,7 +226,7 @@
         <section class="">
           <div class="my-container">
               <h2>Water</h2>
-              <owl-carousel [items]="featuredvideos" [options]="carouselOptions1" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+              <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                 <div class="item" *ngFor="let video of water">
                   <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
                       <div class="thumbnail-card card-shadow">
@@ -267,7 +267,7 @@
         <section class="">
           <div class="my-container">
               <h2>Wastewater</h2>
-              <owl-carousel [items]="featuredvideos" [options]="carouselOptions2" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+              <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                 <div class="item" *ngFor="let video of wastewater">
                   <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
                       <div class="thumbnail-card card-shadow">
@@ -308,7 +308,7 @@
         <section class="">
           <div class="my-container">
               <h2>Storm Water</h2>
-              <owl-carousel [items]="featuredvideos" [options]="carouselOptions3" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+              <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                 <div class="item" *ngFor="let video of stormwater">
                   <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
                       <div class="thumbnail-card card-shadow">
@@ -350,7 +350,7 @@
         <section class="">
           <div class="my-container">
               <h2>Innovation Research </h2>
-              <owl-carousel [items]="featuredvideos" [options]="carouselOptions4" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+              <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                 <div class="item" *ngFor="let video of innovationresearch">
                   <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
                       <div class="thumbnail-card card-shadow">
@@ -391,7 +391,7 @@
         <section class="">
             <div class="my-container">
                 <h2>Sustainable Development</h2>
-                <owl-carousel [items]="featuredvideos" [options]="carouselOptions5" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                   <div class="item" *ngFor="let video of sustainabledevelopment">
                     <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
                         <div class="thumbnail-card card-shadow">
@@ -432,7 +432,7 @@
           <section class="">
               <div class="my-container">
                   <h2>Management & Finance</h2>
-                  <owl-carousel [items]="featuredvideos" [options]="carouselOptions6" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                  <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                     <div class="item" *ngFor="let video of managementsinance">
                       <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
                           <div class="thumbnail-card card-shadow">
@@ -473,7 +473,7 @@
             <section class="">
                 <div class="my-container">
                     <h2>Legistative & Regulatory</h2>
-                    <owl-carousel [items]="featuredvideos" [options]="carouselOptions7" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+                    <owl-carousel [items]="featuredvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
                       <div class="item" *ngFor="let video of legistativeregulatory">
                         <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
                             <div class="thumbnail-card card-shadow">
