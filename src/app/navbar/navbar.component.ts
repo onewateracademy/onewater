@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import * as $ from "jquery";
 import { HttpClient } from '@angular/common/http'
+<<<<<<< HEAD
 import { AuthService } from '../auth.service';
+=======
+>>>>>>> c18b37736b56acce381c082e607dcb5581038d32
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -10,7 +13,11 @@ import { AuthService } from '../auth.service';
 })
 export class NavbarComponent implements OnInit {
   headerBlue = false;
+<<<<<<< HEAD
   constructor(public router: Router, public http: HttpClient, public auth:AuthService) {
+=======
+  constructor(public router: Router, public http: HttpClient) {
+>>>>>>> c18b37736b56acce381c082e607dcb5581038d32
   }
 
   ngOnInit() {
