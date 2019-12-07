@@ -2,11 +2,9 @@ import { Component,OnInit } from '@angular/core';
 import { Router, NavigationStart,NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Location, PopStateEvent } from "@angular/common";
 import { NgxUiLoaderService } from 'ngx-ui-loader'; // Import NgxUiLoaderService
-<<<<<<< HEAD
 import { AuthService } from './auth.service';
-=======
-import { AuthService } from './authors/services/auth.service';
->>>>>>> c18b37736b56acce381c082e607dcb5581038d32
+// import { AuthService } from './authors/services/auth.service';
+
 // import * as $ from "jquery";
 
 @Component({
@@ -21,7 +19,7 @@ export class AppComponent implements OnInit {
   private lastPoppedUrl: string;
   private yScrollStack: number[] = [];
 
-<<<<<<< HEAD
+
   constructor(public router: Router, private location: Location,public auth:AuthService, public route:ActivatedRoute) {
 
     var hash = window.location.hash;
@@ -39,11 +37,11 @@ export class AppComponent implements OnInit {
     }
 
 // this.blogauth.checkLocalStorage();
-=======
-  constructor(public router: Router, private location: Location, public blogauth:AuthService) {
 
-this.blogauth.checkLocalStorage();
->>>>>>> c18b37736b56acce381c082e607dcb5581038d32
+  // constructor(public router: Router, private location: Location, public blogauth:AuthService) {
+
+// this.blogauth.checkLocalStorage();
+
     this.location.subscribe((ev:PopStateEvent) => {
       this.lastPoppedUrl = ev.url;
   });
@@ -62,11 +60,9 @@ this.blogauth.checkLocalStorage();
 
 }
   ngOnInit() {
-<<<<<<< HEAD
-=======
 
 
->>>>>>> c18b37736b56acce381c082e607dcb5581038d32
+
     this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         if (event['url'] == '/login' || event['url'] == '/dashboard' ||event['url'] == '/thankyou-author'  ||event['url'] == '/thankyou-employer' || event['url'].includes('/onewaterjobs/employer/')  || event['url'].includes('/onewaterblog/author-admin')|| event['url'].includes('/user-admin/')) {
