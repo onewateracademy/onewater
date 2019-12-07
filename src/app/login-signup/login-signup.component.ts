@@ -49,6 +49,7 @@ export class LoginSignupComponent implements OnInit {
     this.http.post('https://onewater-auth.herokuapp.com/newuser',this.user.value)
     .subscribe(result=>{
       console.log("User Added", result)
+      alert("User Added Successfully");
     })
   }
 
