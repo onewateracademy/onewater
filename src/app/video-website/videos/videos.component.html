@@ -17,12 +17,12 @@
 
 <div class="container">
 <div class="videos">
-  <h2>
+  <h2 class="text-center">
     All Videos
   </h2>
   <ngx-masonry [useImagesLoaded]="true"  [options]="{ transitionDuration: 0 }">
  <div ngxMasonryItem class="masonry-item" *ngFor="let video of videos; let i = index">
-   <a [routerLink]="['/onevideo/singlevideo/',video._id]">
+   <a [routerLink]="['/o-wow/singlevideo/',video._id]">
    <div class="thumbnail-card">
      <div class="overlay-2"></div>
    <div class="thumb-img">
@@ -33,7 +33,7 @@
    </div>
    <div class="thumb-caption">
      <div class="video-name">
-       <h3>{{video?.title}}</h3>
+       <h5>{{video?.title}}</h5>
      </div>
      <!-- <div class="channel">
        {{video.channel}}

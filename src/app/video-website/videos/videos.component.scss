@@ -101,7 +101,7 @@
   }
 
 .thumb-caption{
-      padding: 0.5rem 1rem 0rem;
+      padding: 0.5rem;
   }
 
   .channel{
@@ -111,9 +111,10 @@
 
  .video-metadata{
   margin-top:1rem;
+  position: relative !important;
 
     .views, .date {
-    color: #fff;
+    color: #fff !important;
     }
 }
 

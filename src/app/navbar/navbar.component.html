@@ -1,7 +1,7 @@
  <!----------------------------------
                   NAVBAR
     ------------------------------------>
-    
+
     <header>
       <div class="navbar">
           <div class="logo-wrap">
@@ -15,11 +15,14 @@
                   <li class="navlink"><a [routerLink]="['/home']">Home</a></li>
                   <li class="navlink"><a href="https://onewateracademy.herokuapp.com" target="_blank">learning academy </a></li>
                   <li class="navlink"><a [routerLink]="['/home']" style="text-transform: none;" >OWXchange </a></li>
-                  <li class="navlink"><a [routerLink]="['/onevideo']"  style="text-transform: uppercase;" >o-wow </a></li>
+                  <li class="navlink"><a [routerLink]="['/o-wow']"  style="text-transform: none;" >O-Wow </a></li>
                   <li class="navlink"><a [routerLink]="['/onewaterblog']" >blog</a></li>
                   <li class="navlink"><a [routerLink]="['/home/about']" > about </a></li>
                   <li class="navlink"><a [routerLink]="['/home/team']" > contact </a></li>
-                  <li class="navlink"><a [routerLink]="['/login']">Login / Signup </a></li>
+                  <li *ngIf="!auth.isLoggedIn" class="navlink"><a href="https://onewater-tenant2.auth0.com/login?state=g6Fo2SBxMzJBM0NvdGxpZ1hvdTBPeG9Uay00QVp6TFY3aS1EY6N0aWTZIGtSRl9sQklid3VPUFJwb1FBMUNkeFJmVUpxeThZTk9wo2NpZNkgWTRBOWI0SHFFNnVMZUJpeDZXbnJMaWw3NmNNT1FGeWo&client=Y4A9b4HqE6uLeBix6WnrLil76cMOQFyj&protocol=samlp&RelayState=%257B%2522accountId%2522%253A%252253950%2522%252C%2522accesskey%2522%253A%2522158ldrji0bfca%2522%252C%2522groupid%2522%253A%252211516%2522%252C%2522epId%2522%253A%252211516%2522%252C%2522acap_prime_json%2522%253A%25221%2522%257D">Login </a></li>
+                  <li *ngIf="auth.isLoggedIn" class="navlink"><a href="https://onewater-tenant2.auth0.com/v2/logout?client_id=Y4A9b4HqE6uLeBix6WnrLil76cMOQFyj&returnTo=http://localhost:4200/home">Logout </a></li>
+                  <!-- https://YOUR_DOMAIN/v2/logout -->
+                  <li class="navlink"><a [routerLink]="['/login']">Signup </a></li>
                   <!-- <li class="navlink hover-dd"><a> platform </a>
                     <div class="dd-menu">
                         <li><a [routerLink]="['/onewaterblog']">OneWater Blog</a></li>
@@ -29,7 +32,7 @@
                         <li><a [routerLink]="['/']">Mentor Mentee</a></li>
                     </div>
                 </li> -->
-                  
+
               </ul>
               <!-- <div class="menu-contact">
                   <div class="row">

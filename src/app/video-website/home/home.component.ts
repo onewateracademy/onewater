@@ -9,37 +9,8 @@ import { CommonService } from '../services/common.service';
 })
 export class HomeComponent implements OnInit {
 
-  //owl carousel settings
-
-  carouselOptions = {
-    margin: 25,
-    nav: true,
-    dots:false,
-
-    stagePadding: 50,
-    navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1,
-        stagePadding: 10,
-      },
-    600: {
-        items: 2,
-
-      },
-      1100: {
-        items: 3,
-
-      },
-      1500: {
-        items: 3,
-
-      }
-    }
-  }
-
-
+ carouselOptions;
+ 
   public featuredvideos;
   public latestvideos;
   public likesvideos;
@@ -54,6 +25,38 @@ export class HomeComponent implements OnInit {
   constructor(public commonservice:CommonService) { }
 
 ngOnInit() {
+
+
+ //owl carousel settings
+
+ this.carouselOptions = {
+  margin: 25,
+  nav: true,
+  dots:false,
+
+  stagePadding: 50,
+  navText: ['<img src="assets/img/icons/prev.svg" style="width:30px;">', '<img src="assets/img/icons/next.svg" style="width:30px;">'],
+  responsiveClass: true,
+  responsive: {
+    0: {
+      items: 1,
+      stagePadding: 10,
+    },
+  600: {
+      items: 2,
+
+    },
+    1100: {
+      items: 3,
+
+    },
+    1500: {
+      items: 3,
+
+    }
+  }
+}
+
 
   // this.commonservice.getVideoByViews()
   //       .subscribe(result=>{

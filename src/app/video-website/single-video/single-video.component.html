@@ -3,7 +3,7 @@
 </div>
 <div class="container">
   <div class="video-container">
-    <div class="iframe-container">
+    <div class="iframe-container ">
     <iframe width="560" height="315" [src]="safeSrc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="video-details">
@@ -36,6 +36,9 @@
       </div>
 
 <div class="v-desc">
+  <h6>
+    About Video:
+  </h6>
   <p>
     {{video?.desc}}
   </p>
@@ -50,7 +53,7 @@
     </h2>
     <owl-carousel [items]="likesvideos" [options]="carouselOptions" [carouselClasses]="['owl-theme', 'row', 'sliding']">
       <div class="item" *ngFor="let videoo of likesvideos">
-        <a [routerLink]="['/onevideo/singlevideo/', videoo._id]">
+        <a [routerLink]="['/o-wow/singlevideo/', videoo._id]" title="{{videoo?.title}}">
         <div class="thumbnail-card card-shadow" >
         <div class="thumb-img">
           <img [src]="videoo?.image" alt="">
@@ -60,11 +63,9 @@
         </div>
         <div class="thumb-caption">
           <div class="video-name">
-          <a [routerLink]="['/onevideo/singlevideo']"><h3>{{videoo?.title}}</h3></a>
+          <a [routerLink]="['/o-wow/singlevideo/', videoo._id]"><h5>{{videoo?.title | slice:0:50}}..</h5></a>
           </div>
-          <div class="channel">
-            John Wick
-          </div>
+          
           <div class="video-metadata">
             <div class="row">
               <div class="col-6"><div class="views">{{videoo?.views}} views</div></div>

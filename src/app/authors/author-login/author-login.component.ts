@@ -111,7 +111,7 @@ export class AuthorLoginComponent implements OnInit {
     if(this.user.invalid){
       return;
     }
-    if(this.user.value.password != this.user.value.cpassword) return alert("Password Not Macthed");
+    if(this.user.value.password != this.user.value.cpassword) return alert("Password Not Matched");
     console.log(this.user.value);
     this.auth.author(this.user.value);
   }

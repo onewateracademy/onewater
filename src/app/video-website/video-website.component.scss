@@ -58,12 +58,8 @@ global styles for website video
   .thumb-caption{
     position: relative;
     min-height: 100px;
-
-    h3{
-      font-size: 1.1rem;
-      letter-spacing: -0.55px;
+    h5{
       line-height: 1.5rem;
-      font-weight: 700;
       margin: 0.5rem ;
     }
     .video-metadata{
@@ -108,12 +104,3 @@ global styles for website video
           display: none !important;
         }
    
-
-@media screen and(max-width:520px){
-
-          .thumbnail-card{
-            .thumb-caption h3{
-              font-size: 1.1rem;
-            }
-          }
-}

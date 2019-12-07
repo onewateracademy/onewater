@@ -15,6 +15,7 @@ import { BlogWebsiteComponent } from './blog-website/blog-website.component';
 import { JobPortalComponent } from './job-portal/job-portal.component';
 import { VideoWebsiteComponent } from './video-website/video-website.component';
 
+import { NgxPayPalModule } from 'ngx-paypal';
 @NgModule({
   declarations: [
     AppComponent, NavbarComponent, FooterComponent, LandingComponentsComponent, LandingPageComponent, BlogWebsiteComponent, JobPortalComponent, VideoWebsiteComponent
@@ -27,7 +28,8 @@ import { VideoWebsiteComponent } from './video-website/video-website.component';
     FormsModule,
     HttpClientModule,
     NgxUiLoaderModule,
-    NgxUiLoaderRouterModule
+    NgxUiLoaderRouterModule,
+    NgxPayPalModule
   ],
 
   providers: [],

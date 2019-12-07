@@ -1,4 +1,5 @@
 @import '../home/home.component.scss';
+@import '../../../../node_modules/modularscale-sass/stylesheets/modularscale';
 
 .category-wrap{
     padding-top: 15vh;
@@ -7,17 +8,16 @@
   
   .category-head h1{
     margin: 0.5rem auto;
-    font-size: 4rem;
+    @include ms-respond(font-size,8);
     font-weight: bold;
-    letter-spacing: -4px;
-    padding-bottom: 2rem;
+    letter-spacing: -0.15rem;
     border-bottom: 1px #ccc solid;
   
     h2{
       color: #777;
-      letter-spacing: -0.06rem;
       font-weight: 600;
-      font-size: 1.8rem;
+      letter-spacing: -0.06rem;
+      @include ms-respond(font-size,3);
     }
   }
   
@@ -26,11 +26,14 @@
 
     h2{
         margin-bottom: 50px;
-        letter-spacing: -0.04rem;
     }
 
     .thumbnail-card{
         margin-bottom: 28px;
+    }
+
+    .thumb-img{
+        height: 200px;
     }
 }
 .top-videos{
@@ -40,25 +43,24 @@
 
 .thumb-caption-big{
     margin: 35px 0;
-    h3{
-        font-size: 3.2rem;
-        font-weight: 800;
-        letter-spacing: -0.15rem;
-    }
+ 
     .views, .date{
         color: #666;
         font-weight: 600;
-        font-size: 1.05rem;
         letter-spacing: -0.035rem;
     }
-
-    .video-desc{
-        font-size: 1.15rem;
-        font-weight: 600;
+    h3{
+        margin-bottom: 2rem;
     }
    
 }
 
 .hover-black:hover{
     color: black !important;
+}
+
+@media all and (max-width:768px){
+    .category-head h1{
+        text-align: center;
+      }
 }

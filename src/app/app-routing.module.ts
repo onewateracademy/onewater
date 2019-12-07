@@ -118,7 +118,7 @@ const routes: Routes = [
   //-----------VIDEO PAGES ROUTING---------------//
 
   {
-    path: 'onevideo',
+    path: 'o-wow',
     component: VideoWebsiteComponent,
     children: [
       {

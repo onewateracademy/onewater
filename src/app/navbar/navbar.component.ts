@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import * as $ from "jquery";
 import { HttpClient } from '@angular/common/http'
+import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class NavbarComponent implements OnInit {
   headerBlue = false;
-  constructor(public router: Router, public http: HttpClient) {
+  constructor(public router: Router, public http: HttpClient, public auth:AuthService) {
   }
 
   ngOnInit() {
@@ -18,6 +19,7 @@ export class NavbarComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         if (event['url'] == '/onewaterblog/author-login' ||
           event['url'].includes('/onewaterblog/category') ||
+          event['url'].includes('/o-wow/video-category') ||
           event['url'] == '/onewaterjobs/emp-login') {
           this.headerBlue = true;
         } else {
