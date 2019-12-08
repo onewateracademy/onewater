@@ -27,8 +27,8 @@ export class AppComponent implements OnInit {
     var localcookie=this.readCookie('id_token');
     let decodedtoken;
     if(hash || localcookie !='null'){
-      this.auth.isLoggedIn=true;
       if(hash){
+        this.auth.isLoggedIn=true;
         console.log(hash,'hash value');
         let fetch_token=hash.split('#');
 
@@ -41,13 +41,14 @@ export class AppComponent implements OnInit {
       this.createCookie('id_token',this.auth.id_token);
       console.log(this.getDecodedAccessToken(this.auth.id_token),'decoded token')
       decodedtoken=this.getDecodedAccessToken(this.auth.id_token);
-      this.createCookie('name',decodedtoken.name)
-      this.createCookie('nickname',decodedtoken.nickname)
-      this.createCookie('userpicture',decodedtoken.picture)
-      this.auth.picture=this.readCookie('userpicture')
-      this.auth.nickname=this.readCookie('nickname')
-      this.auth.name=this.readCookie('name')
+      this.createCookie('name',decodedtoken.name);
+      this.createCookie('nickname',decodedtoken.nickname);
+      this.createCookie('userpicture',decodedtoken.picture);
+      this.auth.picture=this.readCookie('userpicture');
+      this.auth.nickname=this.readCookie('nickname');
+      this.auth.name=this.readCookie('name');
 }else{
+  this.auth.isLoggedIn=true;
   this.auth.access_token=this.readCookie('access_token')
   this.auth.id_token=this.readCookie('id_token')
   this.auth.picture=this.readCookie('userpicture')
