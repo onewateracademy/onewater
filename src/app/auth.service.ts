@@ -12,6 +12,10 @@ export class AuthService {
 
   isLoggedIn:boolean=false;
   access_token;
+  id_token;
+  picture;
+  nickname;
+  name;
 
   constructor(){}
 }

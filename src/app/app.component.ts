@@ -3,6 +3,7 @@ import { Router, NavigationStart,NavigationEnd, ActivatedRoute } from '@angular/
 import { Location, PopStateEvent } from "@angular/common";
 import { NgxUiLoaderService } from 'ngx-ui-loader'; // Import NgxUiLoaderService
 import { AuthService } from './auth.service';
+import * as jwt_decode from "jwt-decode";
 // import { AuthService } from './authors/services/auth.service';
 
 // import * as $ from "jquery";
@@ -23,17 +24,38 @@ export class AppComponent implements OnInit {
   constructor(public router: Router, private location: Location,public auth:AuthService, public route:ActivatedRoute) {
 
     var hash = window.location.hash;
-    if(hash){
-      console.log(hash,'hash value');
+    var localcookie=this.readCookie('id_token');
+    let decodedtoken;
+    if(hash || localcookie !='null'){
+      this.auth.isLoggedIn=true;
+      if(hash){
+        console.log(hash,'hash value');
+        let fetch_token=hash.split('#');
 
-      let fetch_token=hash.split('#');
+        let tokens=fetch_token[1].split('&');
+        console.log(tokens,'mmmmmm token');
+      this.auth.access_token=tokens[0].split('=')[1];
+      this.auth.id_token=tokens[1].split('=')[1];
+      console.log(this.auth.id_token,this.auth.access_token,'dwdjkwbwjkb');
+      this.createCookie('access_token',this.auth.access_token);
+      this.createCookie('id_token',this.auth.id_token);
+      console.log(this.getDecodedAccessToken(this.auth.id_token),'decoded token')
+      decodedtoken=this.getDecodedAccessToken(this.auth.id_token);
+      this.createCookie('name',decodedtoken.name)
+      this.createCookie('nickname',decodedtoken.nickname)
+      this.createCookie('userpicture',decodedtoken.picture)
+      this.auth.picture=this.readCookie('userpicture')
+      this.auth.nickname=this.readCookie('nickname')
+      this.auth.name=this.readCookie('name')
+}else{
+  this.auth.access_token=this.readCookie('access_token')
+  this.auth.id_token=this.readCookie('id_token')
+  this.auth.picture=this.readCookie('userpicture')
+  this.auth.nickname=this.readCookie('nickname')
+  this.auth.name=this.readCookie('name')
+}
 
-      let access_token=fetch_token[1].split('&');
-      console.log(access_token,'access token')
-      if(access_token[0]){
-          this.auth.isLoggedIn=true;
-          this.auth.access_token=access_token[0].split('=')[1];
-      }
+console.log(this.auth.access_token,'!!',this.auth.id_token,'!!',this.auth.name,'!!',this.auth.nickname,'!!',this.auth.picture);
     }
 
 // this.blogauth.checkLocalStorage();
@@ -72,5 +94,36 @@ export class AppComponent implements OnInit {
         }
       }
     });
+}
+
+getDecodedAccessToken(token: string): any {
+  try{
+      return jwt_decode(token);
+  }
+  catch(Error){
+      return null;
+  }
+}
+
+createCookie(key, value) {
+  let cookie = escape(key) + "=" + escape(value) + ";";
+  document.cookie = cookie;
+  // console.log(cookie);
+  // console.log("Creating new cookie with key: " + key + " value: " + value);
+}
+
+readCookie(name) {
+  let key = name + "=";
+  let cookies = document.cookie.split(';');
+  for (let i = 0; i < cookies.length; i++) {
+    let cookie = cookies[i];
+    while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+    if (cookie.indexOf(key) === 0) {
+            return cookie.substring(key.length, cookie.length);
+        }
+  }
+  return null;
 }
 }

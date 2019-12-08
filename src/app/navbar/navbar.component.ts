@@ -89,4 +89,23 @@ export class NavbarComponent implements OnInit {
       })
   }
 
+  logout(){
+    this.deleteCookie('name')
+    this.deleteCookie('nickname')
+    this.deleteCookie('access_token')
+    this.deleteCookie('id_token')
+    this.deleteCookie('userpicture')
+  }
+
+  deleteCookie(name) {
+    this.createCookie(name, null);
+}
+
+createCookie(key, value) {
+  let cookie = escape(key) + "=" + escape(value) + ";";
+  document.cookie = cookie;
+  console.log(cookie);
+  console.log("Creating new cookie with key: " + key + " value: " + value);
+}
+
 }
