@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
 import * as $ from "jquery";
 import { HttpClient } from '@angular/common/http'
+import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -9,9 +11,8 @@ import { HttpClient } from '@angular/common/http'
 })
 export class NavbarComponent implements OnInit {
   headerBlue = false;
-  constructor(public router: Router, public http: HttpClient) {
-  }
 
+  constructor(public router: Router, public http: HttpClient, public auth:AuthService) {  }
   ngOnInit() {
 
     this.router.events.forEach((event) => {
@@ -87,5 +88,24 @@ export class NavbarComponent implements OnInit {
         console.log(result);
       })
   }
+
+  logout(){
+    this.deleteCookie('name')
+    this.deleteCookie('nickname')
+    this.deleteCookie('access_token')
+    this.deleteCookie('id_token')
+    this.deleteCookie('userpicture')
+  }
+
+  deleteCookie(name) {
+    this.createCookie(name, null);
+}
+
+createCookie(key, value) {
+  let cookie = escape(key) + "=" + escape(value) + ";";
+  document.cookie = cookie;
+  console.log(cookie);
+  console.log("Creating new cookie with key: " + key + " value: " + value);
+}
 
 }

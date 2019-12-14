@@ -1,7 +1,11 @@
  <!----------------------------------
                   NAVBAR
     ------------------------------------>
-    
+
+
+
+
+
     <header>
       <div class="navbar">
           <div class="logo-wrap">
@@ -19,7 +23,14 @@
                   <li class="navlink"><a [routerLink]="['/onewaterblog']" >blog</a></li>
                   <li class="navlink"><a [routerLink]="['/home/about']" > about </a></li>
                   <li class="navlink"><a [routerLink]="['/home/team']" > contact </a></li>
-                  <li class="navlink"><a [routerLink]="['/login']">Login / Signup </a></li>
+
+                  <li *ngIf="!auth.isLoggedIn" class="navlink"><a href="https://onewater-tenant2.auth0.com/samlp/Y4A9b4HqE6uLeBix6WnrLil76cMOQFyj">Login </a></li>
+                  <li *ngIf="auth.isLoggedIn" class="navlink"><a (click)="logout()" href="https://onewater-tenant2.auth0.com/v2/logout?client_id=Y4A9b4HqE6uLeBix6WnrLil76cMOQFyj&returnTo=https://onewater.herokuapp.com/home">Logout </a></li>
+                  <!-- https://YOUR_DOMAIN/v2/logout -->
+                  <li *ngIf="!auth.isLoggedIn" class="navlink"><a [routerLink]="['/login']">Signup </a></li>
+
+                  <!-- <li class="navlink"><a [routerLink]="['/login']">Login / Signup </a></li> -->
+
                   <!-- <li class="navlink hover-dd"><a> platform </a>
                     <div class="dd-menu">
                         <li><a [routerLink]="['/onewaterblog']">OneWater Blog</a></li>
@@ -29,7 +40,7 @@
                         <li><a [routerLink]="['/']">Mentor Mentee</a></li>
                     </div>
                 </li> -->
-                  
+
               </ul>
               <!-- <div class="menu-contact">
                   <div class="row">
