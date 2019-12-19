@@ -40,7 +40,9 @@ export class AppComponent implements OnInit {
       this.createCookie('access_token',this.auth.access_token);
       this.createCookie('id_token',this.auth.id_token);
       console.log(this.getDecodedAccessToken(this.auth.id_token),'decoded token')
+
       decodedtoken=this.getDecodedAccessToken(this.auth.id_token);
+      console.table(decodedtoken);
       this.createCookie('name',decodedtoken.name);
       this.createCookie('nickname',decodedtoken.nickname);
       this.createCookie('userpicture',decodedtoken.picture);
@@ -57,6 +59,7 @@ export class AppComponent implements OnInit {
 }
 
 console.log(this.auth.access_token,'!!',this.auth.id_token,'!!',this.auth.name,'!!',this.auth.nickname,'!!',this.auth.picture);
+
     }
 
 // this.blogauth.checkLocalStorage();
