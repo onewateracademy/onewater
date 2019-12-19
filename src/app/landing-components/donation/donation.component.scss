@@ -6,33 +6,24 @@
     background-repeat: no-repeat;
 }
 .section-intro{
-    padding-top: 10px;
-    margin: 75px auto;
     margin-top: -85vh;
     h1{
         color: #fff;
         font-size: 3.8rem;
         font-weight: 600;
-        letter-spacing: -2px;
     }
-    h3{
+    h2{
         margin-top:35px;
         color: #fff;
-        font-size: 2.4rem;
-        font-weight: 600;
-        letter-spacing: -1.5px;
     }
 }
 .section-1{
     margin-top: 40vh;
-
     h2{
-        text-align: left;
-        padding-left: 0;
-        font-size: 2.5rem;
-        letter-spacing: -2px;
+        margin-bottom: 35px;
     }
 }
+
 .donate-img{
     margin-top: -10vh;
 }
@@ -142,8 +133,6 @@ transition: 0.2s ease-in-out all;}
     font-weight: 600;
     cursor: pointer;
 }
-
-
 
 @keyframes a {
     0% {

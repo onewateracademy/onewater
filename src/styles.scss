@@ -28,8 +28,8 @@ $modularscale: (
     ratio: 1.22,
   ),
   768px: (
-    base: 16px,
-    ratio: 1.215,
+    base: 15.4px,
+    ratio: 1.21,
   ),
   991px:(
     base: 16px,
@@ -209,6 +209,9 @@ margin: 1rem;}
     margin: 1.5rem auto 3rem;
     text-align: center;
   }
+  section{
+    padding: 45px 0;
+  }
   .content p {
     width: 90%;
     margin: auto;
@@ -219,7 +222,7 @@ margin: 1rem;}
 
 @media screen and (max-width: 420px) {
   section{
-    padding: 35px 0;
+    padding: 20px 0;
   }
   button::after {
     display: none;

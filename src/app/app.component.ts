@@ -43,6 +43,7 @@ export class AppComponent implements OnInit {
 
       decodedtoken=this.getDecodedAccessToken(this.auth.id_token);
       console.table(decodedtoken);
+      decodedtoken=this.getDecodedAccessToken(this.auth.id_token);
       this.createCookie('name',decodedtoken.name);
       this.createCookie('nickname',decodedtoken.nickname);
       this.createCookie('userpicture',decodedtoken.picture);

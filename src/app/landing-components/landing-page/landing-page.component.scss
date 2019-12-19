@@ -302,10 +302,9 @@ a:hover{
       border:none;
 }
 
-@media all and (max-width:768px){
+@media all and (max-width:991px){
   .hero-section{
     text-align: center;
-   padding-top: 18vh;
     .hero-img{
       width: 75%;
       margin: auto;
@@ -318,12 +317,31 @@ a:hover{
       }
     }
   }
+  .platform-img{
+    width: 60%;
+}
+h2{
+  text-align: center;
+}
+.newsletter-section{
+  padding: 50px 0 320px;
+  margin-bottom: -394px;
+p{
+  text-align: center;
+}
+}
+.news-img-wrap{
+  text-align: center;
+  margin: 1rem;
+}
+.call-to-action-section {
+  padding: 120px 0 80px;}
 }
 
 @media all and (max-width:480px){
-  h2{
-    text-align: center;
-  }
+  .feature-name{
+    font-size: 1.2rem;
+}
   .about-platform p{
     text-align: justify;
   }

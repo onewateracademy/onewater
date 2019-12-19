@@ -30,7 +30,7 @@
 
 <div class="author-btn">
     <div class="row no-gutter align-items-end">
-      <div class="col-lg-7 align-self-center">
+      <div class="col-md-7 align-self-center">
         <div class="reg-text">
           <h3>
             Want to write blogs?
@@ -40,7 +40,7 @@
           <a routerLink="/onewaterblog/author-login">Register as author</a>
         </div>
       </div>
-      <div class="col-lg-5">
+      <div class="col-md-5">
         <img src="assets/img/author-reg-bg.png" alt="" />
       </div>
     </div>
@@ -53,7 +53,7 @@
         Top Videos
       </h2>
     <div class="row">
-        <div class="col-md-6 h-100">
+        <div class="col-lg-6 col-md-12 h-100">
             <div class="vod">
             <a [routerLink]="['/o-wow/singlevideo/', singleliked._id]" title="{{singleliked?.title}}">
                 <div class="thumbnail-card">
@@ -82,7 +82,7 @@
               </a>
               </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-lg-6 col-md-12">
           <div class="row">
             <div class="col-sm-6" *ngFor="let video of likesvideos" >
                 <div class="vod vod-small">
@@ -517,8 +517,9 @@
         <h2>
           Latest
         </h2>
-
-        <div class="thumbnail-card card-shadow" *ngFor="let video of latestvideos">
+<div class="row justify-content-center">
+  <div class="col-lg-12 col-md-6 col-sm-12" *ngFor="let video of latestvideos">
+        <div class="thumbnail-card card-shadow" >
             <a [routerLink]="['/o-wow/singlevideo/', video._id]" title="{{video?.title}}">
           <div class="thumb-img">
             <img [src]="video?.image" alt="">
@@ -542,7 +543,8 @@
           </div>
         </a>
         </div>
-
+      </div>
+      </div>
       </div>
     </div>
   </div>

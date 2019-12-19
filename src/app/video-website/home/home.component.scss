@@ -95,7 +95,7 @@ h2{
     font-weight: 600;
     letter-spacing: -1px;
     color: #fff;
-    margin: 2rem 1rem;
+    margin: 2rem 0;
     position: relative;
     z-index: 5;
   }
@@ -172,7 +172,7 @@ img{
 .sidebar-videos{
   .thumbnail-card{
     position: relative;
-    margin: 1.5rem 0;
+    margin: 0.8rem 0;
     height: 110px;
   }
   .thumb-caption h3{
@@ -285,14 +285,24 @@ h2{
   }
   .vod {
     .thumbnail-card{
-      width: 90%;
-      .thumb-img{
-        height: 35vh;
-      }
+      width: 100%;
+      margin-bottom: 1rem;
     }
   }
+  .vod-small .thumbnail-card{
+    width: 94%;
+  }
+  .sidebar-videos .thumb-caption h3 {
+    font-size: 1rem;
+}
 }
 @media screen and (max-width: 520px){
+
+  .vod-small{
+    width: 94%;
+    margin:auto;
+  }
+
   .cover-photo{height: 100vh;}
   .landing-section
   {
@@ -348,6 +358,10 @@ h2{
   padding: 0.5rem;
   }
 }
+.author-btn {
+  text-align: center;
+  margin: 30px 0 20px;
+}
 }
 .see-more
 {
@@ -359,4 +373,20 @@ h2{
     border: 2px solid #0C7BE2;
     padding: 0.5rem;
   }
+
+
 } 
+
+@media screen and (max-width: 360px){
+.sidebar-videos {
+  .thumb-caption { 
+    height: 120px;
+    h3 {
+    font-size: 0.9rem;
+  }
+}
+.thumbnail-card{
+  height: 120px;
+}
+}
+}

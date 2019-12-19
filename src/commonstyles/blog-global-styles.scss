@@ -85,26 +85,13 @@ left: 1.2rem;
 
 /*-cards with eave background------------*/
 
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  height: 70%;
-  width: 100%;
-  background-image: url("/assets/img/gray-wave.webp");
-  background-size: cover;
-  background-position-y: 0;
-  background-repeat: no-repeat;
-  transform: rotate(180deg);
-  -webkit-filter: grayscale(1);
-}
 .overlay-2 {
   position: absolute;
   left: 0;
   top: 50%;
   height: 100%;
   width: 100%;
-  background-image: url("/assets/img/blue-wave.webp");
+  background-image: url("/assets/img/blue-wave-small.webp");
   background-size: cover;
   background-position-x: right;
   background-repeat: no-repeat;
@@ -125,6 +112,10 @@ left: 1.2rem;
     .blog-caption {
       width: 100%;
       padding: 0.5rem;
+      height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
       h5{
         margin: 0.5rem 0;
@@ -140,7 +131,7 @@ left: 1.2rem;
       display: block;
       margin-top: 1rem;
 
-    .author{margin: 1rem 0;
+    .author{margin:0 0 1rem ;
       text-align: left;
     font-weight: 700;
     opacity: 0.8;
@@ -179,7 +170,8 @@ left: 1.2rem;
       top: 0;
       height: 100%;
       width: 100%;
-      background: url(/assets/img/blue-wave-inverted.webp);
+      background: url(/assets/img/blue-wave-small.webp);
+      transform: rotate(180deg);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: bottom;
