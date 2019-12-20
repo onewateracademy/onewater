@@ -35,10 +35,11 @@ export class AppComponent implements OnInit {
         let tokens=fetch_token[1].split('&');
         console.log(tokens,'mmmmmm token');
       this.auth.access_token=tokens[0].split('=')[1];
-      this.auth.id_token=tokens[1].split('=')[1];
+      this.auth.id_token=tokens[3].split('=')[1];
       console.log(this.auth.id_token,this.auth.access_token,'dwdjkwbwjkb');
       this.createCookie('access_token',this.auth.access_token);
       this.createCookie('id_token',this.auth.id_token);
+      console.log(this.auth.id_token,'fefkenfkenfk');
       console.log(this.getDecodedAccessToken(this.auth.id_token),'decoded token')
 
       decodedtoken=this.getDecodedAccessToken(this.auth.id_token);
